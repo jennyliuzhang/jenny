@@ -1,0 +1,117 @@
+[
+    {
+      "parentProject": "dorsia",
+      "projectName": "Reserve with Dom Perignon",
+      "projectSlug": "dom-perignon",
+      "projectDesc": "A co-branded mobile payment strategy",
+      "projectDeliverables": [
+        "Mobile App Design",
+        "Payments",
+        "User Education",
+        "Co-branding",
+        "Pitch deck"
+      ],
+      "dateLaunched": "2023-09-30",
+      "projectSize": 6,
+      "projectCoverURL": "/projects/dorsia/dom-perignon/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/dom-perignon.jpg"
+    },
+    {
+      "parentProject": null,
+      "projectName": "How to Play With Fire",
+      "projectSlug": "how-to-play-with-fire",
+      "projectDesc": "Design and strategy for a digital research collaborative I co-founded",
+      "projectDeliverables": [
+        "Website Design",
+        "Graphic Design",
+        "Illustration",
+        "React App",
+        "Brand Design",
+        "Research Writing",
+        "Tech Studies"
+      ],
+      "dateLaunched": "2024-05-15",
+      "projectSize": 8,
+      "projectCoverURL": "/projects/how-to-play-with-fire/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "projectName": "Dorsia Style Guide",
+      "projectSlug": "style-guide",
+      "projectDesc": "A deep-dive into the visual identity and voice of a culture tech company",
+      "projectDeliverables": [
+        "Brand Design",
+        "Storytelling",
+        "Design System"
+      ],
+      "dateLaunched": "2024-08-30",
+      "projectSize": 8,
+      "projectCoverURL": "/projects/dorsia/style-guide/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "projectName": "Restaurant Profiles",
+      "projectSlug": "restaurant-profiles",
+      "projectDesc": "Discover Dorsia restaurants and their scenes, awards, and menus",
+      "projectDeliverables": [
+        "Mobile App Design",
+        "Modular Design",
+        "User Education"
+      ],
+      "dateLaunched": "2023-07-30",
+      "projectSize": 7,
+      "projectCoverURL": "/projects/dorsia/restaurant-profiles/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-profiles.png"
+    },
+    {
+      "parentProject": "dorsia",
+      "projectName": "Restaurant Shift Editor",
+      "projectSlug": "shift-editor",
+      "projectDesc": "Plan and view booking availability on Dorsia",
+      "projectDeliverables": [
+        "Web App Design",
+        "Internal Tool",
+        "Scheduling"
+      ],
+      "dateLaunched": "2023-06-30",
+      "projectSize": 7,
+      "projectCoverURL": "/projects/dorsia/shift-editor/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-scheduler.png"
+    },
+    {
+      "parentProject": null,
+      "projectName": "Mortality Awareness on TikTok",
+      "projectSlug": "mortality-tiktok",
+      "projectDesc": "Published writing on how Oslo's Future Library inspires existential thinking online",
+      "projectDeliverables": [
+        "Research Writing",
+        "Published Article",
+        "Digital Social Science",
+        "Futures Studies",
+        "Illustration"
+      ],
+      "dateLaunched": "2024-05-30",
+      "projectSize": 8,
+      "projectCoverURL": "/projects/mortality-tiktok/cover.jpg",
+      "projectThumbnailImageURL": ""
+    },
+    {
+      "parentProject": "dorsia",
+      "projectName": "Book on Behalf",
+      "projectSlug": "book-on-behalf",
+      "projectDesc": "A concierge platform for booking minimum spend reservations",
+      "projectDeliverables": [
+        "Web App Design",
+        "Responsive Design",
+        "Modular Design",
+        "Payments"
+      ],
+      "dateLaunched": "2023-10-30",
+      "projectSize": 8,
+      "projectCoverURL": "/projects/dorsia/book-on-behalf/cover.jpg",
+      "projectThumbnailImageURL": ""
+    }
+  ]
+  

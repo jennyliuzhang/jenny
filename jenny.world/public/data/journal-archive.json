@@ -1,0 +1,134 @@
+[ 
+  {
+  "personalChapter": "covid",
+  "writingName": "My Values Journey",
+  "writingSlug": "my-values-journey",
+  "date": "July 2021",
+  "readTime": "3 min read",
+  "writingDesc": "Documenting the societal observations and beliefs I hold close to me. A sort of bookend to my chapter in San Francisco.",
+  "favorite": false,
+  "isPasswordProtected": false,
+  "writingThumbnailImageURL": "/journal-graphics/vaccuuming.jpg"
+  },
+  {
+    "personalChapter": "covid",
+    "writingName": "Cage Maker",
+    "writingSlug": "cage-maker",
+    "date": "May 2021",
+    "readTime": "1 min read",
+    "writingDesc": "A classic early-20s solipsistic wandering. I read this aloud once, vulnerably, to a group of friends at a storytelling party.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/hoover-house.jpg"
+  },
+  {
+    "personalChapter": "covid",
+    "writingName": "Love Letter",
+    "writingSlug": "love-letter",
+    "date": "November 2020",
+    "readTime": "4 min read",
+    "writingDesc": "Celebrating my earliest, longest friend: me! Written during an autumn stint in New York.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/love-letter.jpg"
+  },
+  {
+    "personalChapter": "covid",
+    "writingName": "Friday",
+    "writingSlug": "friday",
+    "date": "July 2020",
+    "readTime": "2 min read",
+    "writingDesc": "WWOOFing on a bamboo farm and thinking about why I ask so many questions, and why feel annoying when I do.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/vaccuuming.jpg"
+  },
+  {
+    "personalChapter": "covid",
+    "writingName": "Asking Questions",
+    "writingSlug": "asking-questions",
+    "date": "June 2020",
+    "readTime": "2 min read",
+    "writingDesc": "WWOOFing on a bamboo farm and thinking about why I ask so many questions, and why feel annoying when I do.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/vaccuuming.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "My Name Is Jenny",
+    "writingSlug": "my-name-is-jenny",
+    "date": "November 2019",
+    "readTime": "1 min read",
+    "writingDesc": "A classic early-20s solipsistic wandering. I read this aloud once, vulnerably, to a group of friends at a storytelling party.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/hoover-house.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "My Name Is Jenny",
+    "writingSlug": "my-name-is-jenny",
+    "date": "November 2019",
+    "readTime": "1 min read",
+    "writingDesc": "A classic early-20s solipsistic wandering. I read this aloud once, vulnerably, to a group of friends at a storytelling party.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/hoover-house.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "The Origin of Cubism",
+    "writingSlug": "origin-of-cubism",
+    "date": "February 2019",
+    "readTime": "2 min read",
+    "writingDesc": "A rambling about on the multiplicity and ephemerality of personal identity.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/cubism-thumb.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Circles",
+    "writingSlug": "circles",
+    "date": "March 2018",
+    "readTime": "5 min read",
+    "writingDesc": "A impression about my time synesthesia, leading a journalism project in Tijuana, and Stephen Hawking’s concept of imaginary time.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/rare-woman-thumb.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Jovencita",
+    "writingSlug": "jovencita",
+    "date": "January 2018",
+    "readTime": "5 min read",
+    "writingDesc": "Diary excerpts from a winter break spent backpacking around South America.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/rare-woman-thumb.jpg"
+  },
+  {
+    "personalChapter": "girlhood",
+    "writingName": "jenny.jny",
+    "writingSlug": "jenny-jny",
+    "date": "October 2020",
+    "readTime": "4 min read",
+    "writingDesc": "Connecting the dots from childhood experiences to my founding motivations for Plot Twisters and other life goals.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/curiosity-thumb.jpg"
+  },
+  {
+    "personalChapter": "girlhood",
+    "writingName": "Curiosity Is Inheritable, and I Wonder What’s After Pluto",
+    "writingSlug": "curiosity-is-inheritable",
+    "date": "October 2017",
+    "readTime": "3 min read",
+    "writingDesc": "A quick telling of a memorable interaction with my mom.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/curiosity-thumb.jpg"
+  }
+]
