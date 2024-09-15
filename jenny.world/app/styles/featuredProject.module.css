@@ -1,0 +1,64 @@
+.hero {
+
+}
+
+.module1, .module2, .module3 {
+    display: block;
+    margin: 0 0 2em;
+    width: 100%;
+    border-radius: 15px;
+    background: #000;
+}
+
+.module1 {
+    height: 300px;
+}
+
+.module2 {
+    height: 300px;
+}
+
+.module3 {
+    height: 300px;
+}
+
+@media screen
+  and (min-width: 768px) {
+
+    .hero {
+        margin: 2em 0;
+        width: 100%;
+        padding-bottom: 70%;
+        display: flex;
+        position: relative;
+    }
+
+    .module1, .sideModules, .module2, .module3 {
+        position: absolute;
+    }
+    
+  
+    .module1 {
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+    }
+
+    .sideModules {
+        top: 0;
+        right: 0;
+        width: calc(40% - 20px);
+        height: 100%;
+    }
+    
+        .module2 {
+            top: 0;
+            height: calc(50% - 10px);
+        }
+
+        .module3 {
+            top: calc(50% + 10px);
+            height: calc(50% - 10px);
+        }
+}

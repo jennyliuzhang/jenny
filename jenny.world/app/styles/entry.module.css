@@ -1,0 +1,93 @@
+.body {
+    margin: auto;
+    max-width: 800px;
+    font-size: 1.15em;
+}
+
+.body h1 {
+    margin: 0.5em 0;
+}
+
+.body h6 {
+    font-size: 1.1em;
+    margin: 0.25em 0;
+}
+
+.body p {
+    margin: 1.5em 0;
+    line-height: 1.7em;
+}
+
+.writingTop h2 {
+    margin: 1em 0 0;
+}
+
+.writingHero {
+    margin: 2em 0 0.25em;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.5);
+    width: 100%;
+}
+
+.heroCaption {
+    margin: 0.5em 0 3em;
+    font: 400 normal 0.9em/1.6em 'Ivar Text', serif;
+    /* text-align: center; */
+    color: #6c6c6c;
+}
+
+
+@media screen
+and (min-width: 540px) {
+    
+    .body h1 {
+        font-size: 2.7em;
+    }
+}
+
+@media screen
+    and (min-width: 768px) {
+
+        .writingHero {
+            border-radius: 20px;
+        }
+
+        .body h1 {
+            font-size: 2.8em;
+        }
+
+}
+
+@media screen
+and (min-width: 960px) {
+
+    .heroCaption {
+        text-align: center;
+    }
+
+}
+
+@media screen
+and (min-width: 1200px) {
+
+    .writingHero {
+        border-radius: 30px;
+    }
+
+    .body h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen
+    and (min-width: 1600px) {
+
+        .body {
+            max-width: 1000px;
+        }
+  
+        .body h1 {
+            font-size: 3.3em;
+        }
+  
+}

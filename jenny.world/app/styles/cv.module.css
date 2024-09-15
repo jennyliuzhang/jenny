@@ -1,0 +1,241 @@
+.cvActive {
+    display: block;
+    padding: 75px 0 0 0;
+    background-image: url('/nav/cv.png'), url('/nav/active-shadow.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 42px, 30px auto;
+    background-position: 60% 0%, 50% 55px;
+    color: #962006 !important;
+}
+
+.cvWrap h1 {
+    margin-top: 1.5em;
+    scroll-margin-top: 2.5em;
+}
+
+    .cvWrap h1:first-of-type {
+        margin-top: 1em;
+    }
+
+.skills {
+
+}
+
+    .skills > div {
+
+    }
+
+    .skills .designGraph, .skills .technologyGraph, .skills .productGraph {
+        display: block;
+        margin: 10px auto 0px;
+    }
+
+    .skills .designGraph {
+        background: url('/cv-graphics/s-design.png') no-repeat;
+        background-size: 100% auto;
+        width: 100%;
+        padding-bottom: 71%;
+    }
+
+    .skills .technologyGraph {
+        background: url('/cv-graphics/s-technology.png') no-repeat;
+        background-size: 100% auto;
+        width: 100%;
+        padding-bottom: 71%;
+    }
+
+    .skills .productGraph {
+        background: url('/cv-graphics/s-product.png') no-repeat;
+        background-size: 100% auto;
+        width: 100%;
+        padding-bottom: 71%;
+    }
+
+    .tools h4 {
+        margin: 2.5em 0 1em;
+    }
+
+    .tools p {
+        margin: 0.5em 0;
+        font-size: 0.9em;
+    }
+
+    .tools span.level {
+        font: 700 normal 1em/1.4em 'Ivar Text', serif;
+    }
+
+.entry {
+    margin: 15px 0 20px;
+}
+
+.title, .place, .dates {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+    .title {
+        font: 700 normal 1em/1.4em 'Ivar Text', serif;
+    }
+    .place {
+        font: 600 normal 1em/1.4em 'Ivar Text', serif;
+    }
+    .dates {
+        font: 400 normal 1em/1.4em 'Ivar Text', serif;
+        opacity: 0.65;
+    }
+
+    .entry .author {
+        color: #962006;
+        font-weight: 900;
+    }
+
+    .entry .talkTitle {
+        font-style: italic;
+    }
+    
+        .entry .talkTitle:before {
+            content: open-quote;
+        }
+
+        .entry .talkTitle:after {
+            content: close-quote;
+        }
+
+.entry ul {
+    margin: 0.5em 0;
+    padding: 0 0 0 2em;
+    list-style-type: circle;
+    font: 400 normal 0.9em/1.4em 'Ivar Text', serif;
+    color: rgba(0,0,0,0.7);
+}
+
+    .entry li {
+        margin: 0.4em 0;
+    }
+
+@media screen
+    and (min-width: 480px) {
+
+        .skills .designGraph {
+            background: url('/cv-graphics/m-design.png') no-repeat;
+            background-size: 100% auto;
+            width: 75%;
+            padding-bottom: 58%;
+        }
+    
+        .skills .technologyGraph {
+            background: url('/cv-graphics/m-technology.png') no-repeat;
+            background-size: 100% auto;
+            width: 75%;
+            padding-bottom: 58%;
+        }
+    
+        .skills .productGraph {
+            background: url('/cv-graphics/m-product.png') no-repeat;
+            background-size: 100% auto;
+            width: 75%;
+            padding-bottom: 58%;
+        }
+    }
+
+@media screen
+    and (min-width: 768px) {
+
+        .cvWrap h1:first-of-type {
+            margin-top: 0.75em;
+        }
+
+        .skills > div h3 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: 1fr;
+            grid-column-gap: 10px;
+        }
+
+            .skills .designGraph {
+                background: url('/cv-graphics/s-design.png') no-repeat;
+                background-size: 100% auto;
+                width: 100%;
+                padding-bottom: 71%;
+            }
+        
+            .skills .technologyGraph {
+                background: url('/cv-graphics/s-technology.png') no-repeat;
+                background-size: 100% auto;
+                width: 100%;
+                padding-bottom: 71%;
+            }
+        
+            .skills .productGraph {
+                background: url('/cv-graphics/s-product.png') no-repeat;
+                background-size: 100% auto;
+                width: 100%;
+                padding-bottom: 71%;
+            }
+
+    }
+
+
+@media screen
+    and (min-width: 960px) {
+        .cvWrap {
+            display: grid;
+            grid-template-columns: 0.24fr 1fr;
+            grid-column-gap: 40px;
+            height: auto;
+        }
+
+        .cvSubNav {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            height: 95vh;
+        }
+
+        .cvSubNav a {
+            display: block;
+            margin: 1em 0 1.2em;
+            font: 700 normal 0.9em/1.2em 'Ivar Text', serif;
+            color: #2c2c2c;
+            transition: all 0.2s;
+        }
+
+            .cvSubNav a:hover {
+                margin-left: 5px;
+            }
+    }
+
+@media screen
+    and (min-width: 1140px) {
+
+        .skills {
+            grid-column-gap: 10px;
+        }
+
+        .skills .designGraph {
+            background: url('/cv-graphics/m-design.png') no-repeat;
+            background-size: 100% auto;
+            width: 100%;
+            padding-bottom: 77%;
+        }
+    
+        .skills .technologyGraph {
+            background: url('/cv-graphics/m-technology.png') no-repeat;
+            background-size: 100% auto;
+            width: 100%;
+            padding-bottom: 77%;
+        }
+    
+        .skills .productGraph {
+            background: url('/cv-graphics/m-product.png') no-repeat;
+            background-size: 100% auto;
+            width: 100%;
+            padding-bottom: 77%;
+        }
+
+    }

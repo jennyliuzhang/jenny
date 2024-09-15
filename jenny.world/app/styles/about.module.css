@@ -1,0 +1,353 @@
+.aboutActive {
+    display: block;
+    padding: 75px 0 0 0;
+    background-image: url('/nav/about.png'), url('/nav/active-shadow.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 42px, 30px auto;
+    background-position: center top, 50% 55px;
+    color: #962006 !important;
+}
+
+.jennyHeadline {
+    margin: 0.75em 0;
+}
+
+.introduction {
+    margin: 0 0 20px;
+}
+
+    .introPara p {
+        font-size: 1em;
+    }
+
+.skillsTable {
+    margin: 10px 0;
+    width: 100%;
+    display: inline-grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 6 columns */
+    grid-template-rows: repeat(3, auto); /* 2 rows */
+}
+
+.skillsTable > div {
+    padding: 50px 10px 10px;
+    text-align: center;
+    outline: 1px solid #dcdcdc;
+    font: 400 normal 0.8em/1.1em 'Ivar Text', serif;
+}
+
+    .skillsTable div.creativeStrategy {
+        background: url('/skill-icons/creative-strategy.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.designResearch {
+        background: url('/skill-icons/design-research.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.uxDesign {
+        background: url('/skill-icons/ux-design.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.designResearch {
+        background: url('/skill-icons/design-research.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.uiPrototyping {
+        background: url('/skill-icons/ui-prototyping.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.frontEndDev {
+        background: url('/skill-icons/front-end-development.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.contentDesign {
+        background: url('/skill-icons/content-design.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.graphicDesign {
+        background: url('/skill-icons/graphic-design.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.webDesign {
+        background: url('/skill-icons/web-design.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.illustration {
+        background: url('/skill-icons/illustration.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.artDirection {
+        background: url('/skill-icons/art-direction.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.strategicForesight {
+        background: url('/skill-icons/strategic-foresight.png') no-repeat;
+        background-size: 45px auto;
+        background-position: center top 8px;
+    }
+
+    .skillsTable div.roadmapping {
+        background: url('/skill-icons/roadmapping.png') no-repeat;
+        background-size: 40px auto;
+        background-position: center top 5px;
+    }
+
+        .skillsTable div span, .skillsTable div.uiPrototyping span, .skillsTable div.webDesign span, .skillsTable div.illustration span, .skillsTable div.artDirection span, .skillsTable div.roadmapping span {
+            display: inline-block;
+            margin-top: 0.5em;
+        }
+    
+
+.highlights p {
+    color: #5c5c5c;
+    /* font: normal 400 0.9em/1.7em 'Inter', sans-serif; */
+}
+
+    .highlights h4 {
+        color: #3c3c3c;
+    }
+
+    /* .portrait {
+        margin: 2em 0 0 0;
+        display: block;
+        width: 100%;
+        height: 60vh;
+        background: url('/jennybook.jpg') no-repeat;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,1);
+    } */
+
+    .portrait {
+        margin: 2em 0 0.5em 0;
+        display: block;
+        width: 100%;
+        height: 90vw;
+        background: url('/gif2.gif') no-repeat;
+        /* background: url('/jenny-working.jpg') no-repeat; */
+        background-size: cover;
+        background-position: center center;
+        border-radius: 15px;
+        border: 1px solid rgba(255,255,255,1);
+    }
+
+        .hideOnMobile {
+            display: none;
+        }
+
+.creativePrinciples {
+    /* padding: 10px 0 0; */
+    /* background: #3B571E; */
+    /* color: #fff; */
+    /* width: 100vw; */
+
+    padding: 20px 0;
+}
+
+    .principleTiles {
+        margin: 2em 0 1em;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .principleTile {
+        padding: 0em 1em 0.5em;
+        background: rgba(0,0,0,0.02);
+        border-radius: 15px;
+        border: 1px solid rgba(0,0,0,0.01);
+    }
+
+        .principleTile h3 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .principleTile blockquote {
+            text-align: center;
+            margin: 1em 0em;
+            font: 400 normal 1.15em/1.4em 'Ivar Text', serif;
+        }
+
+        .principleTile p.author {
+            font-size: 1.15em;
+            text-align: center;
+            color: rgba(0,0,0,0.5);
+        }
+
+        .principleTile p {
+            text-align: left;
+            color: rgba(0,0,0,0.7);
+        }
+
+.axioms {
+    margin: 40px 0 0 0;
+}
+
+    .axiomTiles {
+    }
+
+    .axiomTile {
+
+    }
+
+    .axiomTile h3 {
+        /* color: #962006; */
+    }
+
+@media screen
+    and (min-width: 480px) {
+
+        .portrait {
+            /* height: 80vh; */
+        }
+        
+    }
+
+@media screen
+and (min-width: 540px) {
+    
+    .jennyHeadline {
+        font-size: 2.7em;
+    }
+
+    .portrait {
+        /* height: 110vh; */
+    }
+
+    .axioms {
+
+    }
+    
+        .axiomTiles {
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 40px;
+        }
+    
+        .axiomTile {
+            padding: 0 0 1em;
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+        }
+
+            .axiomTile:nth-last-child(-n+2) { border: none; }
+
+}
+
+
+
+@media screen
+    and (min-width: 768px) {
+
+        .introduction {
+            display: grid;
+            grid-template-columns: 3fr 1.7fr;
+            grid-auto-rows: 1fr;
+            grid-column-gap: 60px;
+        }
+
+            .introPara {
+                width: 100%
+            }
+
+                .jennyHeadline {
+                    margin: 0.4em 0 0.5em;
+                }
+                
+                .introPara p {
+                    font-size: 1.1em;
+                }
+
+            .highlights p {
+                font-size: 0.9em;
+            }
+
+            .portrait {
+                margin: 0 0 0.5em;
+                width: 100%;
+                /* height: 88vh; */
+                height: 30vw;
+                max-height: 500px;
+            }
+
+            .hideOnDesktop {
+                display: none;
+            }
+
+            .hideOnMobile {
+                display: block;
+            }
+
+        .creativePrinciples {
+            padding: 10px 0;
+        }
+
+            .principleTiles {
+                margin: 3em 0 2em;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .principleTile {
+                padding: 0em 2em 1em;
+            }
+        
+    }
+
+    @media screen
+    and (min-width: 960px) {
+
+        .jennyHeadline {
+            font-size: 3em;
+        }
+
+        .principleTile blockquote {
+            margin: 1em 1.5em;
+        }
+
+    }
+
+    @media screen
+    and (min-width: 1140px) {
+
+        .introduction {
+            grid-column-gap: 80px;
+        }
+
+        .skillsTable {
+            grid-template-columns: repeat(6, minmax(0, 1fr)); /* 6 columns */
+            grid-template-rows: repeat(2, auto); /* 2 rows */
+        }
+    }
+
+    @media screen
+    and (min-width: 1600px) {
+  
+        .jennyHeadline {
+            font-size: 3.5em;
+        }
+  
+    }

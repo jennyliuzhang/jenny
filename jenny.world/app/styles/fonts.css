@@ -1,0 +1,193 @@
+/* Capitaine Font */
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-Black.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-BlackItalic.otf');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-Bold.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-BoldItalic.otf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-SemiBold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-SemiBoldItalic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-Medium.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-MediumItalic.otf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Capitaine';
+    src: url('/fonts/CapitaineTRIAL-RegularItalic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Ivar Headline Font */
+
+@font-face {
+    font-family: 'Ivar Headline';
+    src: url('/fonts/IvarHeadlineTRIAL-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ivar Headline';
+    src: url('/fonts/IvarHeadlineTRIAL-Medium.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Ivar Text Font */
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-Bold.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-BoldItalic.otf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-SemiBold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-SemiBoldItalic.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-Medium.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-MediumItalic.otf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ivar Text';
+    src: url('/fonts/IvarTextTRIAL-Italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Graphik Font */
+
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Funkis Font */
+
+
+@font-face {
+    font-family: 'Funkis';
+    src: url('/fonts/FunkisATRIAL-Light.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Funkis';
+    src: url('/fonts/FunkisATRIAL-Regular.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Funkis';
+    src: url('/fonts/FunkisATRIAL-Medium.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Funkis';
+    src: url('/fonts/FunkisATRIAL-SemiBold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Funkis';
+    src: url('/fonts/FunkisATRIAL-Bold.otf');
+    font-weight: 800;
+    font-style: normal;
+}

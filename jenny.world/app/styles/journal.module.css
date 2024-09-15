@@ -1,0 +1,195 @@
+.journalActive {
+    display: block;
+    padding: 75px 0 0 0;
+    background-image: url('/nav/journal.png'), url('/nav/active-shadow.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 42px, 30px auto;
+    background-position: 45% 0px, 50% 55px;
+    color: #962006 !important;
+}
+
+.blogHeadline {
+    margin: 0.75em 0;
+}
+
+.introduction {
+    margin: 0 0 40px;
+}
+
+    .introPara p {
+        font-size: 1em;
+    }
+
+.writingList {
+    margin: 2.5em 0 0;
+}
+
+
+a.writingEntry, a.writingEntry:visited {
+    color: #2c2c2c;
+} 
+
+
+.timePeriod h1 {
+    margin: 0.75em 0 0.5em;
+}
+
+.timePeriod p {
+    font-size: 1.05em;
+    color: #5c5c5c;
+}
+
+.writings.lastWritingSection .writingEntry:last-child {
+    border-bottom: none;
+}
+
+.writingEntry {
+    display: block;
+    margin: 1.5em 0 1.5em;
+    padding: 0 0 1.5em;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    transition: all 0.2s;
+}
+
+    .writingEntry:hover {
+        transform: translateX(5px);
+    }
+
+.entryThumb {
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.entryInfo h3 {
+    margin: 0.75em 0 0.4em;
+}
+
+.entryInfo p {
+    margin: 0 0 0.6em;
+    color: #2c2c2c;
+    /* font-size: 1.05em; */
+}
+
+.entryInfo p.dateReadTime {
+    font-size: 1em;
+    color: #6c6c6c;
+}
+
+.whySection {
+    scroll-margin-top: 2.5em;
+}
+
+@media screen
+    and (min-width: 480px) {
+        
+    }
+
+@media screen
+and (min-width: 540px) {
+    
+    .blogHeadline {
+        font-size: 2.7em;
+    }
+
+
+}
+
+
+@media screen
+    and (min-width: 768px) {
+
+        .introduction {
+            display: grid;
+            grid-template-columns: 3fr 1.7fr;
+            grid-auto-rows: 1fr;
+            grid-column-gap: 60px;
+            margin: 0 0 30px;
+        }
+
+            .introPara {
+                width: 100%
+            }
+
+                .blogHeadline {
+                    margin: 0.4em 0 0.5em;
+                }
+                
+                .introPara p {
+                    font-size: 1.1em;
+                }
+        
+
+        .writingEntry {
+            display: grid;
+            grid-template-columns: 0.35fr 1fr;
+            grid-column-gap: 30px;
+            margin: 1.5em 0 1.5em;
+            padding: 0 0 1.5em;
+        }
+
+        .entryInfo h3 {
+            margin: 0.25em 0 0.4em;
+        }
+        
+    }
+
+    @media screen
+    and (min-width: 960px) {
+
+        .blogHeadline {
+            font-size: 3em;
+        }
+
+        .writingList {
+            margin: 1.5em 0 0;
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-column-gap: 60px;
+        }
+
+        .writingEntry {
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+        }
+
+        .whySection {
+            margin: 4em 0 0 0;
+        }
+
+            .whySection .whyBody {
+                margin: 0 0 2.5em;
+                column-count: 2;
+                column-gap: 50px;
+            }
+
+            .whyBody p {
+                margin: 0 0 1em;
+            }
+
+    }
+
+    @media screen
+    and (min-width: 1140px) {
+
+        .introduction {
+            grid-column-gap: 80px;
+        }
+
+    }
+
+    @media screen
+    and (min-width: 1600px) {
+
+        .introduction {
+            grid-template-columns: 3fr 2fr;
+        }
+  
+        .blogHeadline {
+            font-size: 3.5em;
+        }
+
+        .writingEntry {
+            grid-template-columns: 0.35fr 1fr;
+        }
+  
+    }

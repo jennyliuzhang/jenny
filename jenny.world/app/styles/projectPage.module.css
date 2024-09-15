@@ -1,0 +1,333 @@
+.projectPage {
+    
+}
+
+h2.backh2{
+    color: #8c8c8c;
+}
+
+    h2.backh2:before {
+        display: inline-block;
+        margin: 0 7px;
+        content: "←";
+    }
+
+.projectHero {
+    margin: 2em 0 1em;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.5);
+    width: 100%;
+}
+
+.projectIntro {
+    margin: 0 0 40px;
+}
+
+    .projectIntro h1 {
+        margin: 0.75em 0 0.5em;
+    }
+
+    .projectIntro h2 {
+        color: #4c4c4c;
+        margin: 0em 0 1em;
+        line-height: 1.4em;
+    }
+
+        .projectIntro h2:after {
+            display: none;
+        }
+
+    .details {
+
+    }
+
+    .details h5 {
+        margin: 1em 0 0.5em;
+    }
+
+    .services ul, .team ul {
+        margin: 0;
+        padding: 0;
+        font: 400 normal 1em/1.5em 'Ivar Text', serif;
+    }
+
+        .services ul li, .team ul li {
+            list-style-type: none;
+        }
+
+        .services ul li, .team ul li {
+            display: inline;
+        }
+
+        .services ul li:after, .team ul li:after {
+            content: ', ';
+        }
+
+        .services ul li:last-child::after, .team ul li:last-child::after {
+            content: '';
+        }
+
+        .team .role {
+            color: #962006;
+            font-weight: 900;
+        }
+
+    .introPara {
+        margin: 1em 0 1em;
+    }
+
+        .introPara p {
+            font-size: 1.2em;
+        }
+
+.projectPage h2.projectPageh2 {
+    margin: 1em 0 0.25em;
+}
+
+.creativeProcess {
+    margin: 0 0 3em;
+}
+
+
+    .step .number {
+        display: inline-block;
+        margin: 1.5em 0 0.5em;
+        font: 600 normal 1.1em/1.2em 'Capitaine', serif; /* */
+        padding: 8px 12px;
+        background: rgba(0,0,0,0.03);
+        border-radius: 100px;
+        border: 1px solid rgba(0,0,0,0.01);
+    }
+
+    .step h5 {
+        font-size: 1.1em;
+        margin: 0.5em 0 0.25em;
+    }
+
+    .step p {
+        font-size: 1em;
+        margin: 0;
+    }
+
+.keyFeatures {
+    border-top: 1px solid rgba(0,0,0,0.15);
+    margin: 1em 0 3.5em;
+}
+
+    .keyFeature h4 {
+        margin: 2em 0 0;
+    }
+    
+    .keyFeature h1 {
+        margin: 0.75em 0 0;
+    }
+
+
+.takeaways {
+    margin: 2em 0 1em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+.takeaway {
+    padding: 0em 1em 0.5em;
+    background: rgba(0,0,0,0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(0,0,0,0.01);
+}
+
+    .takeaway h3 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .takeaway blockquote {
+        text-align: center;
+        margin: 1em 0em;
+        font: 400 normal 1.15em/1.4em 'Ivar Text', serif;
+    }
+
+    .takeaway p.author {
+        font-size: 1.15em;
+        text-align: center;
+        color: rgba(0,0,0,0.5);
+    }
+
+    .takeaway p {
+        text-align: center;
+        color: rgba(0,0,0,0.7);
+    }
+
+
+@media screen
+and (min-width: 540px) {
+    
+    .projectIntro h1 {
+        font-size: 2.7em;
+    }
+}
+
+@media screen
+    and (min-width: 768px) {
+
+        .projectHero {
+            border-radius: 20px;
+        }
+
+        .projectIntro {
+            display: grid;
+            grid-template-columns: 3fr 0.2fr;
+            grid-auto-rows: 1fr;
+            grid-column-gap: 60px;
+        }
+
+        .introContent {
+            width: 100%
+        }
+
+        .projectIntro h1 {
+            font-size: 2.8em;
+            margin: 0.5em 0 0em;
+        }
+
+        .projectIntro h2 {
+            margin: 0.5em 0 0.5em;
+            font-size: 1.8em;
+            max-width: 90%;
+        }
+
+        .creativeProcess {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 0 1em;
+        }
+
+            .creativeProcess .step {
+                flex: 1 0 47%; /* explanation below */
+                max-width: 47%;
+                padding: 0 2% 20px 2%;
+                text-align: center;
+                /* border: 1px solid red; */
+            }
+
+            .creativeProcess .step:nth-child(2n) {
+                padding: 0 0 20px 2%;
+            }
+
+            .creativeProcess .step:first-child, .creativeProcess .step:nth-child(3n) {
+                padding: 0 2% 20px 0;
+            }
+
+    .keyFeature p {
+        font-size: 1.05em;
+    }
+
+}
+
+@media screen
+and (min-width: 960px) {
+
+    .projectIntro {
+        grid-template-columns: 3fr 0.8fr;
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1.1fr 0.2fr;
+        grid-auto-rows: 1fr;
+        grid-column-gap: 30px;
+    }
+
+    .services ul li, .team ul li {
+        display: block;
+        margin: 0 0 0.3em;
+    }
+
+        .services ul li:after, .team ul li:after {
+            content: '';
+        }
+
+    .takeaways {
+        margin: 3em 0 2em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+        
+        .takeaway {
+            padding: 0em 2em 1em;
+        }
+
+
+    .keyFeature {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       column-gap: 40px;
+    }
+
+        .featureDesc {
+            margin: 1.5em 0 0;
+        }
+
+        .keyFeature h1 {
+            font-size: 2.8em;
+            margin: 0.5em 0 0;
+        }
+
+}
+
+@media screen
+and (min-width: 1200px) {
+
+    .projectHero {
+        border-radius: 30px;
+    }
+
+    .projectIntro {
+        grid-column-gap: 80px;
+    }
+
+    .projectIntro h1 {
+        font-size: 3.3em;
+    }
+    
+    .projectIntro h2 {
+        font-size: 2em;
+    }
+
+    .creativeProcess .step {
+        flex: 1 0 22%; /* explanation below */
+        max-width: 22%;
+        /* border: 1px solid red; */
+    }
+
+        .creativeProcess .step:nth-child(2n), .creativeProcess .step:nth-child(3n) {
+            padding: 0 2% 20px 2%;
+        }
+
+        .creativeProcess .step:nth-child(4n) {
+            padding: 0 0 20px 2%;
+        }
+
+        .creativeProcess .step:first-child, .creativeProcess .step:nth-child(5n) {
+            padding: 0 2% 20px 0;
+        }
+
+        .step h5 {
+            font-size: 1em;
+        }
+    
+        .step p {
+            font-size: 0.95em;
+        }
+
+}
+
+@media screen
+    and (min-width: 1600px) {
+  
+    .projectIntro h1 {
+        font-size: 3.5em;
+    }
+  
+}
