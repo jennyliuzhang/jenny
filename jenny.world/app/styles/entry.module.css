@@ -32,7 +32,12 @@
 .heroCaption {
     margin: 0.5em 0 3em;
     font: 400 normal 0.9em/1.6em 'Ivar Text', serif;
-    /* text-align: center; */
+    color: #6c6c6c;
+}
+
+.caption {
+    margin: 0em 0 3em;
+    font: 400 normal 0.8em/1.6em 'Ivar Text', serif;
     color: #6c6c6c;
 }
 

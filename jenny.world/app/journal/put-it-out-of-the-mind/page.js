@@ -31,7 +31,9 @@ export default function Page() {
         <p>Managing anxiety</p>
         <p>My phone has been dead for 5 days. Barktober fest at Taps and Tails. Wiener dog race.</p>
         <p>Applying for a fellowship, app due October. I put it out of mind because I realized realistically it would take me 20–25 hours to complete an application for, and I don't need to worry about that right now. &nbsp;&#x273d;</p>
-        <p></p>
+        <p>Collating all my past writings. Lots of really exciting stuff. Emotional stuff. Feelings of precipice.</p>
+
+        <p>I'd like to channel the precipice. That summer when I was 21, I saw several psychics because I was direly overwhelmed by the paths ahead of me. A professor told me that I should have it all sorted by the end of my junior year. One of them told me I think I'm confused but I'm not. "you think you’re confused but you know what you want to do, and you’re all over the place."</p>
 
       </div>      
 

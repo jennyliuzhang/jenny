@@ -364,6 +364,50 @@
   },
   {
     "personalChapter": "early-20s",
+    "writingName": "Diner Drawing",
+    "writingSlug": "diner-drawing",
+    "date": "June 2018",
+    "readTime": "5 min read",
+    "writingDesc": "4 of 4 illustrated blog posts about “bookpacking” in Louisiana. Ennui, revisiting things, and the lasting impact of literature.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/diner-drawing.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Blue Carnival",
+    "writingSlug": "blue-carnival",
+    "date": "June 2018",
+    "readTime": "4 min read",
+    "writingDesc": "3 of 4 illustrated blog posts about “bookpacking” in Louisiana. Distractions, second line parades, and fortunetellers.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/blue-carnival.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Syncopated City",
+    "writingSlug": "syncopated-city",
+    "date": "May 2018",
+    "readTime": "3 min read",
+    "writingDesc": "2 of 4 illustrated blog posts about “bookpacking” in Louisiana. New Orleans, jazz, Buddy Bolden, and drunk poets.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/syncopated-city.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Estuary",
+    "writingSlug": "estuary",
+    "date": "May 2018",
+    "readTime": "5 min read",
+    "writingDesc": "1 of 4 illustrated blog posts about “bookpacking” in Louisiana. Grand Isle, Kate Chopin, and hopes for the future.",
+    "favorite": true,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/estuary.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
     "writingName": "Common Ground",
     "writingSlug": "common-ground",
     "date": "May 2018",
