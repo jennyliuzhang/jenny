@@ -6,12 +6,12 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Last Week, I Bought A Ripe Pink Rose</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Last Week, I Bought A Ripe Pink Rose</span></h2>
       </div>
       
       <Image
         className={entryStyles.writingHero}
-        src="/journal-graphics/vaccuuming.jpg"
+        src="/journal-graphics/last-week-i-bought.jpg"
         alt="Project"
         width={2880}
         height={2025}
@@ -19,6 +19,10 @@ export default function Page() {
         quality={100} 
         priority
       />
+
+      <div className={entryStyles.heroCaption}>
+        An illustration I created of pink spray roses. See my <Link href="/projects/plants-by-jenny">Plants By Jenny project</Link> for more.
+      </div>
 
       <div className={entryStyles.body}>
         <h1>Last Week, I Bought A Ripe Pink Rose</h1>

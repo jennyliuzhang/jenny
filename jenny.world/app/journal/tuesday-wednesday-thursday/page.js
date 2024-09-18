@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Tuesday, Wednesday, Thursday</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Tuesday, Wednesday, Thursday</span></h2>
       </div>
       
       <Image
@@ -33,7 +33,7 @@ export default function Page() {
 
         <p>Anyway, I woke up irritated because last night for dinner I was anxious about my meal choices at a restaurant. I wanted soup but I ordered steamed veggies and a few lettuce sushi rolls instead. I was very confused for the rest of the night. I hadn’t forgiven myself for my behavior when I woke up. Then this morning I felt anxious because I ate 2 apples, a banana, and a granola bar for breakfast.</p>
 
-        <p>The funny part is that none of this sounds very abnormal. I mean, maybe that’s a lot of fruit, but it’s all pretty tame. Still, I let myself feel disappointment and shame, then I got mad at myself for letting myself feel those feelings.</p>
+        <p>The funny part is that none of this sounds abnormal. I mean, maybe that’s a lot of fruit, but it’s all pretty tame. Still, I let myself feel disappointment and shame, then I got mad at myself for letting myself feel those feelings.</p>
 
         <p>I spent the morning lamenting. Half of my brain was abusive, mean, and critical for not having a plan and being indecisive. The other half of my mind was trying her best to be patient and nurturing. A weird food day is nothing to hate yourself for. These two coexisting feelings caused a general discomfort in my stomach. Sam watched me brood. She had been wanting to leave the farm because she wanted to go back to LA for a personal commitment. She had also been feeling a bit jaded. But we sat in the sun for a while as she played Dolly Parton from her speaker. Then she put on the necklace I gave her for her birthday. Then I rubbed sunscreen on my face. Then our workday on the farm started.</p>
 

@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Diner Drawing</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Diner Drawing</span></h2>
       </div>
       
       <Image
@@ -27,12 +27,12 @@ export default function Page() {
       <div className={entryStyles.body}>
         <h1>Diner Drawing</h1>
         <h6>June 2018</h6>
-        <h6>4 min read</h6>
+        <h6>9 min read</h6>
         <p>One morning during our first week in New Orleans, when I was having trouble going back to sleep after waking up too early, I tried to inspire myself by walking around the city for an hour. On a whim, I decided to eat breakfast at Commerce Restaurant, a local diner in the business district. Mornings like these happen to me often, no matter where in the world I am. I frequently go days in a row running on three or four hours of sleep, but I’ve learned to embrace my restlessness. We’re back from Cajun country to rest in New Orleans for a few days now before heading back to California. I’m having a bout of sleepless mornings again. I’m starting to suppose this is some sort of mental menstrual cycle, but in any case, I’ve decided to visit Commerce again to eat eggs (hoping I can encourage spiritual and intellectual fecundity by ingesting them) and write this. The servers think I’m funny because I keep declining coffee. Truth be told, I don’t need it. I’m very awake. It is 7:30am. I’m going to share two very permanent stories: one is about a tattoo, and one is about this place I’m in right now.</p>
 
         <Image
           className=""
-          src="/journal-graphics/blue-carnival/jazzy-jenny.jpg"
+          src="/journal-graphics/diner-drawing/jazzy-jenny.jpg"
           alt="Project"
           width={2500}
           height={1667}
@@ -43,7 +43,7 @@ export default function Page() {
 
         <p className={entryStyles.caption}>Me playing the washtub bass with a Cajun band in Breaux Bridge.</p>
 
-        <p>In my most recent blog, I described a sense of restlessness in New Orleans, its capacity for ennui and malaise, and its ability to dwell and distract itself as an antidote. After getting out of the city, I’m starting to see that it’s not just New Orleans. It’s Baton Rouge, too. I went on a run along the Mississippi one evening and saw at least ten different couples sitting along the water together, watching the river flow out of sight, letting romance settle. Funnier yet, I think Breaux Bridge, Louisiana dwells and distracts itself too. In fact, I know it does because I was playfully invited to play the washtub bass in a Cajun band jam session at the Joie de Vivre café for two whole songs, and then later enjoyed similarly delightful music at a local brewery while I sipped a couple beers and read The Moviegoer. Loving these curious distractions and dwelling in a moment is not just an antidote to some malady of discontentment. I’m learning that it’s a vitamin for happiness. A true gift.</p>
+        <p>In my most recent blog, I described a sense of restlessness in New Orleans, its capacity for ennui and malaise, and its ability to dwell and distract itself as an antidote. After getting out of the city, I’m starting to see that it’s not just New Orleans. It’s Baton Rouge, too. I went on a run along the Mississippi one evening and saw at least ten different couples sitting along the water together, watching the river flow out of sight, letting romance settle. Funnier yet, I think Breaux Bridge, Louisiana dwells and distracts itself too. In fact, I know it does because I was playfully invited to play the washtub bass in a Cajun band jam session at the Joie de Vivre café for two whole songs, and then later enjoyed similarly delightful music at a local brewery while I sipped a couple beers and read <em>The Moviegoer</em>. Loving these curious distractions and dwelling in a moment is not just an antidote to some malady of discontentment. I’m learning that it’s a vitamin for happiness. A true gift.</p>
 
         <p>Five years ago, I was in Paraguay for the summer on an exchange trip in a rural community. During that summer of speaking a language I barely knew in a country I knew even less, I read a book called <em>A Prayer for Owen Meany</em> by John Irving. It changed my life profoundly. I knew it was an important book for me. I remember highlighting parts that I knew were especially important, even though I couldn’t pinpoint why. Below is a passage that has kept coming to mind these past mornings. I have been trying to understand it for a long time. Owen Meany has a weird voice so Irving writes his dialogue in all caps:</p>
 
@@ -67,7 +67,7 @@ export default function Page() {
 
         <Image
           className=""
-          src="/journal-graphics/blue-carnival/commerce.jpg"
+          src="/journal-graphics/diner-drawing/commerce.jpeg"
           alt="Project"
           width={1205}
           height={911}
@@ -93,17 +93,6 @@ export default function Page() {
         <p>And I do love this place I’m in. I always have, even before I was able to write all of this down, even before the first morning I came to Commerce. I’ve loved it since at least five years ago, when I first discovered that Owen Meany book and realized for whatever reason that passage would be important. Maybe I’ve loved it even before that, because there might be dots from my past I’ve yet to connect, gifts I’ve yet to receive. It was serendipitous that I walked in that first time, but not a coincidence. It was self-awareness that brought me in this morning, so I could sit here now and begin to understand, through every conversation and story—through Edna and Binx and Louis and Ignatius and Jefferson and Wiggins and Buddy Bolden—where I am and why.</p>
 
         <p>Andrew told us to find our happy place on this trip, to look for that special spot in Louisiana. I was expecting to choose some comfortable café simply because I liked the beignets, but I’ve distracted myself with a beauty much sweeter than sugar now. I’m dwelling in this diner, and it’s nearly 10am. The servers are still offering me coffee, but mostly just to tease me and peek at what I’m writing on my laptop. They come around with their coffee pots, they call me queen and Jenny darling. Queen, they ask me, you all good, Jenny darling? We just share smiles and nods. They know I’m happy where I am, and that though I’m in this diner, I’m also dwelling somewhere outside of it, too. The art of life. I hope they’ve also been here. Nothing is meaningless because everything is full of meaning. We just have to read into things a bit, and I think it’s natural to be a bit restless on that journey. I am charmed. I want to thank Andrew for bringing this specific place and these specific characters into my awareness. This is an important gift to my life. I will let you know just how important soon, when I’ve connected all the dots. &nbsp;&#x273d;</p>
-
-        <Image
-          className=""
-          src="/journal-graphics/blue-carnival/mardigras-trees.jpg"
-          alt="Project"
-          width={1205}
-          height={766}
-          style={{ width: '100%', height: 'auto' }}
-          quality={100} 
-          priority
-        />
 
       </div>      
 

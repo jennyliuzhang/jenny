@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Curiosity Is Inheritable, and I Wonder What's After Pluto</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Curiosity Is Inheritable, and I Wonder What's After Pluto</span></h2>
       </div>
       
       <Image

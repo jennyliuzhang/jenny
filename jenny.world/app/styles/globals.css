@@ -407,12 +407,26 @@ li {
   transition: all 0.2s;
 }
 
+  h2.subnav {
+    white-space: normal; /* Allows line breaks for long text */
+    word-wrap: break-word;
+  }
+
+    .subnav {
+      font-size: 0.8em;
+    }
+
+  h2 a.breadcrumb {
+    white-space: normal; /* Allows line breaks for long text */
+    word-wrap: break-word;
+  }
+
   .breadcrumb:hover {
     color: #4c4c4c;
   }
 
   .breadcrumb:after {
-    display: inline-block;
+    display: inline;
     margin: 0 7px;
     content: "/";
   }
@@ -465,6 +479,10 @@ and (min-width: 640px) {
     .breadcrumbh2 {
       font-size: 1.2em;
       margin: 1.5em 0 0;
+    }
+
+    .subnav {
+      font-size: 1em;
     }
 
     h4 {

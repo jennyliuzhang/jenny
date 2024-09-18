@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>June Check-In From Jet Lag Jenny</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>June Check-In From Jet Lag Jenny</span></h2>
       </div>
       
       <Image
@@ -30,6 +30,19 @@ export default function Page() {
         <h6>4 min read</h6>
         <p>Good morning from London! The streets of Notting Hill are peppered with people of all ages — plotting, laughing, talking — and the weather remains brisk. I have found a wonderful mix of uncanny accents and languages in the restaurants and cafes here.</p>
 
+        <Image
+          className=""
+          src="/journal-graphics/jet-lag-jenny/selfie.jpg"
+          alt="Project"
+          width={1280}
+          height={1707}
+          style={{ display: 'block', width: '40%', height: 'auto', margin: '1em auto' }}
+          quality={100} 
+          priority
+        />
+
+        <p className={entryStyles.caption} style={{textAlign: 'center'}}>Gratuitous selfie from my first morning in London.</p>
+
         <p>The exhibition at Oxford exhausted my body. For two weeks Avery and I had been pouring our energies into the map to prepare for it, and in the meantime I had also been working full time on Dorsia and interviewing more designers to hire. The jet lag was palpable on arrival, and I grew extremely sensitive to people and environments, more so than normal. I began to get cranky during the conference, so I had to skip lunch and two panels to take a nap under a large magnolia in St Catherine’s. I slowed my breathing for two hours, despite the ants from the grass crawling into my ears, and mustered up enough energy to present the exhibition with Lumi that afternoon.</p>
 
         <p>My energy has evolved since Friday. My arrival in London signified a return of self-control. I spent yesterday doing what I like doing in my most stripped down, basal form: sleep, draw, and listen to music that resonates with my mood. Last night I picked up takeaway — paneer makhanwala — then listened to Feist, in near tears, while I drew illustrations for my upcoming personal website. I’m really excited to publish it one day soon, by the way; I have found a visual metaphor that I really love and feels true to me.</p>
@@ -37,6 +50,19 @@ export default function Page() {
         <p>Presenting Plot Twisters, creating my personal website, and engaging with my career goals recently has made me succinctly aware of some listlessness hidden in me. In the space between all of the projects — literally the moments before and after this exhibition, which is supposed to be a huge milestone — I’ve had to confront the origins of my motivation.</p>
 
         <p>The friendship of several old and new folks recently has helped these thoughts and feelings flow out. Avery has talked me through their favorite personality typologies to frame the phenomenon of my willpower: I’m something like a VFEL or VEFL in Attitudinal Psyche (not an LEFV as we previously conjectured), led by my volition; something like a 1w2 in Enneagram, in pursuit of my principles; and something like an ENFJ/ENFP or INFJ/INFP, with a preference for structure and heartful exchanges.</p>
+
+        <Image
+          className=""
+          src="/journal-graphics/jet-lag-jenny/prince-ashitaka.png"
+          alt="Project"
+          width={440}
+          height={58}
+          style={{ width: '100%', height: 'auto' }}
+          quality={100} 
+          priority
+        />
+
+        <p className={entryStyles.caption}>Prince Ashitaka is the protagonist of the movie <em>Princess Mononoke</em> by Hayao Miyazaki of Studio Ghibli. Avery said this about me in reference to my personality test results. As one of my favorite movies and characters, this is high praise.</p>
 
         <p>Lumi listened to my confessions and offered her perspective during the Oxford trip, too. I had some admittedly weak moments — all the insecurities about not being intellectual and measurably rigorous enough in the ways I engage with people bubbled to the surface, especially as I mentally recounted my recent past and physically counted all the ways I was out of place in the present, being at an Oxford conference and all. She said, “I’ve noticed that some people really like to learn what other people discover, and some people just like to discover.” When she said this, I suddenly remembered who I chose to be in this life, and I immediately stopped feeling so bad about not enjoying most podcasts (lol). These days I’m my own favorite craftsperson, artist, and discoverer, and my scientific methods and outward exegeses permeate from my personal ways of being. Earl also made note to me that my goals seem very intrinsically decided upon, with fewer specific external achievements mapped onto them. I’ve begun to wonder, playfully and patiently, about all these frameworks: under what circumstances do I fight impulsion versus invite it? How does my stubbornness interact with my indecision? Anyway, I don’t need answers, just companions to observe me and let me observe them. I appreciate philosophizing about inner worlds, and in my best friendships, this continues to be a thread of magical meetings.</p>
 

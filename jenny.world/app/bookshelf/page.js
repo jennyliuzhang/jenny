@@ -7,8 +7,8 @@ import ScrollingTabs from '../components/ScrollingTabs';
 
 const breakpointColumnsObj = {
     default: 3,
-    768: 3,
-    600: 2,
+    768: 2,
+    600: 1,
     480: 1
   };
 
@@ -17,87 +17,51 @@ export default function Page() {
   return (
     <main className={bookshelfStyles.bookshelf}>
 
-      <h2>Bookshelf</h2>
+        <h2>Bookshelf</h2>
 
-      {/* <div className="breadcrumbs">
-            <Link href="/about" className="backTo">&#8592; Back to About</Link>
-        </div> */}
+        <div className={bookshelfStyles.introduction}>
+        <div className={bookshelfStyles.introPara}>
+          <h1 className={bookshelfStyles.bookshelfHeadline}>My favorite books, essays, stories, and tidbits.</h1>
+          <p>These are my most impactful reads, organized into six &ldquo;bookshelves&rdquo; of themes I enjoy meditating on. I think about these texts often for inspiration, knowledge, or their ability to articulate something in my inner world.</p>
+          <p style={{marginBottom: '0'}}>Some works easily fit multiple themes, but I’ve sorted them based on my overall judgement and takeaway, which is fun for me to think about.</p>
+        </div>
 
-      <ScrollingTabs>
-        <Link href="#form">On Form</Link>
-        <Link href="#flourishing">On Flourishing</Link>
-        <Link href="#love">On Love</Link>
-        <Link href="#learning">On Learning</Link>
-        <Link href="#play">On Play</Link>
-        <Link href="#meaning">On Meaning</Link>
-      </ScrollingTabs>
+
+        <div className={bookshelfStyles.highlights}>
+
+
+        </div>
         
-        <h1 id="form">On Form</h1>
+      </div>
 
-            <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className={`my-masonry-grid ${bookshelfStyles.books}`}
-                columnClassName="my-masonry-grid_column">
 
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.amazon.com/Reflective-Practitioner-Professionals-Think-Action/dp/0465068782" target="_blank"><img src="https://m.media-amazon.com/images/I/61ai6RE-FPL._AC_UF1000,1000_QL80_.jpg" alt="The Reflective Practitioner"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>The Reflective Practitioner</h5>
-                    <p className={bookshelfStyles.bookAuthor}>Donald Schön</p>
-                    <p>This book reminds me that my personal intuitions and tacit knowledge are crucial to my creative practice. In vague and complex problem spaces, purely technical solutions can be impossible. Especially in fields like education or social work, any map created rarely matches the territory, and if it does, it doesn’t for long. Schön presents the skill of “reflection-in-action” as the art of self-awareness in decision-making that can only happen impromptu and in context, asking us to exercise our experiential wisdom more often.</p>
-                </div>
-
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.amazon.com/Mastery-Movement-Rudolf-Laban/dp/1852731451" target="_blank"><img src="https://m.media-amazon.com/images/I/6136jIsO5aL._AC_UF1000,1000_QL80_.jpg" alt="The Mastery of Movement"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>The Mastery of Movement</h5>
-                    <p className={bookshelfStyles.bookAuthor}>Rudolf Laban</p>
-                    <p>Rudolf Laban was a dancer and choreographer passionate about how physical movement is a highly personal vocabulary. He describes movement through the categories of body, shape, space, and effort, and characterizes it in continuums between elements like “quick” and “sustained,” “heavy” and “light,” and “bound” and “free.” Tender, nuanced, and extremely unique, I really admire this treatise about movement as creation and the exploration of agency.</p>
-                </div>
-
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199" target="_blank"><img src="https://m.media-amazon.com/images/I/61DirDeK3tL._AC_UF1000,1000_QL80_.jpg" alt="A Pattern Language"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>A Pattern Language</h5>
-                    <p className={bookshelfStyles.bookAuthor}>Christopher Alexander</p>
-                    <p>Christopher Alexander, a mathematician-turned-architect, wrote this book of 253 “patterns” of towns and buildings that nourish “aliveness.” He envisioned architects and designers to combine, remix, and interpret these patterns as the formal elements of physical spaces, artistically and infinitely rearrangeable in the same way as words in a poem. The existence of this work continues to amaze me: Alexander not only codified a fascinating collection of urban and architectural forms, but presented them like building blocks to inspire people to create more “poetic” spaces, a feat of form in itself.</p>
-                </div>
-
-            </Masonry>
-            
-        <h1 id="flourishing">On Flourishing</h1>
-
-            <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className={`my-masonry-grid ${bookshelfStyles.books}`}
-                columnClassName="my-masonry-grid_column">
-
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.amazon.com/Dawn-Everything-New-History-Humanity/dp/0374157359" target="_blank"><img src="https://m.media-amazon.com/images/I/819UL7qQa5L._AC_UF1000,1000_QL80_.jpg" alt="The Dawn of Everything"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>The Dawn of Everything</h5>
-                    <p className={bookshelfStyles.bookAuthor}>David Graeber and David Wengrow</p>
-                    <p>This is an engaging and subversive telling of human history by the late Graeber, an anthropologist and mainstay of Occupy Wall Street, and Wengrow, an accomplished archaeologist. The world as we know it, they argue, emerged much more chaotically and capriciously than we realize. Instead of textbook tropes about nomads, pastoralism, then the inevitable agricultural revolution, the authors share stories about large Eurasian cities without any rulers and the gambling habits of women in indigenous societies. They assert how civilizations have always been born from some tension between control and freedom, and tell us where we fall in comparison today.</p>
-                </div>
-
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.akpress.org/emergentstrategy.html" target="_blank"><img src="https://m.media-amazon.com/images/I/61JNBMA0jlL._AC_UF1000,1000_QL80_.jpg" alt="Emergent Strategy"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>Emergent Strategy</h5>
-                    <p className={bookshelfStyles.bookAuthor}>adrienne maree brown</p>
-                    <p>adrienne maree brown personally invites us to see our own lives, work, and relationships as the first arena for social change. Recombining concepts from complexity science with her observations about collective changemaking as an activist, brown advocates for love as a conduit of possibility, the fractal-like correspondence between healthy projects and their healthy organizations, and nurturing critical relationships over critical mass. A passionate and uplifting resource about practicing justice at scale, I use this book like a tonic for the daily drain of modern labor systems and performativity.</p>
-                </div>
-
-                <div className={bookshelfStyles.book}>
-                    <a href="https://www.amazon.com/Conflict-Resolution-Holy-Beings-Poems/dp/039335363X" target="_blank"><img src="https://m.media-amazon.com/images/I/61yzFyiRqgL._SL1200_.jpg" alt="Conflict Resolution for Holy Beings"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>Conflict Resolution for Holy Beings</h5>
-                    <p className={bookshelfStyles.bookAuthor}>Joy Harjo</p>
-                    <p>Joy Harjo breaks and revitalizes the concept of “conflict resolution” in these poems that take us through her Native American history. A member of the Muscogee (Creek) Nation, a jazz musician, and a U.S. Poet Laureate, Harjo evokes both pain and resilience in lyrical odes about her family, community, and journey of personal reckoning. It’s impossible to define a flourishing world without recognizing the actualities of its deep grief, anger, and numbness. To resolve conflict, Harjo expresses, we must allow our emotions to stomp, sing, and be heard.</p>
-                </div>
-            </Masonry>
+      <div className={bookshelfStyles.shelfTabs}>
+            <Link href="#love">On Love</Link>
+            <Link href="#learning">On Learning</Link>
+            <Link href="#play">On Play</Link>
+            <Link href="#form">On Form</Link>
+            <Link href="#flourishing">On Flourishing</Link>
+            <Link href="#meaning">On Meaning</Link>
+        </div>
 
         <h1 id="love">On Love</h1>
+
+        <p>Reads about love, the magical stuff that makes the world bloom.</p>
 
         <Masonry
                 breakpointCols={breakpointColumnsObj}
                 className={`my-masonry-grid ${bookshelfStyles.books}`}
                 columnClassName="my-masonry-grid_column">
-            <div className={bookshelfStyles.book}>
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.communio-icr.com/files/berry27-1pdf.pdf" target="_blank"><img src="https://m.media-amazon.com/images/I/815JY5omm2L._AC_UF1000,1000_QL80_.jpg" alt="Life Is A Miracle"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>Life Is A Miracle</h5>
+                    <p className={bookshelfStyles.bookAuthor}>Wendell Berry</p>
+                    <p>Wendell Berry, a farmer and a writer, describes how every person is special just because of their time and place in the phenomenon of life, and how valuing humans by only their labels — a common practice in our modern and empirically-driven world — doesn’t respect this. We exploit what we value, but we <em>defend what we love</em>, he says; he wants each of us to protect each other as creatures deserving of affection and capable of joy, grief, and belonging.</p>
+                </div>
+                
+                
+                <div className={bookshelfStyles.book}>
                 <a href="https://www.amazon.com/All-About-Love-New-Visions/dp/0060959479" target="_blank"><img src="https://m.media-amazon.com/images/I/71xEY+ZI8kL._AC_UF1000,1000_QL80_.jpg" alt="All About Love"></img></a>
                     <h5 className={bookshelfStyles.bookTitle}>All About Love</h5>
                     <p className={bookshelfStyles.bookAuthor}>bell hooks</p>
@@ -114,13 +78,17 @@ export default function Page() {
                 <div className={bookshelfStyles.book}>
                     <a href="https://www.communio-icr.com/files/berry27-1pdf.pdf" target="_blank"><img src="https://m.media-amazon.com/images/I/815JY5omm2L._AC_UF1000,1000_QL80_.jpg" alt="Life Is A Miracle"></img></a>
                     <h5 className={bookshelfStyles.bookTitle}>Life Is A Miracle</h5>
-                    <p className={bookshelfStyles.bookAuthor}>Wendell Berry</p>
-                    <p>Wendell Berry, a farmer and a writer, describes how every person is special just because of their time and place in the phenomenon of life, and how valuing humans by only their labels — a common practice in our modern and empirically-driven world — doesn’t respect this. We exploit what we value, but we <em>defend what we love</em>, he says; he wants each of us to protect each other as creatures deserving of affection and capable of joy, grief, and belonging.</p>
+                    <p className={bookshelfStyles.bookAuthor}>Jenny Slate</p>
+                    <p>Terrifically hilarious and compelling. Perfectly meandering, yet composed.</p>
                 </div>
 
             </Masonry>
 
+        <hr></hr>
+
         <h1 id="learning">On Learning</h1>
+
+        <p>Reads about learning, the social process by which we name our world.</p>
 
         <Masonry
                 breakpointCols={breakpointColumnsObj}
@@ -156,9 +124,12 @@ export default function Page() {
                 </div>
 
             </Masonry>
-            
+        
+        <hr></hr>
 
         <h1 id="play">On Play</h1>
+
+        <p>Reads about play, the attitude that sharpens our agency and creativity.</p>
 
         <Masonry
             breakpointCols={breakpointColumnsObj}
@@ -194,8 +165,80 @@ export default function Page() {
                 </div>
 
             </Masonry>
+            
+
+        <hr></hr>
+
+        <h1 id="form">On Form</h1>
+
+        <p>Reads about form, the manner by which worldly things appear to us.</p>
+
+            <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className={`my-masonry-grid ${bookshelfStyles.books}`}
+                columnClassName="my-masonry-grid_column">
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.amazon.com/Reflective-Practitioner-Professionals-Think-Action/dp/0465068782" target="_blank"><img src="https://m.media-amazon.com/images/I/61ai6RE-FPL._AC_UF1000,1000_QL80_.jpg" alt="The Reflective Practitioner"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>The Reflective Practitioner</h5>
+                    <p className={bookshelfStyles.bookAuthor}>Donald Schön</p>
+                    <p>This book reminds me that my personal intuitions and tacit knowledge are crucial to my creative practice. In vague and complex problem spaces, purely technical solutions can be impossible. Especially in fields like education or social work, any map created rarely matches the territory, and if it does, it doesn’t for long. Schön presents the skill of “reflection-in-action” as the art of self-awareness in decision-making that can only happen impromptu and in context, asking us to exercise our experiential wisdom more often.</p>
+                </div>
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.amazon.com/Mastery-Movement-Rudolf-Laban/dp/1852731451" target="_blank"><img src="https://m.media-amazon.com/images/I/6136jIsO5aL._AC_UF1000,1000_QL80_.jpg" alt="The Mastery of Movement"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>The Mastery of Movement</h5>
+                    <p className={bookshelfStyles.bookAuthor}>Rudolf Laban</p>
+                    <p>Rudolf Laban was a dancer and choreographer passionate about how physical movement is a highly personal vocabulary. He describes movement through the categories of body, shape, space, and effort, and characterizes it in continuums between elements like “quick” and “sustained,” “heavy” and “light,” and “bound” and “free.” Tender, nuanced, and extremely unique, I really admire this treatise about movement as creation and the exploration of agency.</p>
+                </div>
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental/dp/0195019199" target="_blank"><img src="https://m.media-amazon.com/images/I/61DirDeK3tL._AC_UF1000,1000_QL80_.jpg" alt="A Pattern Language"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>A Pattern Language</h5>
+                    <p className={bookshelfStyles.bookAuthor}>Christopher Alexander</p>
+                    <p>Christopher Alexander, a mathematician-turned-architect, wrote this book of 253 “patterns” of towns and buildings that nourish “aliveness.” He envisioned architects and designers to combine, remix, and interpret these patterns as the formal elements of physical spaces, artistically and infinitely rearrangeable in the same way as words in a poem. The existence of this work continues to amaze me: Alexander not only codified a fascinating collection of urban and architectural forms, but presented them like building blocks to inspire people to create more “poetic” spaces, a feat of form in itself.</p>
+                </div>
+
+            </Masonry>
+            
+        <hr></hr>
+
+        <h1 id="flourishing">On Flourishing</h1>
+
+        <p>Reads about flourishing, the experience of healing and nurturing the collective human spirit.</p>
+
+            <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className={`my-masonry-grid ${bookshelfStyles.books}`}
+                columnClassName="my-masonry-grid_column">
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.amazon.com/Dawn-Everything-New-History-Humanity/dp/0374157359" target="_blank"><img src="https://m.media-amazon.com/images/I/819UL7qQa5L._AC_UF1000,1000_QL80_.jpg" alt="The Dawn of Everything"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>The Dawn of Everything</h5>
+                    <p className={bookshelfStyles.bookAuthor}>David Graeber and David Wengrow</p>
+                    <p>This is an engaging and subversive telling of human history by the late Graeber, an anthropologist and mainstay of Occupy Wall Street, and Wengrow, an accomplished archaeologist. The world as we know it, they argue, emerged much more chaotically and capriciously than we realize. Instead of textbook tropes about nomads, pastoralism, then the inevitable agricultural revolution, the authors share stories about large Eurasian cities without any rulers and the gambling habits of women in indigenous societies. They assert how civilizations have always been born from some tension between control and freedom, and tell us where we fall in comparison today.</p>
+                </div>
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.akpress.org/emergentstrategy.html" target="_blank"><img src="https://m.media-amazon.com/images/I/61JNBMA0jlL._AC_UF1000,1000_QL80_.jpg" alt="Emergent Strategy"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>Emergent Strategy</h5>
+                    <p className={bookshelfStyles.bookAuthor}>adrienne maree brown</p>
+                    <p>adrienne maree brown personally invites us to see our own lives, work, and relationships as the first arena for social change. Recombining concepts from complexity science with her observations about collective changemaking as an activist, brown advocates for love as a conduit of possibility, the fractal-like correspondence between healthy projects and their healthy organizations, and nurturing critical relationships over critical mass. A passionate and uplifting resource about practicing justice at scale, I use this book like a tonic for the daily drain of modern labor systems and performativity.</p>
+                </div>
+
+                <div className={bookshelfStyles.book}>
+                    <a href="https://www.amazon.com/Conflict-Resolution-Holy-Beings-Poems/dp/039335363X" target="_blank"><img src="https://m.media-amazon.com/images/I/61yzFyiRqgL._SL1200_.jpg" alt="Conflict Resolution for Holy Beings"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>Conflict Resolution for Holy Beings</h5>
+                    <p className={bookshelfStyles.bookAuthor}>Joy Harjo</p>
+                    <p>Joy Harjo breaks and revitalizes the concept of “conflict resolution” in these poems that take us through her Native American history. A member of the Muscogee (Creek) Nation, a jazz musician, and a U.S. Poet Laureate, Harjo evokes both pain and resilience in lyrical odes about her family, community, and journey of personal reckoning. It’s impossible to define a flourishing world without recognizing the actualities of its deep grief, anger, and numbness. To resolve conflict, Harjo expresses, we must allow our emotions to stomp, sing, and be heard.</p>
+                </div>
+            </Masonry>
+
+        <hr></hr>
 
         <h1 id="meaning">On Meaning</h1>
+
+        <p>Reads about meaning, the powerful narratives that emerge in our struggle toward flourishing.</p>
 
         <Masonry
         breakpointCols={breakpointColumnsObj}

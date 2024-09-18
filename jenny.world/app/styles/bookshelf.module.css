@@ -9,12 +9,73 @@
     color: #962006 !important;
     }
 
+.bookshelfHeadline {
+    margin: 0.75em 0;
+}
+
+.introduction {
+    margin: 0 0 40px;
+}
+
+    .introPara p {
+        font-size: 1em;
+    }
+
+.shelfTabs {
+    width: calc(100%+50px);
+    margin: 0.5em -25px 0;
+    overflow-x: scroll;
+    position: sticky;
+    top: -2px;
+    display: flex;
+    align-items: center;
+    height: 4em;
+    padding: 0 0;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    z-index: 100;
+  }
+  
+      .shelfTabs::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+      }
+  
+
+    .shelfTabs a {
+        margin: 0 0 0 0;
+        display: inline-block;
+        width: auto;
+        white-space: nowrap;
+        padding: 0.75em 1em 1em;
+        height: 1em;
+        font: 400 normal 1.3em/1.3em 'Capitaine', serif;
+        color: #2c2c2c;
+        text-decoration: none;
+        background: #fbfaf9;
+        border: 1px solid #dcdcdc;
+        border-right: none;
+        transition: all 0.3s;
+    }
+
+    .shelfTabs a:first-child {
+        border-left: none;
+        padding: 0.75em 1em 1em 25px;
+      }
+  
+    .shelfTabs a:last-child {
+        border-right: none;
+    }
+
+    .shelfTabs a:hover {
+        background: #fff;
+    }
+
 .bookshelf p {
     font-size: 1.15em;
 }
 
-.bookshelf h2 {
-    scroll-margin-top: 2.5em;
+.bookshelf h1 {
+    scroll-margin-top: 3em;
 }
 
 .bookshelf p.dropCapP:first-letter {
@@ -24,7 +85,7 @@
   }
 
 .books {
-    margin: 2em 0 0 -30px;
+    margin: 2em 0 0 -20px;
 }
 
 .book {
@@ -64,4 +125,86 @@ p.bookAuthor {
 .book img:hover {
     box-shadow: 0px 10px 10px 8px rgba(0, 0, 0, .01);
     transform: translateY(-3px);
+}
+
+@media screen
+    and (min-width: 768px) {
+
+        .introduction {
+            display: grid;
+            grid-template-columns: 3fr 2.1fr;
+            grid-auto-rows: 1fr;
+            grid-column-gap: 60px;
+            margin: 0 0 30px;
+        }
+
+            .introPara {
+                width: 100%
+            }
+
+                .bookshelfHeadline {
+                    margin: 0.4em 0 0.5em;
+                }
+                
+                .introPara p {
+                    font-size: 1.1em;
+                }
+
+}
+
+@media screen
+and (min-width: 900px) {
+
+    .shelfTabs {
+        top: -4px;
+        width: calc(100%+4px);
+        margin: 2.5em -2px 3em;
+        overflow-x: visible;
+    }
+
+    .shelfTabs a {
+        width: 16.67%;
+        text-align: center;
+    }
+
+    .shelfTabs a:first-child {
+        border-left: 1px solid #dcdcdc;
+        padding: 0.75em 1em 1em;
+      }
+  
+    .shelfTabs a:last-child {
+        border-right: 1px solid #dcdcdc;
+    }
+
+}
+
+@media screen
+and (min-width: 960px) {
+
+    .bookshelfHeadline {
+        font-size: 3em;
+    }
+
+}
+
+@media screen
+and (min-width: 1140px) {
+
+    .introduction {
+        grid-column-gap: 80px;
+    }
+
+}
+
+@media screen
+and (min-width: 1600px) {
+
+    .introduction {
+        grid-template-columns: 3fr 2.6fr;
+    }
+
+    .bookshelfHeadline {
+        font-size: 3.5em;
+    }
+
 }

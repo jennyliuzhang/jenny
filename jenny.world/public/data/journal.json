@@ -16,7 +16,7 @@
     "writingSlug": "put-it-out-of-the-mind",
     "date": "September 2024",
     "readTime": "2 min read",
-    "writingDesc": "A reminder for myself on how to dispel stressful moments, especially when balancing many responsibilities.",
+    "writingDesc": "On soothsayers, and dispelling stressful moments amidst many responsibilities.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/put-it-out-of-the-mind.jpg"
@@ -27,7 +27,7 @@
     "writingSlug": "the-great-weird",
     "date": "September 2024",
     "readTime": "9 min read",
-    "writingDesc": "An “I’m between jobs” update. On self-alignment, making commitments, and the nature of emotional stability.",
+    "writingDesc": "An “I’m between jobs” reflection. On self-alignment, making commitments, and the nature of emotional stability.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/the-great-weird.jpg"
@@ -48,7 +48,7 @@
     "writingName": "The Lost Chapter",
     "writingSlug": "the-lost-chapter",
     "date": "May 2024",
-    "readTime": "6 min read",
+    "readTime": "7 min read",
     "writingDesc": "Recounting a chaotic period. On working hard, playing hard, burning out, feeling distant from oneself, and adopting a dog.",
     "favorite": false,
     "isPasswordProtected": false,
@@ -239,7 +239,18 @@
     "writingDesc": "Made in Doha",
     "favorite": true,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/brief-scotland-update.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/concerns-of-spiritual-beingness.jpg"
+  },
+  {
+    "personalChapter": "traveling",
+    "writingName": "Arriving in Doha",
+    "writingSlug": "arriving-in-doha",
+    "date": "January 2022",
+    "readTime": "2 min read",
+    "writingDesc": "Transitioning to Doha after traveling Europe. Enjoying architecture, recollecting routines.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/arriving-in-doha.jpg"
   },
   {
     "personalChapter": "traveling",
@@ -283,14 +294,14 @@
     "writingDesc": "Notable moments while living in San Francisco’s Mission District during the COVID quarantine.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/vaccuuming.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/lockdown-in-san-francisco.jpg"
   },
   {
     "personalChapter": "covid",
     "writingName": "Seattle to Boston",
     "writingSlug": "seattle-to-boston",
     "date": "October 2020",
-    "readTime": "2 min read",
+    "readTime": "7 min read",
     "writingDesc": "Recollections of an ambitious and thrifty cross-country fall road trip.",
     "favorite": true,
     "isPasswordProtected": false,
@@ -302,7 +313,7 @@
     "writingSlug": "tuesday-wednesday-thursday",
     "date": "June 2020",
     "readTime": "2 min read",
-    "writingDesc": "The oppposite of romanticizing travel. On dysregulation and awkward days while WWOOFing on a bamboo farm.",
+    "writingDesc": "The opposite of romanticizing travel. On dysregulation and awkward days while WWOOFing on a bamboo farm.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/tuesday-wednesday-thursday.jpg"
@@ -338,7 +349,7 @@
     "writingDesc": "A list-style inventory on my life after university graduation, living in an artist collective and exploring my passions.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/sky-chatting-thumb.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/presently.jpg"
   },
   {
     "personalChapter": "early-20s",
@@ -349,7 +360,7 @@
     "writingDesc": "A fast homage to pink—a favorite color of mine—and youth!",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/sky-chatting-thumb.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/last-week-i-bought.jpg"
   },
   {
     "personalChapter": "early-20s",
@@ -367,9 +378,9 @@
     "writingName": "Diner Drawing",
     "writingSlug": "diner-drawing",
     "date": "June 2018",
-    "readTime": "5 min read",
-    "writingDesc": "4 of 4 illustrated blog posts about “bookpacking” in Louisiana. Ennui, revisiting things, and the lasting impact of literature.",
-    "favorite": false,
+    "readTime": "9 min read",
+    "writingDesc": "4 of 4 illustrated blog posts about “bookpacking” in Louisiana. Tattoos, revisiting things, and the lasting impact of literature.",
+    "favorite": true,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/diner-drawing.jpg"
   },
@@ -415,7 +426,7 @@
     "writingDesc": "On how digital culture helped me bond with a family for whom I was working on a journalism project.",
     "favorite": false,
     "isPasswordProtected": true,
-    "writingThumbnailImageURL": "/journal-graphics/rare-woman-thumb.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/common-ground.jpg"
   },
   {
     "personalChapter": "early-20s",
@@ -423,7 +434,7 @@
     "writingSlug": "twenty",
     "date": "February 2017",
     "readTime": "3 min read",
-    "writingDesc": "Reflecting on lessons learned at the young age of 20.",
+    "writingDesc": "A collection of advice and lessons learned at the great and wise old age of 20.",
     "favorite": true,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/twenty.jpg"
@@ -434,10 +445,21 @@
     "writingSlug": "postcards",
     "date": "August 2016",
     "readTime": "3 min read",
-    "writingDesc": "Technically written when I was 19, but I count this as my early 20s. Learning from others how to live in Los Angeles.",
+    "writingDesc": "Reflecting on my chapbook about five Los Angelenos. Again, I wrote this when I was 19 and not 20, but whatever.",
     "favorite": true,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/curiosity-thumb.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/postcards.jpg"
+  },
+  {
+    "personalChapter": "early-20s",
+    "writingName": "Hello World!",
+    "writingSlug": "hello-world",
+    "date": "July 2016",
+    "readTime": "3 min read",
+    "writingDesc": "On who I became after my first year of undergrad at USC. Technically written at age 19, but I count this as my 20s.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/hello-world.jpg"
   },
   {
     "personalChapter": "girlhood",

@@ -5,7 +5,9 @@ import projectPage from "../../styles/projectPage.module.css";
 export default function Page() {
   return (
     <main className={projectPage.projectPage}>
-      <h2 className="breadcrumbh2"><Link href="/projects" className="breadcrumb">Projects</Link>Mortality Awareness on TikTok</h2>
+      <div className={projectPage.subnavTop}>
+        <h2><span className="subnav"><Link href="/projects" className="breadcrumb">Projects</Link>Mortality Awareness on TikTok</span></h2>
+      </div>
       
       <Image
         className={projectPage.projectHero}

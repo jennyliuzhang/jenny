@@ -6,12 +6,12 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Common Ground</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Common Ground</span></h2>
       </div>
       
       <Image
         className={entryStyles.writingHero}
-        src="/journal-graphics/brief-scotland-update.jpg"
+        src="/journal-graphics/common-ground.jpg"
         alt="Project"
         width={2880}
         height={2025}
@@ -19,6 +19,10 @@ export default function Page() {
         quality={100} 
         priority
       />
+
+      <div className={entryStyles.heroCaption}>
+        Every week when we visited the Garcias, we brought and made tea for each of us.
+      </div>
 
       <div className={entryStyles.body}>
         <h1>Common Ground</h1>

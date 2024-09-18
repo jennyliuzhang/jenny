@@ -265,7 +265,7 @@ and (min-width: 540px) {
 
         .introduction {
             display: grid;
-            grid-template-columns: 3fr 1.7fr;
+            grid-template-columns: 3fr 1.65fr;
             grid-auto-rows: 1fr;
             grid-column-gap: 60px;
         }

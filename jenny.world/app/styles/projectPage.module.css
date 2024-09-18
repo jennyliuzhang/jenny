@@ -19,6 +19,10 @@ h2.backh2{
     width: 100%;
 }
 
+.subnavTop h2 {
+    margin: 1em 0 0;
+}
+
 .projectIntro {
     margin: 0 0 40px;
 }

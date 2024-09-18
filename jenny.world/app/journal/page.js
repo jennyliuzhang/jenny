@@ -165,7 +165,7 @@ export default function Page() {
           <h1>Pandemic Times</h1>
           <h6>2020–2021</h6>
           <p>Just like everyone else, my life paused during COVID-19. I had also just dissolved my one tie to a physical place: I left my job in Los Angeles. Young and newly free of any obligations, I spent time road-tripping, wandering about, working on Plot Twisters, and confronting my health and some rougher parts of my personality.</p>
-          <p>It was an angsty time, for me and probably many people. I’m still looking through writings from this era and figuring out whether they’re worth sharing.</p>
+          <p>It was an angsty time, for me and probably many people. I’m still looking through writings from this era and figuring out whether they’re worth sharing. For now, these three!</p>
         </div>
 
         <div className={journalStyles.writings}>
@@ -295,12 +295,12 @@ export default function Page() {
         />
 
         <div className={journalStyles.whyBody}>
-          <p>I believe telling personal stories is crucial for revealing the diversity of perspectives in the human experience. I’m a young Chinese-American woman with a humble upbringing as a daughter of middle-class immigrants. Simultaneously, I have the privilege today to be independent, have a safe home, pursue career projects I’m passionate about, and travel. As someone who didn’t grow up around narratives of people like me, with my specific family background, cultural straddling, and mix of idiosyncrasies and interests, I find it important to share my voice as an example of what’s possible.</p>
+          <p>I believe telling personal stories is crucial for revealing the diversity of perspectives in the human experience. I’m a young Chinese-American woman with a humble upbringing as a daughter of a blended family of Asian immigrants. Simultaneously, I have the privilege today to be independent, have a safe home, pursue career projects I’m passionate about, and travel. As someone who didn’t grow up around narratives of people like me, with my specific backgrounds, cultural straddlings, and mix of idiosyncrasies and interests, I find it important to share my voice as an example of what’s possible.</p>
           <p>My writing can be vulnerable. I explore my emotional states, learnings, and observations. Because I harbor a unique mix of identities—literate and able-bodied, but also a second-generation and neurodivergent woman of color—the way I occupy and perceive spaces is unique. Writing is my medium for showing this experience firsthand.</p>
-          <p>When others read my writing, I hope they can find what’s kindred between us. In turn, I hope this contributes to a larger project: giving people the tools for empathy and patience with one another.</p>
+          <p>When others read my writing, I hope they can find what’s kindred between us. In turn, I hope this contributes to a larger project: giving people more tools to be empathetic and patient with one another.</p>
         </div>
 
-        <Button title="Read more about my perspectives" type="blue-centered" desc="" link="/about/journey" className={journalStyles.journeyCTA}></Button>
+        <Button title="Read more about my perspectives" type="blue-centered" desc="" link="/about/journey"></Button>
 
       </div>
 

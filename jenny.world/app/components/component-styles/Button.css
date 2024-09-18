@@ -29,7 +29,7 @@
   }
 
   .button-blue, .button-blue-centered {
-    width: auto;
+    width: fit-content;
     color: #fff;
     background: #074288;
     padding: 1em 3em 1em 1.5em;

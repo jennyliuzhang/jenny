@@ -97,14 +97,14 @@ export default function Page() {
         <h3>Lead With the Vision</h3>
         <blockquote>&ldquo;The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.&rdquo;</blockquote>
           <p className={aboutStyles.author}>David Graeber</p>
-          <p>To design is to make something <em>by design</em>. When I&rsquo;m inspired by a project vision, I seek to clarify its values, affordances, and design criteria — and this is an ongoing process. I holistically consider users, consumers, and stakeholders to ensure the end product is aligned with the future we’re all striving for.</p>
+          <p>To design is to make something <em>by design</em>. When I&rsquo;m inspired by a project vision, I seek to clarify its values, affordances, and design criteria—and this is an ongoing process. I holistically consider users, consumers, and stakeholders to ensure the end product is aligned with the future we’re all striving for.</p>
       </div>
 
       <div className={aboutStyles.principleTile}>
         <h3>Curiosity Over Criticism</h3>
           <blockquote>&ldquo;The world is full of magic things, patiently waiting for our senses to grow sharper.&rdquo;</blockquote>
           <p className={aboutStyles.author}>William Butler Yeats</p>
-          <p>Rather than dismissing an idea early on due to an initial bias or negative reaction, I try to unpack what my response reveals about myself and how I interpret the world around me — and whether my interpretations are useful in context. Though this is hard to consistently do, I find that when I let go of overly quick or critical assumptions, I&rsquo;m more capable of staying open to other subtexts and possibilities, especially what are known as &ldquo;blind spots&rdquo; and &ldquo;unknowns&rdquo; in <a href="https://en.wikipedia.org/wiki/Johari_window" target="_blank">Johari's Window</a>.</p>
+          <p>Rather than dismissing an idea early on due to an initial bias or negative reaction, I try to unpack what my response reveals about myself and how I interpret the world around me—and whether my interpretations are useful in context. Though this is hard to consistently do, I find that when I let go of overly quick or critical assumptions, I&rsquo;m more capable of staying open to other subtexts and possibilities, especially what are known as &ldquo;blind spots&rdquo; and &ldquo;unknowns&rdquo; in <a href="https://en.wikipedia.org/wiki/Johari_window" target="_blank">Johari's Window</a>.</p>
       </div>
 
       <div className={aboutStyles.principleTile}>
@@ -118,7 +118,7 @@ export default function Page() {
           <h3>Surprise and Delight</h3>
           <blockquote>&ldquo;Anyone who's a chef, who loves food, ultimately knows that all that matters is: &lsquo;Is it good? Does it give pleasure?&rsquo;&rdquo;</blockquote>
           <p className={aboutStyles.author}>Anthony Bourdain</p>
-          <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+          <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual motif, I like to invite wonder and joy into my work.</p>
       </div>
 
           </div>

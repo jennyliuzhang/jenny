@@ -41,6 +41,11 @@
     color: #6c6c6c;
 }
 
+.heroCaption a, .caption a {
+    color: #0055BA;
+    font-weight: 700;
+}
+
 
 @media screen
 and (min-width: 540px) {

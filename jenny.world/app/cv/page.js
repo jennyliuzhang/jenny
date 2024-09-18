@@ -8,6 +8,8 @@ export default function Page() {
     <main>
       <h2>Curriculum Vitae</h2>
 
+      {/* <p>See Resume or read my Testimonials.</p> */}
+
       {/* <ScrollingTabs>
         <Link href="/resume.pdf" style={{background: '#FFF8D7', border: '1px solid #FFF9F5'}}>
           Résumé<span className="external" style={{fontSize: '1em', lineHeight: '1em'}}></span>
@@ -29,7 +31,7 @@ export default function Page() {
 
       <div className={cvStyles.cvWrap}>
 
-        <div className={cvStyles.cvSubNav}>
+        {/* <div className={cvStyles.cvSubNav}>
           <Link href="#skills">Skill Areas</Link>
           <Link href="#education">Education</Link>
           <Link href="#professional">Professional Experience</Link>
@@ -42,7 +44,7 @@ export default function Page() {
           <Link href="#other">Other Projects &amp; Service Work</Link>
           <Link href="/resume.pdf">Résumé</Link>
           <Link href="/cv/testimonials">Testimonials</Link>
-        </div>
+        </div> */}
 
         <div className={cvStyles.cvContent}>
 
@@ -155,14 +157,14 @@ export default function Page() {
         </ul>
       </div>
 
-      <div className={cvStyles.entry}>
+      {/* <div className={cvStyles.entry}>
         <span className={cvStyles.title}>Design Thinking Facilitator</span>
         <span className={cvStyles.place}>Apple, University of Southern California</span>
         <span className={cvStyles.dates}>2018–2019</span>
         <ul className={cvStyles.bullets}>
           <li>Planned and led design thinking sprints at the yearly Apple Learning Series to reimagine the future of classroom technology with over 40 educators across the U.S.</li>
         </ul>
-      </div>
+      </div> */}
 
       <div className={cvStyles.entry}>
         <span className={cvStyles.title}>Co-founder, Partner</span>

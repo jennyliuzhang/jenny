@@ -6,12 +6,12 @@ export default function Page() {
   return (
     <main className={entryStyles.entryStyles}>
       <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Brief Scotland Update</h2>
+        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>The Concerns of Spiritual Beingness</span></h2>
       </div>
       
       <Image
         className={entryStyles.writingHero}
-        src="/journal-graphics/brief-scotland-update.jpg"
+        src="/journal-graphics/concerns-of-spiritual-beingness.jpg"
         alt="Project"
         width={2880}
         height={2025}
@@ -20,10 +20,19 @@ export default function Page() {
         priority
       />
 
+      <div className={entryStyles.heroCaption}>
+        My framework for conducting oneself as a spiritual vessel on Earth.
+      </div>
+
       <div className={entryStyles.body}>
-        <h1>Amsterdam Jotting</h1>
-        <h6>June 2020</h6>
+        <h1>The Concerns of Spiritual Beingness</h1>
+        <h6>February 2022</h6>
         <h6>2 min read</h6>
+
+        <p>
+        I’ve always appreciated the quote, “We are not human beings having a spiritual experience. We are spiritual beings having a human experience.” I first saw it when I was in New Orleans nearly 4 years ago, and I still meditate on it often. This is a recent jotting-of-thoughts about spiritual beingness.</p>
+
+
         <p>While listening to Art Garfunkel croon on "Waters of March" as I gather my laundry on Sunday, I remember the work I read by Dr. Emily Holmes about how the visuospatial demand of playing tetris immediately after a traumatizing situation can disrupt the development of PTSD longer term. I bite into a steamed bun as I load my sheets into the washing machine and think about my favorite movies, the ones that left a real imprint on me, and how they might also have been cognitive structuring devices to help me move through emotional stimulus that I don't even remember now. I find it hard to believe looking back, and can feel the strings in my throat preferring to believe I was a smart and self-aware being that sought out distractions intentionally, but the wisest me knows I'm a sheep to my body's intuitions. The strings in my throat are dried out by the steamed bun, which wasn't newly steamed but hours ago, so it was a bit chalky and tough to chew down.
 
         I'm busy. Projects and freelance and meetings and Maybe I have too few hours to do too many different things. But I also like this feeling. I feel like I'm making bets with myself, and it's a fun game.

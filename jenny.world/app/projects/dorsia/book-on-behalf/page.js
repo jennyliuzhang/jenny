@@ -5,7 +5,7 @@ import projectPage from "../../../styles/projectPage.module.css";
 export default function Page() {
   return (
     <main className={projectPage.projectPage}>
-      <h2 className="breadcrumbh2"><Link href="/projects" className="breadcrumb">Projects</Link><Link href="/projects/dorsia" className="breadcrumb">Dorsia</Link>Book on Behalf</h2>
+      <h2 className="breadcrumbh2"><span className="subnav"><Link href="/projects" className="breadcrumb">Projects</Link><Link href="/projects/dorsia" className="breadcrumb">Dorsia</Link>Book on Behalf</span></h2>
       
       <Image
         className={projectPage.projectHero}
