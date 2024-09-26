@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "diner-drawing");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Diner Drawing</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Diner Drawing</h1>
-        <h6>June 2018</h6>
-        <h6>9 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        
         <p>One morning during our first week in New Orleans, when I was having trouble going back to sleep after waking up too early, I tried to inspire myself by walking around the city for an hour. On a whim, I decided to eat breakfast at Commerce Restaurant, a local diner in the business district. Mornings like these happen to me often, no matter where in the world I am. I frequently go days in a row running on three or four hours of sleep, but I’ve learned to embrace my restlessness. We’re back from Cajun country to rest in New Orleans for a few days now before heading back to California. I’m having a bout of sleepless mornings again. I’m starting to suppose this is some sort of mental menstrual cycle, but in any case, I’ve decided to visit Commerce again to eat eggs (hoping I can encourage spiritual and intellectual fecundity by ingesting them) and write this. The servers think I’m funny because I keep declining coffee. Truth be told, I don’t need it. I’m very awake. It is 7:30am. I’m going to share two very permanent stories: one is about a tattoo, and one is about this place I’m in right now.</p>
 
         <Image

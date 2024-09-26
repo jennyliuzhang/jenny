@@ -1,13 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+  const [nextEntry, setnextEntry] = useState(null);
+  const [prevEntry, setprevEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        // Find the index of the current entry
+        const currentIndex = data.findIndex(item => item.writingSlug === "every-love-is-different");
+        
+        // Get the current entry
+        const foundEntry = data[currentIndex];
+        setEntry(foundEntry);
+
+        // Get the previous entry, if it exists
+        if (currentIndex > 0) {
+          setnextEntry(data[currentIndex - 1]);
+        }
+
+        // Get the next entry, if it exists
+        if (currentIndex < data.length - 1) {
+          setprevEntry(data[currentIndex + 1]);
+        }
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Every Love Is Different</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +63,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Every Love Is Different</h1>
-        <h6>October 2022</h6>
-        <h6>2 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        
         <p>I'm currently in a walkable city with a nice income, which means on I can end my morning strolls by trying a different local cafe each weekend — and I don't have to be so cheap about it. My routine includes seeing smiling and busy people in the street, or at crosswalks, or in the park with their dogs, then reviewing menus in coffee shop windows to decide whether or not a dirty chai latte is one of the ways I will show myself love today. Where I stay in Abbeyhill is lined with some great Italian delicatessens, plant-based bakeries, and homemade takeaway stops. I begin my days with a cardamom bun when possible, and always stop for matcha if I find it. I get the "daily soups" even when they cost £8. My boots are finally breaking in.</p>
 
         <p>A year of mottled circumstances has passed since I last told someone I was based out of this time zone. Blackpool, Manchester, Doha, Dubai, Kuala Lumpur, George Town, Renton, Oxford, London, Lisbon, Chicago, St Andrews, Amsterdam, Edinburgh. It doesn't seem to matter whether I spent a few moments in a city or several long months. The temporariness of my stations, which I had to confront every time I thought about which of my present routines were lifelong or conditional, prompted me to treasure where I was and what I was dealing with — no matter how strange or awful — at least once a day. A few standout moments include the hysterical disbelief of finding the bed bugs in Manchester, my mom haggling expertly at the crowded gold souk in Dubai, and the vegetarian feast on Tamil New Year. I appreciate the cities and the people I got to know better in them; I loved laughing with Lumi as she barged into our Oxford Airbnb proudly hoisting a massive watermelon, and dancing on West Sands Beach until the night finally killed the bonfire. I remember my nerves, but also the times I was remarkably cool-headed. I keep the stories and the playlists, the jokes and the gifts, and that mindful saying, "Wherever you go, there you are." These have been pretty meaningful seasons.</p>
@@ -126,7 +166,25 @@ export default function Page() {
 
       There is nothing more magical than gratitude. And the way we express gratitude is so unique. We have a lot to be thankful for. This is a . I went to sing to the swans today, and the rain misted my glases and I felt the dampness of the grass seep into the sole of my shoe. And yet I was so happy because it smelled so good outside. When we show people gratitude, their best qualities are blessed with the expectation to grow. People bloom in these conditions. We should all be so lucky. &nbsp;&#x273d;</p>
 
-      </div>      
+      </div>   
+
+      <div className={entryStyles.otherEntries}>        
+        {prevEntry && (
+          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
+            <span className={entryStyles.direction}>← Previous Entry</span>
+            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
+            <span className={entryStyles.date}>{prevEntry.date}</span>
+          </Link>
+        )}
+
+        {nextEntry && (
+          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
+            <span className={entryStyles.direction}>Next Entry →</span>
+            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
+            <span className={entryStyles.date}>{nextEntry.date}</span>
+          </Link>
+        )}
+      </div>    
 
     </main>
   );

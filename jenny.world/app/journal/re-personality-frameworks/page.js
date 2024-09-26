@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "re-personality-frameworks");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>On Personality Frameworks</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>On Personality Frameworks</h1>
-        <h6>July 2022</h6>
-        <h6>1 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        
         <p>I see personality typologies as languages for labeling and communicating certain qualities or behaviors in yourself that you might not otherwise have the words for, or you might not have been self-aware of yet. Because they’re essentially boxes, they often come with descriptions or recommendations for navigating those qualities. For example, if you identify introvert tendencies in yourself, a framework that accounts for introversion may offer certain warnings, strategies, or ways of framing your self-concept that may or may not be useful to your life — career, lifestyle, relationships, etc. I think people get really into frameworks that they find useful.</p>
 
         <p>There are so many frameworks out there, and I see them each as intentionally constrained and serving different purposes: I think MBTI is useful for understanding people’s communication and collaboration styles; Socionics is a way to describe one’s information metabolism; Enneagram is like an expression of people’s default coping tendencies in times of stress… etc, etc.</p>

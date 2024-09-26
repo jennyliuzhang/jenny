@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "tuesday-wednesday-thursday");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Tuesday, Wednesday, Thursday</span></h2>
-      </div>
+
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -26,9 +48,11 @@ export default function Page() {
 
 
       <div className={entryStyles.body}>
-        <h1>Tuesday, Wednesday, Thursday</h1>
-        <h6>June 2020</h6>
-        <h6>3 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Today is Thursday. I woke up irritated. I’ve been thinking many rude things to myself because of indecision related to food. When I am overwhelmed or lacking sleep, I step back into strange thought processes related to what I eat. Calculating calories and macronutrients and timing the distribution of my consumption throughout the day. It’s the type of obsessive mental behavior that could be better used to tag Plot Twisters research readings or organize my clothes. I’m still learning to divert the energy.</p>
 
         <p>Anyway, I woke up irritated because last night for dinner I was anxious about my meal choices at a restaurant. I wanted soup but I ordered steamed veggies and a few lettuce sushi rolls instead. I was very confused for the rest of the night. I hadn’t forgiven myself for my behavior when I woke up. Then this morning I felt anxious because I ate 2 apples, a banana, and a granola bar for breakfast.</p>

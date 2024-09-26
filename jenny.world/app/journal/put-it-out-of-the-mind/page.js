@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "put-it-out-of-the-mind");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Put It Out of the Mind</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,11 +47,12 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Put It Out of the Mind</h1>
-        <h6>October 2024</h6>
-        <h6>1 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
 
-        <p>My phone has been dead for 5 days. Barktober fest at Taps and Tails. Wiener dog race.</p>
+        <p>Last week, my phone was dead for 3 days. Barktober fest at Taps and Tails. Wiener dog race.</p>
 
         <p>Back in LA, wonton party no phone. 1.5 months without phone</p>
 
@@ -39,13 +62,19 @@ export default function Page() {
 
         <p>Making new friends. Dave. Taylor. Bumble BFF. No dating apps. But friends? Yes. Always can use more friends. How does this person fit into your life? No questions. Helps. Taylor is an ambivert. I'm an extrovert.</p>
 
+        <p>Anxiety attack today. Existential dread, fear of vulnerability, people seeming to come and leave in my life easily. Open mic at CODA. Jake. Convo about doing things. Jake's really good at chess. Match soon. Sit down with the guitar. Describing learning an instrument: you break it down into small parts and you examine every part and learn it individually. Then you look at the bigger project all together and learn it all together. And it takes fucking time. And you just do it. And I thought about coding my website this morning. And how anxious I was about doing it. Then I went to Rising Star and pumped a coffee and laid it out and coded it in 35 minutes. Being yourself is also a way to just shed the people around you that aren't meant to be in your support system. They aren't meant to love you.</p>
+
+        <p>Issue when coding personal website. The subnavigation breadcrumbs situation is really a mess. It's like 5 different nested divs with different CSS styles if it's a 2-level nav vs. 3 level, and some divs only have margin adjustments and no other styling. And I didn't use components. Blah blah blah. It's a mess. It makes me feel gross and tense and itchy. Like when you're cleaning but you have one table or corner that's just like where all your crap goes and you're reluctant to clean it. I take Lila for a walk.</p>
+
         <p>Opposite of emdr. Focusing my eyesight and letting the world pass along.</p>
 
-        <p>What else? Lila's successful elimination diet. Creepy man at the alpaca farm. Talking about family dynamics on Cassidy's deck. Volunteering at the Pickle Festival. Going to Abundance as a yearly tradition. Pink beer. Haggling with Larry on Facebook Marketplace. Cry-laughing in the cafe while reading Seth Rogen’s memoir. Pocket Pitbull Patio Party. Taking the Olympus to Euclid Creek. Being spendthrift in Coventry. Beetlejuice, beetlejuice, beetlejuice.</p>
+        <p></p>
 
         <p>Mostly, I'm collating all my past writings. Lots of really exciting stuff. Emotional stuff. Feelings of precipice.</p>
 
         <p>I'd like to channel the precipice. That summer when I was 21, I saw several psychics because I was direly overwhelmed by the paths ahead of me. A professor told me that I should have it all sorted by the end of my junior year. One of them told me I think I'm confused but I'm not. "you think you’re confused but you know what you want to do, and you’re all over the place." &nbsp;&#x273d;</p>
+
+        <p>And I feel love and I feel love and I feel love and I feel love. And I ran up and down the stairs at home and I danced with Lila and Cali and I shook with excitement. I wish my friends knew how much love I felt, that I could offer it them to them by post in a few weeks again to remind them, to receive on a Tuesday and open. In the package something would blossom and glisten and they would feel commemorated and tall and full.</p>
         
 
       </div>      

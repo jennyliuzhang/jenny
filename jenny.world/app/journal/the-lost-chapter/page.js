@@ -1,14 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
-import entryStyles from "../../styles/entry.module.css";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import Tooltip from "../../components/Tooltip";
+import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+  const [nextEntry, setnextEntry] = useState(null);
+  const [prevEntry, setprevEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const currentIndex = data.findIndex(item => item.writingSlug === "the-lost-chapter");
+        
+        // Get the current entry
+        const foundEntry = data[currentIndex];
+        setEntry(foundEntry);
+
+        // Get the previous entry, if it exists
+        if (currentIndex > 0) {
+          setnextEntry(data[currentIndex - 1]);
+        }
+
+        // Get the next entry, if it exists
+        if (currentIndex < data.length - 1) {
+          setprevEntry(data[currentIndex + 1]);
+        }
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>The Lost Chapter</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -26,9 +63,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>The Lost Chapter</h1>
-        <h6>May 2024</h6>
-        <h6>7 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Something I’ve learned about myself in the last 1.5 years: I don’t really do traditional first drafts, of anything. Most everything I make, I make relatively linearly and on the first try, for better or worse. Writing, design projects, art projects, whatever. It’s not always perfect and it can take a lot of time, but I do always try my best and it ends up working out most of the time. I’m just not a bullet-summary-pre-sketch-wireframe person. Each paper I’ve written for my Masters was done basically in one sitting, right through. Last December I wrote one that took me 12 hours straight. I sat down around 6pm after work and researched and penned one sentence after another through the entire night, only getting up to get water and relieve myself, and finally submitted the full ~2,000 words at 6:50am the next morning. Then I still worked a full work day after <em>and</em> played a soccer game that next night. No one knew that I was practically on a bender. But I got a <Tooltip text="The UK version of an A">1st</Tooltip> on the paper, and though I may not be proud of everything I make, I was pretty proud of that.</p>
 
         <p>Anyway, I write this to account for my lack of personal writing and artmaking over the last half year. Since moving to Cleveland, I’ve found it hard to make time for regular journaling, Plot Twisters, and other creative hobbies like working on my website and ideating on my thesis. Balancing my Masters courses while figuring out my home and generally keeping myself spirited as a human have been a major time suck on top of full-time work. It’s May now and the weather is beginning to perk up. I resent the days when it’s terrific out but I am so busy. I hate having to look outside and convince myself that it’s a beautiful day to do data analysis or make a slide deck or whatever the hell. I want to lie in the grass and listen to Norah Jones with my new dog.</p>
@@ -43,7 +82,7 @@ export default function Page() {
         
         <p>It happened quite quickly. I visited two local shelters over a week, and she was the first dog I met at the second shelter I visited. Her shelter name was “Zinnia,” but when I saw her, I immediately thought, “Oh, that’s Lila,” as if by precognition. I walked her around the playspace. She took a few steps then threw her back onto the grass and rolled around, a signature move I know very well now. She was chipper and ate all my treats. I told Julia at the shelter that I really liked her but needed a few days to think about it. I didn’t, though, because that night, I went home and bought her collar online, a pink nylon one custom embroidered with “Lila” and my phone number. That was a Sunday, and I brought her home the following Thursday.</p>
         
-        <p>Lila is a 6 year-old stout little pitbull mix. 45 pounds and has a history of being abused and overbred. She was found as a stray but was microchipped, so the shelter got in touch with her original owners. They said they had her for her first two years of life, which explains why she’s housebroken, but then they rehomed her in 2020—clearly to people who mistreated her and only used her for breeding. In March, she was found as a stray and seemed to have just given birth, so whoever had her must have taken her babies and then dumped her. Her belly and nipples are really saggy. She has some old wounds on her tail and bottom. She’s missing most of her front teeth, probably from being caged up all the time and anxiously gnawing on the bars. But her temperament is so sweet, despite the trauma. She is incredibly trusting, against all odds.</p>
+        <p>Lila is a 6 year-old stout little pitbull mix. 45 pounds and has a history of being abused and overbred. She was found as a stray but was microchipped, so the shelter got in touch with her original owners. They said they had her for her first two years of life, which explains why she’s housebroken, but then they rehomed her in 2020—and whatever happened in the next four years is a mystery. Clearly she fell into the hands of people who mistreated her and only used her for breeding. In March, she was found as a stray and seemed to have just given birth, so whoever had her must have taken her babies and then dumped her. Her belly and nipples are really saggy. She has some old wounds on her tail and bottom. She’s missing most of her front teeth, probably from being caged up all the time and anxiously gnawing on the bars. But her temperament is so sweet, despite the trauma. She is incredibly trusting, against all odds.</p>
 
         <p>Last year I started a running iPhone note to track tidbits of my life in lieu of making time to sit down and journal:</p>
 
@@ -69,9 +108,27 @@ export default function Page() {
 
         <p>Something tough about never doing quick and strategic first drafts is that when I go too far down a certain creative direction, like defending a certain argument in a paper or committing to a specific vision for a design project, I tend to fall into the sunk-cost fallacy if I discover it’s not working. That, or I get so close to running out of time entirely so I need to make the best of the work I’ve already produced, even if I know it’s not great. When I have boundless time to work on something, like my personal website, I find myself creating with seemingly no end: minorly adjusting paragraphs and webpages along what feels like an infinite recursion, in final-polish, high-fidelity iterations.</p>
         
-        <p>What I am hoping for, though, is that the recursion is not infinite and I do arrive at the base case: a perfect end product that wows my soul and makes me feel ecstatic levels of revelation, the thing that proves that every nudge, edit, and transformation was the right decision. As far as treating my life as a creative project goes, I think I’m living it like a final draft too, making moment-to-moment choices and fully committing to paths without much premeditation. I write a paper, I stress, I play soccer, I burn out, I sleep, I turn inward, I seek kinship, I get a dog. I commit to my decisions and I make the next one based on where I’m at. No grand plans, just trusting my small intuitive refinements to figure out how all the themes fit into a positive, consistent, and cohesive body of work. &nbsp;&#x273d;</p>
+        <p>What I am hoping for, though, is that the recursion is not infinite and I do arrive at the base case: a perfect end product that wows my soul and makes me feel ecstatic levels of revelation, the thing that proves that every nudge, edit, and transformation was the right decision. As far as treating my life as a creative project goes, I think I’m living it like a final draft too, making moment-to-moment choices and fully committing to paths without much premeditation. I write a paper, I stress, I play soccer, I burn out, I sleep, I turn inward, I seek kinship, I get a dog. I commit to my decisions, even when they’re potentially bad, sunk costs, and I make the next one based on where I’m at. No grand plans, just trusting my small intuitive refinements to figure out how all the themes fit into a positive, consistent, and cohesive body of work. &nbsp;&#x273d;</p>
 
       </div>      
+
+      <div className={entryStyles.otherEntries}>        
+        {prevEntry && (
+          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
+            <span className={entryStyles.direction}>← Previous Entry</span>
+            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
+            <span className={entryStyles.date}>{prevEntry.date}</span>
+          </Link>
+        )}
+
+        {nextEntry && (
+          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
+            <span className={entryStyles.direction}>Next Entry →</span>
+            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
+            <span className={entryStyles.date}>{nextEntry.date}</span>
+          </Link>
+        )}
+      </div> 
 
     </main>
   );

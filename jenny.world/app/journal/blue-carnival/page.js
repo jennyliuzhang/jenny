@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "blue-carnival");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Blue Carnival</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,10 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Blue Carnival</h1>
-        <h6>June 2018</h6>
-        <h6>4 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
         <p>I’m in Baton Rouge now, and the distance from New Orleans is just enough space to do some thinking uninterrupted by the wailing of a saxophone. Is it disrespectful to say wailing?</p>
 
         <p>Don’t get me wrong, the wailing is beautiful. I heard some of the most musically wondrous moments of my life in New Orleans. The city’s historical and cultural hodgepodge is very inspiring (apartments with French latticing and hole-in-the-wall po-boy restaurants on the same avenue? What? Is this Vegas’ dream ego? If Vegas were actually real and more well-read?), and my eclectic soul is wowed by just about everything. But I was there long enough to see the same buskers days in a row. The crowds followed the same songs, stopping to reflect on a stranger’s sonic heartache or fleeting harmonica happiness on pretty streets four or five times a day.</p>

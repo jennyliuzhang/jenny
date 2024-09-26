@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "friday");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>What Goes On?</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,10 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>What Goes On?</h1>
-        <h6>November 2021</h6>
-        <h6>3 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
 
         <p>
         I arrived on Monday but am just now getting to unpack today, on Friday. I regret not doing it sooner. My mom and I sat opposite each other this morning over breakfast. She pointed out my flaws: grumpiness, disorganization, emotional sensitivity, the fact I don’t hydrate enough, how I don’t have a deliberate morning skincare routine, how I don’t act beautiful or delicate. I expressed that I’m trying on all these fronts and to be more patient. It was a literal replay of things I’ve said before in the past, to myself and others. I think of what I had said to the plants on Rob’s farm: “This is dehydrated. This is cut too short. This hasn’t gotten enough sun. The leaves are yellow.”

@@ -1,23 +1,34 @@
 [
   {
     "personalChapter": "cleveland-2",
-    "writingName": "Playing Chess With Kids",
-    "writingSlug": "playing-chess-with-kids",
+    "writingName": "Cardamom Lattes",
+    "writingSlug": "cardamom-lattes",
     "date": "October 2024",
-    "readTime": "6 min read",
-    "writingDesc": "On getting better at things, from hobbies to being patient with myself. On focus, risk-taking, and the nonlinearity of growth.",
+    "readTime": "3 min read",
+    "writingDesc": "Stream-of-conscious prose poem. Rhythmic little vignettes about taking an intentional break between jobs in the fall.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/the-great-weird.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/cardamom-lattes.jpg"
   },
   {
     "personalChapter": "cleveland-2",
-    "writingName": "Put It Out of the Mind",
-    "writingSlug": "put-it-out-of-the-mind",
+    "writingName": "The Muse Within Myself",
+    "writingSlug": "muse-within-myself",
     "date": "September 2024",
-    "readTime": "2 min read",
-    "writingDesc": "On soothsayers, and dispelling stressful moments amidst many responsibilities.",
+    "readTime": "4 min read",
+    "writingDesc": "A fast tribute to part of myself I'm sometimes annoyed by and sometimes in love with.",
     "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/cardamom-lattes.jpg"
+  },
+  {
+    "personalChapter": "cleveland-2",
+    "writingName": "Playing Chess With Kids",
+    "writingSlug": "playing-chess-with-kids",
+    "date": "September 2024",
+    "readTime": "9 min read",
+    "writingDesc": "On getting better at things, from hobbies to patience with myself. On self-acceptance and the nonlinearity of growth.",
+    "favorite": true,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/put-it-out-of-the-mind.jpg"
   },
@@ -27,7 +38,7 @@
     "writingSlug": "the-great-weird",
     "date": "September 2024",
     "readTime": "9 min read",
-    "writingDesc": "An “I’m between jobs” reflection. On self-alignment, making commitments, and the nature of emotional stability.",
+    "writingDesc": "An “I’m between jobs” reflection. On self-alignment and the nature of committing to paths.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/the-great-weird.jpg"
@@ -71,10 +82,10 @@
     "writingSlug": "staking-my-positions",
     "date": "July 2023",
     "readTime": "1 min read",
-    "writingDesc": "Goal-setting",
+    "writingDesc": "On virtue ethics, where I place my moral weights, existential responsibilities, and courage.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/slow-moving.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/staking-my-positions.jpg"
   },
   {
     "personalChapter": "cleveland-1",
@@ -89,7 +100,7 @@
   },
   {
     "personalChapter": "cleveland-1",
-    "writingName": "Today Is April 9, 2023",
+    "writingName": "Today Is April 9",
     "writingSlug": "today-is-april-9",
     "date": "April 2023",
     "readTime": "1 min read",
@@ -166,8 +177,8 @@
   },
   {
     "personalChapter": "traveling",
-    "writingName": "On Personality Frameworks",
-    "writingSlug": "on-personality-frameworks",
+    "writingName": "Re: Personality Frameworks",
+    "writingSlug": "re-personality-frameworks",
     "date": "July 2022",
     "readTime": "1 min read",
     "writingDesc": "A response I wrote to a DISI peer questioning why people like personality tests and typologies.",
@@ -221,8 +232,8 @@
   },
   {
     "personalChapter": "traveling",
-    "writingName": "On Body Mods",
-    "writingSlug": "on-body-mods",
+    "writingName": "Re: Body Mods",
+    "writingSlug": "re-body-mods",
     "date": "March 2022",
     "readTime": "3 min read",
     "writingDesc": "A response I wrote to an Interact discussion about why people get body mods. This got good feedback!",
@@ -445,7 +456,7 @@
     "writingSlug": "postcards",
     "date": "August 2016",
     "readTime": "3 min read",
-    "writingDesc": "Reflecting on my chapbook about five Los Angelenos. Again, I wrote this when I was 19 and not 20, but whatever.",
+    "writingDesc": "Reflecting on my interview project of five Los Angelenos and how they informed my own relationship to LA.",
     "favorite": true,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/postcards.jpg"
@@ -455,8 +466,8 @@
     "writingName": "Hello World!",
     "writingSlug": "hello-world",
     "date": "July 2016",
-    "readTime": "3 min read",
-    "writingDesc": "On who I became after my first year of undergrad at USC. Technically written at age 19, but I count this as my 20s.",
+    "readTime": "7 min read",
+    "writingDesc": "On who I became after my first year of undergrad at USC. On intellectual and practical balance.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/hello-world.jpg"

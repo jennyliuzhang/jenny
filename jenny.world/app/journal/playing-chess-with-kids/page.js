@@ -1,17 +1,55 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+  const [nextEntry, setnextEntry] = useState(null);
+  const [prevEntry, setprevEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        // Find the index of the current entry
+        const currentIndex = data.findIndex(item => item.writingSlug === "playing-chess-with-kids");
+        
+        // Get the current entry
+        const foundEntry = data[currentIndex];
+        setEntry(foundEntry);
+
+        // Get the previous entry, if it exists
+        if (currentIndex > 0) {
+          setnextEntry(data[currentIndex - 1]);
+        }
+
+        // Get the next entry, if it exists
+        if (currentIndex < data.length - 1) {
+          setprevEntry(data[currentIndex + 1]);
+        }
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Playing Chess With Kids</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
-        src="/journal-graphics/peaceful-monastery-day.jpg"
+        src="/journal-graphics/put-it-out-of-the-mind.jpg"
         alt="Project"
         width={2880}
         height={2025}
@@ -20,13 +58,59 @@ export default function Page() {
         priority
       />
 
+      <div className={entryStyles.heroCaption}>
+        This photo isn't really related to this post, but its energy is. Imagine that it's us looking down at a chess board. Taken at Majestic Meadows Alpaca Farm in Medina, Ohio.
+      </div>
+
       <div className={entryStyles.body}>
-        <h1>Playing Chess With Kids</h1>
-        <h6>August 2021</h6>
-        <h6>1 min read</h6>
-        <p>When I first got my Honda when I was 22, I bought a set of fuzzy dice to hang from the rearview mirror. I drove all around and up and down California and Washington and in between with </p>
-        <p>I learned how to play chess from my ex-boyfriend, two ex-boyfriends ago. &nbsp;&#x273d;</p>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        <p>When I first got my Honda when I was 22, I bought a set of fuzzy dice to hang from the rearview mirror. I drove all around and in between California and Washington with these dice. They made me smile. As I'd drive, the dice would bounce and roll in the air, and whenever I was paused at a traffic light, I would glance and notice that they were snake eyes or two fours (my lucky number) or add up to seven and be so happy. At some point in San Francisco or perhaps Seattle, I took them down and stuffed them away in the glovebox. I was experiencing a bout of excessive self-consciousness or self-doubt or other kind of useless curse. I thought maybe the dice were too cringey and eye-catching and maybe this was embarrassing and not virtuous.</p>
+
+        <p>I'm in Cleveland now and I found the fuzzy dice in my glovebox the other day while I was stuck at a red light. I decided it was time to hang them back up.</p>
+
+        <p>The other night at the weekly CODA open mic, I met Parker who owns Viva, a ballroom and Latin dance studio in Asiatown. I got drunk that night with Jake and Bert, and when I get drunk, I want to dance. It's not something I can help, it simply takes over. Anyway, I am dancing viciously through Bert's set and Parker who owns Viva comes up to me after and asks me if I am a dancer. I said I did ballet, tap dance, and jazz for 10 formative years of my life, so I must be a dancer in my bones and at my core. He invited me to a salsa party at Viva the next night. I added my contact to his phone—with a selfie as my contact photo no less—and pinky-promised I would be at the salsa party. Anyway, it's been a few weeks since then and I have gone to Viva three times now to dance. They have Thursday salsa parties and lessons throughout the week. I'm practicing bachata and preparing to learn zouk, a Brazilian dance style similar to but more fluid and graceful than salsa. I'm also taking ballet lessons again at the studio of the Ohio Contemporary Ballet to refine my foundations.</p>
+
+        <p>I've been going to the public library branch in my neighborhood. It's very small. I go to print things I want to read on paper—PDFs, articles, my friends' Masters theses. I sit and read them. A few weeks ago, I noticed they had a sign by the printer advertising the library chess club. I asked one of the librarians, Nick, if this was still happening. He said yes, but that it was for kids to attend after school. I asked if it would be weird for me to attend. He said no, he didn't think so. So now I'm a regular at the after school library chess club. I play the kids, who are usually 14 or 15, or I play Nick. I always ask for white. Sometimes the kids help me plan my moves. During my first week, Samir, age 14, helped me get to an end game with Nick. I was doing pretty badly, forfeiting pieces on accident and wedged up against the sides of the board, but with Samir's help, we came to a draw and Nick was only up a rook in the end.</p>
+
+        <p>I had a mild anxiety attack before I went to CODA that other night. I am unemployed and living in a city where I don't have many close friends. Existential dread, fear of vulnerability, recognizing a deep-seated knowing that my career path will be unconventional, lack of role models, and lamenting that only a few relationships in my physical life have been spiritually nurturing. It'd been several months since I had an emotional wave like that. I brought a book and a sparkling water to the park that evening and I ignored both in favor of laying supine in the grass next to Lila while I stared at the sky and questioned my entire life.</p>
+        
+        <p>I was lucky, then, when Jake reminded me that CODA's open mic was that night and texted me to join him, because I probably would have spiraled until morning. At CODA an hour later, I basically entered with some classic frazzled Jenny statement like, "Jake, I'm going through it." Jake and I met through a mutual friend from USC, so I felt more safe than usual to speak vulnerably. To describe why I felt safe, it's like the shared reality of a different relationship outside of little Cleveland was a safety net. I could trust that I did indeed belong to multiple contexts, like I am not a solipsistic meat vehicle melting in Ohio but I am also a nice woman and friend to someone else in another universe that we both know dearly and my problems here would still be logical and valid there and therefore I am allowed to have them. Anyway, he listened to and reassured me, which was kind because we haven't been friends long; I even teared up a little at the bar and he took it like a champ.</p>
+        
+        <p>After I became the lady who cried at the bar, I felt a good release and then became the lady that was ready to drink and enjoy her night. Over my whiskey ginger and his peach cocktail, we talked about more positive things. We had a great conversation about the process of learning new things. I mentioned my guitar collecting dust in my living room. Jake's an extremely talented musician. He explained that you basically have to sit with the guitar and break the song down into small pieces. You examine every piece and learn how they work individually, in your mind, with your hands. Then you look at the bigger project, how it all comes together, and learn that. And it takes fucking time. And you just sit and do it. And I told him about coding a component for my website that morning. How dreadful I felt before I sat down to code it. But then I went to Rising Star and pumped a coffee. And just like he said, I broke it down, laid it out, and ended up coding the thing in 35 minutes.</p>
+        
+        <p>And we talked about chess. Jake's really good at chess too. We used to play online matches on Chess.com together but I basically timed out every one of our games. Ambitiously, I had like 10 games going with different friends earlier this year, but I slowly timed them all out, which dropped my rating down to an embarrassing 200-something. I explained how difficult the asynchronous pace was for me, how distracted I get, how I don't remember the narrative of the game to practice efficient mental visualization. He said playing chess on Chess.com is a different activity from <em>chess</em>. "You need to do the thing you like and do it over and over again." And I remarked that I never do training drills for soccer. I just play soccer—and I am getting better just doing that. And it circled back to this point about just doing things, and also accepting when a thing is not meant for you. "And who knows? Maybe you practice the guitar and it's too much work or you discover that you don't like it." And I can't remember if I related it aloud or just in my mind, but it reminded me of the themes of my anxiety attack and how that age-old cliche, "be yourself," is an antidote for all of it. Play guitar and go to salsa and practice chess and date people and apply for roles and share your art and write and make friends as an adult. Notice what's easy and hard. Experience your feelings. Listen to your needs. Do what feels important. Be yourself. Being yourself is a way to clean out the things, people, hobbies, and environments that aren't meant to be in your support system—and announce your readiness for the things that are. And we ended the night sharing wings across the street and bonding over music. We both love Daniel Caesar, and I loved the look on his face when I got to be the one to tell him that his song "Neu Roses" is a pun for "neurosis."</p>
+
+        <p>When I started playing soccer in Cleveland last August, I had under my belt a couple youth rec sessions from when I was 10 and 11, one high school season during which I was benched almost every game, and some pickup games in Los Angeles (I did briefly flirt with a league team for a few games in Pasadena—shoutout Goal Diggers—but then COVID happened). Basically, I knew the rules but have only taken it seriously since moving here. Now it's been about one full year of playing several times per week. I was pretty bad at it for the first... 9 months. Then, suddenly, in April-May, I started getting a lot better. I mean, a lot better. I can play in men-only games (which are notoriously competitive, especially as a woman) and be <em>reliable</em>. I started being able to defend better, move off the ball, maintain good depth on the field, and make quick, targeted passes. My ball control remains middling, but my positional play is much more developed. And it's appalling to me how bad I had to be for so long in order to get to this state. Improvement is not linear, and I'm slowly realizing how this applies to literally everything.</p>
+
+        <p>One thing that helps me a lot when I'm learning something is quieting my inner critic. Part of "being myself" is embracing my mistakes as part of the process. Thanks to hobbies like soccer and dance, my self-talk is improving by miles. When I fumble a play or mess up a move, I can acknowledge what I did wrong without holding it so heavily. For every goal I make, I know I will miss at least 10, so when I miss a shot, I just keep in mind that that's one of my 10 mandatory misses and look forward to my next chance. This idea came up briefly after Jake's set at CODA, which he felt was not his best performance. I told him about Olympic runner Alexi Pappas' "rule of thirds." Basically, if you're challenging yourself, you will do really well a third of the time. Another third of the time, you'll do okay. And a third of the time, you'll do badly. As creative, ambitious people, we want to do well always. But even Olympians feel lousy a third of the time, and I think this helps to remember.</p>
+      
+        <p>Being new to a city means building relationships from scratch, and good relationships take effort and time. There are not a lot of people here who look like me, talk like me, think like me. I struggle with this even in big cities like New York and LA, because I'm the type of person who would rather be in Cleveland, but now I'm struggling here too. This has been hard on my need for positive social feedback. Friends and partners have come and gone since being here, rarely fulfilling the longevity needed for me to truly trust them and feel "seen" in all my strengths, quirks, and rough edges too. I have had a hard time disclosing to others who I am and who I want to be, and in turn, my fears and doubts about those things. I crave this kind of connection, but I also crave not needing it. I want people beyond myself to admire me too, because it gets lonely being the sole member of my own audience. I want them to get to know me and appreciate how sensitive and odd yet forthright and brave I am. I want them to wonder how I ended up in this place, position, and body. I want them to say “I never thought of it like that!” when I share my perspective—or, "Wait, I think about that too!" I want them to meet and love my pets. I want to compel them to reflect on their values. I want them to notice how comfortable other people are around me. I want to be witnessed as a leader, a magnet, a reliable human, but I also want to feel like a silly girl and a wise woman and an abstract, passionate point of view. I want to feel safe enough to vent-scream in front of someone. I want to feel like an eccentric secret world slipping out of a chrysalis. I want to get my flowers, and I want them to know what my favorite flowers are. I want to be positive and intricate and precious and warm. And if they don't appreciate me like that, I want to be okay being misunderstood. <em>I want to be okay being misunderstood.</em></p>
+
+        <p>When I took the selfie for my contact profile in Parker's phone, I laughed about how silly and embarrassing it was. He told me I could retake it if I wanted. I said something like, "No, I think part of dancing is that you can't be afraid of being embarrassed." And I think some wise spirit must've possessed my body at that moment to say that, because it's true, and not just about dance. And for how much I can get in my head and fear vulnerability and feel like I am too cringey or off-putting or not making enough sense to deserve acceptance and attention, I strongly believe with my whole heart that it's true: part of dancing is that you can't be afraid of being embarrassed.</p>
+        
+        <p>What I love about learning chess from kids is that I get to borrow their mindset again for a moment. At age 14, the world is quite a bit smaller and things like chess probably seem a lot easier. There are fewer compounded years of learned second guessing, being scratched up by self-doubt. The fuzzy dice still hang from the rearview mirror and have never come down, you know? Once they know the rules, the game is simple. The rest is just about the pieces in front of them. &nbsp;&#x273d;</p>
       </div>      
+
+      <div className={entryStyles.otherEntries}>        
+        {prevEntry && (
+          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
+            <span className={entryStyles.direction}>← Previous Entry</span>
+            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
+            <span className={entryStyles.date}>{prevEntry.date}</span>
+          </Link>
+        )}
+
+        {nextEntry && (
+          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
+            <span className={entryStyles.direction}>Next Entry →</span>
+            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
+            <span className={entryStyles.date}>{nextEntry.date}</span>
+          </Link>
+        )}
+      </div> 
 
     </main>
   );

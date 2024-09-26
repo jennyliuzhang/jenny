@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "brief-scotland-update");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Brief Scotland Update</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Brief Scotland Update</h1>
-        <h6>August 2022</h6>
-        <h6>1 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Hi! Been a while since I shared a personal update. I just came back from a beer tasting so this writing is entirely stream of consciousness and a bit infused with drink made from “murdered barley babies” as our tasting guide called it. I’m in Edinburgh now after a long 3 weeks at St Andrews for the Diverse Intelligences Summer Institute (DISI). Back to full-time work and balancing Plot Twisters and other projects. The city is wondrous: it’s layered in this weird way, with a volcano sitting in the middle of it and streets that go up and up and around and around. If you’re walking down the street and turn around to look back, the odds of seeing a massive landform are high. It’s beautiful and awe-inspiring and wild to behold how civilization has made itself work around these natural shapes.</p>
 
         <p>The institute was good for me in the way that vegetables are good for a person. I met some people who I feel immense resonance with, and some others that I really don’t. Among philosophers, social scientists, biologists, psychologists, artists, and other technologists, it’s been weird to see where I fit in—nowhere obvious! But this was also fulfilling. I fit in best as a project orchestrator or idea communicator or something like that. Not sure yet, pending pending pending.</p>

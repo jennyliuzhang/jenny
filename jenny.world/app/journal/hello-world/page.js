@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "hello-world");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Hello World</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Hello World</h1>
-        <h6>July 2016</h6>
-        <h6>9 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Last week, I moved out of my sublease after wrapping up summer classes and freshman year of college for good. Now that I’m away from campus (finally) and able to breathe air untainted by the certain, distinct smells of South Central Los Angeles, I want to give an introspective account of college thus far.</p>
 
         <p>Last August, I came to the University of Southern California as one of 22 students in the Iovine and Young Academy. ~*The Academy*~, as we have dubbed it (out of both love and mockery), is a new major funded by Jimmy Iovine and Dr. Dre for students talented in the arts, technology, and business of innovation. By that I mean I am literally earning a “Bachelors of Science in The Arts, Technology, and Business of Innovation.”</p>

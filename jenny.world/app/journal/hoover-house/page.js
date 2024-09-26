@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "hoover-house");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Hoover House</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,11 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>Hoover House</h1>
-        <h6>December 2019</h6>
-        <h6>3 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>For the last six months, I lived in a bustling, crazy artist collective in the Silver Lake neighborhood of Los Angeles. Day in and day out, people were singing, including me. We chased exciting things, for the art of our lives, between giggles, casting calls, retail shifts, bus rides, and service jobs downtown. I had not patiently sipped on a soup in months. In fact, I hadn’t been patient at all in months. I got a rash on my face one week, probably because I was so impatient, manic, completely careless. When my roommates noticed, one gave me calendula cream and another gave me blueberries. There was one morning where a bunch of us all shared a chocolate banana smoothie batch while we vacuumed our old couches and played the Lizzie McGuire movie in the background for the third time that week.</p>
 
         <p>Every day, they dealt with my sarcastic, sing-song, up-tempo workaholic soapbox. I lived here because I long to start my own companies. The first company I wanted to start was called Plot Twisters, an education technology studio that helps young people reflect on their life journeys. I had a dream—I still do—to make books and software and travel across the country in my car, visiting classrooms, launching a summer camp. But at the beginning, in those months immediately after college, I had no idea what I was doing. I felt unconfident and unconvinced by every effort to make something useful, so I thought it’d be good to be around people who were confident, or at least had honest conviction in their creativity. I was half-right about the people. When I moved into the artist collective, I met people who had conviction, in their appearance and voice, their artwork and their metamorphosis. I soon learned, though, their confidence in a receptive, accepting world often flickered, like mine.</p>

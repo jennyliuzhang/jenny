@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "no-more-baby-books");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>No More Baby Books</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>No More Baby Books</h1>
-        <h6>June 2022</h6>
-        <h6>4 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>In <em>Free At Last</em>, Daniel Greenberg makes a point about how they don’t keep baby books in their Sudbury School. No extremely dumbed-down, vapid, reading-practice books. This is because at Sudbury Valley, they don’t teach reading. There is no required reading time or expectation that anyone has to be literate by a certain age. Any student who learns how to read decides when to take the first step on their own.</p>
 
         <p>Of course, all the students eventually learn to read. They learn it because they realize that a big part of human knowledge is locked away in words, and literacy is the key to access it. The difference is that when a student chooses to learn reading, they are self-motivated to do it, because they realize how valuable it can be for learning about the world. When the students choose to begin reading, it takes them a year or less to be completely and efficiently literate.</p>

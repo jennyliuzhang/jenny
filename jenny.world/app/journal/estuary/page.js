@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "estuary");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Estuary</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Estuary</h1>
-        <h6>May 2018</h6>
-        <h6>5 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>It was my full intention to bring a camera to take photos for these blog posts. Unfortunately, I’m quite forgetful and my iPhone is nearly out of space, so I’ve decided to invest in a mediocre in-house illustrator to supplement my reflections. I’m the mediocre in-house illustrator.</p>
 
         <p>Luckily, my daily tasks on this 26-day trip include nothing more than to read, write, and observe. And sketching, luckily, is observation. Unlike photography, it takes a bit longer to develop and is much more reliant on my own memory. Because Louisiana is so noticeably different from what I’m used to, it leaves very distinct impressions in my mind and my sketchbook. I hope you enjoy its quirks, fortunes, and moods as much as I do.</p>

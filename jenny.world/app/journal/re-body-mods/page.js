@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "re-body-mods");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>And So On</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingStyle}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,11 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>On Body Mods</h1>
-        <h6>March 2022</h6>
-        <h6>3 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>For context, I’m pretty tattooed but don’t often show my tattoos publicly. I also have some other lived experiences engaging with other body mods.</p>
 
         <p>I’ve learned to really appreciate a trauma-informed lens, i.e. recognizing that a person’s decision-making is impacted by their lived experience, including learned reactions from past conflicts or challenges where their emotional, spiritual, cognitive, and physical needs weren’t met, and they needed to find whatever way possible to self-regulate. I find that this is the most nuanced, intersectional, and trans-inclusive approach — especially for the topic of body mods, which is a longstanding point of discourse in queer and trans communities.</p>

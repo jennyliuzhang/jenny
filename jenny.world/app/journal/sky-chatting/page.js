@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "sky-chatting");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Sky Chatting</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,11 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>Sky Chatting</h1>
-        <h6>November 2017</h6>
-        <h6>2 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Back when I was afraid of falling asleep by myself, shadows of trees would rock against my bedroom ceiling. I did not want to close my eyes, so I would concentrate on its drywall texture. It was a map of unexplored geography. In the shadows, I imagined the stencils of kingdoms until I was dizzy from concentrating on the ceiling. I would turn away from the dark shapes and try to sleep, but restless nausea met the fear of closing my eyes.</p>
 
         <p>We lived in Federal Way, Washington, back when “federal” was not in my vocabulary. There was a two-bedroom townhouse for you, me, and Robert. Every night, you and Robert went to sleep in the master bedroom. I went alone to my dark, drywall sky. I was afraid to close my eyes. I would go to your room to escape shadowy kingdoms. I could finally fall asleep next to you.</p>

@@ -1,13 +1,51 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+  const [nextEntry, setnextEntry] = useState(null);
+  const [prevEntry, setprevEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        // Find the index of the current entry
+        const currentIndex = data.findIndex(item => item.writingSlug === "the-comedy");
+        
+        // Get the current entry
+        const foundEntry = data[currentIndex];
+        setEntry(foundEntry);
+
+        // Get the previous entry, if it exists
+        if (currentIndex > 0) {
+          setnextEntry(data[currentIndex - 1]);
+        }
+
+        // Get the next entry, if it exists
+        if (currentIndex < data.length - 1) {
+          setprevEntry(data[currentIndex + 1]);
+        }
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>The Comedy</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +63,18 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>The Comedy</h1>
-        <h6>June 2024</h6>
-        <h6>2 min read</h6>
+      <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
+        <blockquote>
+          Just when I thought it wouldn't get no sicker
+          <br></br>
+          Woke up one morning and heard this weird ass mothafucka talkin' out the side of his neck
+          <br></br>
+          — YG on "FDT"
+        </blockquote>
         <p>this era of my 20s has been a riot. i can't go into detail right now because honestly it was a bit traumatizing, so i resist reliving it. but i will recount the basics
 
           number of emails i've had to send being like hey so sorry. catastrophe!
@@ -45,6 +92,24 @@ my nighttime routine is to prepare for the mice. gloves on. shoes on. set and ch
 mousetrapping is my hobby. lila has a new lump. i'm so tired you guys &nbsp;&#x273d;</p>
 
       </div>      
+
+      <div className={entryStyles.otherEntries}>        
+        {prevEntry && (
+          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
+            <span className={entryStyles.direction}>← Previous Entry</span>
+            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
+            <span className={entryStyles.date}>{prevEntry.date}</span>
+          </Link>
+        )}
+
+        {nextEntry && (
+          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
+            <span className={entryStyles.direction}>Next Entry →</span>
+            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
+            <span className={entryStyles.date}>{nextEntry.date}</span>
+          </Link>
+        )}
+      </div> 
 
     </main>
   );

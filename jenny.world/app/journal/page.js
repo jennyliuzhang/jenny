@@ -45,7 +45,7 @@ export default function Page() {
         <div className={journalStyles.timePeriod}>
         <h1>Cocooning</h1>
         <h6>2024–present</h6>
-          <p>Maybe it was a hex, maybe it was the natural conclusion of a cosmic cycle: in any case, several things started falling apart in my life halfway through 2024, prompting several changes. These tell the story of me getting reorganized. As good stories do, this chapter starts with a bang.</p>
+          <p>Maybe it was a hex, maybe it was the natural conclusion of a cosmic cycle: in any case, several things started falling apart in my life halfway through 2024, prompting some changes. These tell the story of me getting reorganized. As good stories do, this chapter starts with a bang.</p>
         </div>
 
         <div className={journalStyles.writings}>
@@ -296,7 +296,7 @@ export default function Page() {
 
         <div className={journalStyles.whyBody}>
           <p>I believe telling personal stories is crucial for revealing the diversity of perspectives in the human experience. I’m a young Chinese-American woman with a humble upbringing as a daughter of a blended family of Asian immigrants. Simultaneously, I have the privilege today to be independent, have a safe home, pursue career projects I’m passionate about, and travel. As someone who didn’t grow up around narratives of people like me, with my specific backgrounds, cultural straddlings, and mix of idiosyncrasies and interests, I find it important to share my voice as an example of what’s possible.</p>
-          <p>My writing can be vulnerable. I explore my emotional states, learnings, and observations. Because I harbor a unique mix of identities—literate and able-bodied, but also a second-generation and neurodivergent woman of color—the way I occupy and perceive spaces is unique. Writing is my medium for showing this experience firsthand.</p>
+          <p>My writing can be vulnerable. I explore my emotional states, learnings, and observations about my life. Because I harbor a unique mix of identities—literate and able-bodied, but also a second-generation and neurodivergent woman of color—the way I occupy and perceive spaces is unique. Writing is my medium for showing this experience firsthand.</p>
           <p>When others read my writing, I hope they can find what’s kindred between us. In turn, I hope this contributes to a larger project: giving people more tools to be empathetic and patient with one another.</p>
         </div>
 

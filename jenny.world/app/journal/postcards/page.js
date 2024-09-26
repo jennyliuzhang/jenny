@@ -1,14 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Button from "../../components/Button";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "postcards");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Postcards</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -26,9 +47,10 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Postcards</h1>
-        <h6>August 2016</h6>
-        <h6>1 min read</h6>
+      <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
         <p>During my freshman year at USC, I didn’t venture out into the city much. My off-campus adventures in Los Angeles involved closing my eyes and taking the metro to 7th Street and Figueroa to shop at Target. I went to L.A. Live twice, I think, and <em>who actually lived east of Little Tokyo?</em></p>
 
         <p>This summer, though, I’ve realized that East LA is a real place, as well as a lot of other things about Los Angeles. I took classes this summer on campus, and in between that and work, I’ve learned that this city is vast, beautiful, and not only its first impression. To document and illustrate my experiences, I created a brief chapbook that I want to share with you called <Link href="/journal-graphics/postcards/postcards.pdf" target="_blank">Postcards</Link>.</p>

@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import projectPage from "../../styles/projectPage.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
   return (
     <main className={projectPage.projectPage}>
-      <div className={projectPage.subnavTop}>
-        <h2><span className="subnav"><Link href="/projects" className="breadcrumb">Projects</Link>How to Play With Fire</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Projects</Link>
+        <span>How to Play With Fire</span>
+      </Breadcrumbs>
       
       <Image
         className={projectPage.projectHero}

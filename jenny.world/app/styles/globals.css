@@ -374,63 +374,6 @@ li {
   margin: 1em 0.5em;
 }
 
-.breadcrumbs {
-  margin: 10px 0 0;
-  font: 400 normal 1em/1.4em 'Capitaine', serif;
-}
-
-  .breadcrumbh2 {
-    font-size: 1em;
-    margin: 1em 0 0;
-  }
-
-  .breadcrumbs a {
-    color: #8c8c8c;
-  }
-
-  .breadcrumbs a:after {
-    display: inline-block;
-    margin: 0 7px;
-    content: "/";
-  }
-
-  .breadcrumbs a.backTo:after {
-    display: none;
-  }
-
-  .breadcrumbs span {
-    color: #4c4c4c;
-  }
-
-.breadcrumb {
-  color: #8c8c8c;
-  transition: all 0.2s;
-}
-
-  h2.subnav {
-    white-space: normal; /* Allows line breaks for long text */
-    word-wrap: break-word;
-  }
-
-    .subnav {
-      font-size: 0.8em;
-    }
-
-  h2 a.breadcrumb {
-    white-space: normal; /* Allows line breaks for long text */
-    word-wrap: break-word;
-  }
-
-  .breadcrumb:hover {
-    color: #4c4c4c;
-  }
-
-  .breadcrumb:after {
-    display: inline;
-    margin: 0 7px;
-    content: "/";
-  }
-
 .tags {
   margin: 1.5em 0 0.75em;
 }
@@ -476,14 +419,14 @@ and (min-width: 640px) {
 
   @media screen
   and (min-width: 768px) {
-    .breadcrumbh2 {
+    /* .breadcrumbh2 {
       font-size: 1.2em;
       margin: 1.5em 0 0;
     }
 
     .subnav {
       font-size: 1em;
-    }
+    } */
 
     h4 {
       font-size: 1.1em;

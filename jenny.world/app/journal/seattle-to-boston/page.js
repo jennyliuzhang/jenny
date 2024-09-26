@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "seattle-to-boston");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Seattle to Boston</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,16 +47,18 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Seattle to Boston</h1>
-        <h6>October 2020</h6>
-        <h6>7 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        
         <p>The roads are pink roads and the rocks are purple! Becky, Jordan, and I made it to the Wyoming part of Yellowstone. The trip started off hilariously because as soon as we backed out of my driveway in Renton, Selva noticed that the left tail light of Becky’s car wasn’t working. So our first stop on this coast-to-coast trip was the Mercedes-Benz service center in Bellevue. But within a couple hours we were back on track. In Coeur d’Alene we walked around a park with lots of families and their kids and touched sticky sap on a tree. Then we grazed the corner of Montana and arrived into Wyoming that night. In the car, I talked about my struggle with setting premeditated intentions. I like to just do things and see what happens. Today we drove by maybe six bison, massive and only a few feet from the side of the road.</p>
 
         <p>I am watching the elk graze on the grass outside of our motel. The stars are out. The elk eat the grass on this manufactured lawn, confined by gray curbs and buildings on both sides. I’m thinking of my studio apartment in LA, where I showered right up along spiders in their webs. We’re like the spiders, but our webs are weird gray curbs and motels.</p>
 
         <p style={{textAlign: 'center'}}>...</p>
 
-        <p>Poop, dongle, canyon, billionaires, Inspiration Point, disposable camera. Jenny Lake. Staring at the clouds closely because they are always moving. We made it to the Badlands in South Dakota. My first snow of the year. I’m in a bizarre outfit of multiple windbreakers. Watching animals from the car. Rocks with lines, little canyons, bighorn sheep. Eating Chinese homemade jerky and cashews for breakfast, lunch, and dinner. Never hungry, but not quite full.</p>
+        <p>Poop, dongle, canyon, billionaires, Inspiration Point, disposable camera. Jenny Lake. Wall Drug. Staring at the clouds closely because they are always moving. We made it to the Badlands in South Dakota. My first snow of the year. I’m in a bizarre outfit of multiple windbreakers. Watching animals from the car. Rocks with lines, little canyons, bighorn sheep. Eating Chinese homemade jerky and cashews for breakfast, lunch, and dinner. Never hungry, but not quite full.</p>
 
         <p>We are sharing a motel room in South Dakota. It has one king bed that cost $11 per person. For $15 per person we could have gotten two queens, but we’re really trying to keep costs as low as possible. The water from the faucet here tastes sweet. I had hot food for the first time in four days. The skin on my hands is very dry. We have watched <em>The Holiday</em>, <em>The Proposal</em>, and <em>The Devil Wears Prada</em>. Jordan is flying back to DC for work and leaving us in a couple days.</p>
         

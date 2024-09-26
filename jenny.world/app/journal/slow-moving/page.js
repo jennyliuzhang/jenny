@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "slow-moving");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Slow Moving</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,11 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>Slow Moving</h1>
-        <h6>January 2023</h6>
-        <h6>3 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>I’ve inaugurated the last three years of my life by moving to a new city each January, but this time I hope it will be more long-term. Cleveland has been nice so far. My belongings are slowly making their way across continents and countries to my front door here. I’m lucky to have hauled in some things of my parents, including mattresses, tables, lamps, and useful housewares to start off my place. A lot of it is lying around on my first floor right now, some pieces even upside down, so I’ve been gently prancing around in my fuzzy house slippers through the legs of sideways chairs and between the beams of bed frames. My second and third floors are still mostly empty, though I’ve been sneaking up a stool or a lamp when I feel like taking them. I don’t have my internet set up yet, so I have to go to my local cafe to take my morning calls. I emptied my mailbox for the first time yesterday. I’m still getting to know the light switches.</p>
 
         <p>Overall, I’m in love with my unit and very happy with the building and neighborhood. It’s nice to be super enthusiastic about my choices. The community manager told me a story about how the building used to be a saloon and social hall in the 1920s, then a cultural community center for most of the 20th century after that, then finally a housing development in the 1990s. He said the flooring on my first floor is the original wood from the 1920s, just refinished, and I assume the exposed brick in my unit too is also all original. I gave Plot Twisters a tour of my place on our Sunday call. It’s been a longtime dream to host all of us in person, and I suggested they all come to Cleveland one day so we could work together from here. Jesse, who is a Peaky Blinders fan like me, made me laugh with a joke about hosting “Plotty Twisters” meetings at the “Plot Twisters Saloon.”</p>

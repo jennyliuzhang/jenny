@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "rare-woman");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Rare Woman</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -21,9 +43,11 @@ export default function Page() {
       />
 
       <div className={entryStyles.body}>
-        <h1>Rare Woman</h1>
-        <h6>July 2018</h6>
-        <h6>5 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+        
         <p>You are very kind and strong and smart, she tells me. But I think you should wear makeup more often so other people might take the time to notice these good qualities too. She brushes bronze dust onto my eyelid as I sit at her vanity. I know what she means. Who we seem is who we are to the impatient people of two-second handshakes. So my mother is honest about her femininity as an advantage. She powders my cheek gently.</p>
 
         <p>Yet our relationship is actually quite untender and ungendered. When we talk, I send her my overoptimistic energy for the future, which she nods to and recognizes, but trades for advice colder than compassion and older than the rations of some sadder hindsight about her youth. I tell her my dreams. I want to learn recipes, the constellations, more degrees. I want my own business. I want my kids well-traveled. I want to write—I want to write about everything—and I want to be an artist. She says I need a supportive, stable, and rich husband. She says this as fact. Being a woman is simply being human but in a biased, suspicious society. It is hard to be alone. No one wants an educated woman where I’m from, she says. But I’m a driven person, which is very different from what most people want out of me. I have had two failed marriages as proof.</p>

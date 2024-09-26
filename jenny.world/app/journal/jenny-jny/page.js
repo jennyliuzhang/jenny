@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "jenny-jny");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><span className="subnav"><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>June Check-In From Jet Lag Jenny</span></h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>June Check-In From Jet Lag Jenny</h1>
-        <h6>June 2022</h6>
-        <h6>4 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>Growing up, I was raised by several different people and environments. I was born in Arizona, but my mom and birth dad were both new immigrants on welfare who couldn’t afford to take care of me. At six months, I was put on a plane to China, to stay with my mom’s parents in Shenzhen. I lived there with my grandparents until I was 5. I learned to speak and write in Mandarin, which was my first language. Back in the states, my mom and dad separated in my absence.
 
 At age 5, I came back to live in Washington state with her and a man who soon became my stepdad. I knew no English and I was very scared and shy. She worked three jobs and invested all her income on my attendance at a Montessori school so I could learn English without being bullied and develop a curiosity for the world in a safe environment. My mom also paid for ballet classes, soccer, gymnastics, acting lessons, and art classes for me to break me out of my shell. Though she was always busy and stressed with work, paying for my unique education and hobbies is how she showed me love. And she showed me so much of it: she created as many opportunities as she had in her power for me to follow my curiosities—every possible cookie trail—and grow.

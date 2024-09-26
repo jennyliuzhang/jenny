@@ -22,8 +22,8 @@ export default function Page() {
         <div className={bookshelfStyles.introduction}>
         <div className={bookshelfStyles.introPara}>
           <h1 className={bookshelfStyles.bookshelfHeadline}>My favorite books, essays, stories, and tidbits.</h1>
-          <p>These are my most impactful reads, organized into six &ldquo;bookshelves&rdquo; of themes I enjoy meditating on. I think about these texts often for inspiration, knowledge, or their ability to articulate something in my inner world.</p>
-          <p style={{marginBottom: '0'}}>Some works easily fit multiple themes, but I’ve sorted them based on my overall judgement and takeaway, which is fun for me to think about.</p>
+          <p>These are my most impactful reads, organized into <Link href="#shelves">six &ldquo;bookshelves&rdquo;</Link> of themes I enjoy meditating on. I think about these texts often for inspiration, knowledge, or their ability to articulate something in my inner world.</p>
+          <p style={{marginBottom: '0'}}>Some works could easily sit on multiple shelves, but I’ve sorted them based on my overall judgement and takeaway, which is fun for me to think about.</p>
         </div>
 
 
@@ -35,7 +35,7 @@ export default function Page() {
       </div>
 
 
-      <div className={bookshelfStyles.shelfTabs}>
+      <div id="shelves" className={bookshelfStyles.shelfTabs}>
             <Link href="#love">On Love</Link>
             <Link href="#learning">On Learning</Link>
             <Link href="#play">On Play</Link>
@@ -76,10 +76,10 @@ export default function Page() {
                 </div>
 
                 <div className={bookshelfStyles.book}>
-                    <a href="https://www.communio-icr.com/files/berry27-1pdf.pdf" target="_blank"><img src="https://m.media-amazon.com/images/I/815JY5omm2L._AC_UF1000,1000_QL80_.jpg" alt="Life Is A Miracle"></img></a>
-                    <h5 className={bookshelfStyles.bookTitle}>Life Is A Miracle</h5>
+                    <a href="https://www.amazon.com/Little-Weirds-Jenny-Slate/dp/0316485365" target="_blank"><img src="https://m.media-amazon.com/images/I/81MDBFdQ9WL._AC_UF1000,1000_QL80_.jpg" alt="Little Weirds"></img></a>
+                    <h5 className={bookshelfStyles.bookTitle}>Little Weirds</h5>
                     <p className={bookshelfStyles.bookAuthor}>Jenny Slate</p>
-                    <p>Terrifically hilarious and compelling. Perfectly meandering, yet composed.</p>
+                    <p>I want to swear my writing style was already the way it was before I read Jenny Slate’s writing. However, this book encouraged me to embrace my whimsical, ornate fundaments more than ever. I think the line that captures the essence of love, especially self-love, arrives early in the book: &ldquo;My vulnerability is natural and permissible and beautiful to me, and it should remind you of your responsibility to behave like a friend to me and the world.&rdquo; Terrifically hilarious and unabashed. Perfectly meandering yet composed. Strange and magical. My favorite things. </p>
                 </div>
 
             </Masonry>

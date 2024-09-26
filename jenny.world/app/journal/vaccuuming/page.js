@@ -1,13 +1,35 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Page() {
+  const [entry, setEntry] = useState(null);
+
+  useEffect(() => {
+    fetch('/data/journal.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const foundEntry = data.find(item => item.writingSlug === "vaccuuming");
+        setEntry(foundEntry);
+      })
+      .catch((error) => console.error('Error fetching journal entry:', error));
+  }, []);
+
+  // If entry is not found or still loading
+  if (!entry) return <div>Loading...</div>;
+
   return (
     <main className={entryStyles.entryStyles}>
-      <div className={entryStyles.writingTop}>
-        <h2><Link href="/journal" className="breadcrumb">Jenny&rsquo;s Journal</Link>Vaccuuming</h2>
-      </div>
+      
+      <Breadcrumbs>
+        <Link href="/journal">Jenny’s Journal</Link>
+        <span>{entry.writingName}</span>
+      </Breadcrumbs>
       
       <Image
         className={entryStyles.writingHero}
@@ -25,9 +47,11 @@ export default function Page() {
       </div>
 
       <div className={entryStyles.body}>
-        <h1>Vaccuuming</h1>
-        <h6>January 2020</h6>
-        <h6>7 min read</h6>
+        <h1>{entry.writingName}</h1>
+        <p className={entryStyles.descText}>{entry.writingDesc}</p>
+        <h6>{entry.date}</h6>
+        <h6>{entry.readTime}</h6>
+
         <p>I had a 7am shift in Beverly Hills. I slept over at Jamie’s apartment the night before, then woke up at 6am, took an orange from her kitchen counter, and left while she was still asleep to make it to my job.</p>
 
         <p>I will remember this as the chapter in my life where I worked five very different jobs. The job I’m currently talking about is at Anthropologie, a French-inspired clothing and lifestyle retailer for well-off women. The store sells a slew of feminine adjectives. Dreamy, bohemian, warm, rustic, romantic, beautiful. During early morning shifts, I usually restock our candles and stationery. This morning, for the first time, I was asked to vacuum and dust the entire store by myself.</p>

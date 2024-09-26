@@ -26,7 +26,7 @@
     margin: 0.5em -25px 0;
     overflow-x: scroll;
     position: sticky;
-    top: -2px;
+    top: -4px;
     display: flex;
     align-items: center;
     height: 4em;
@@ -75,7 +75,7 @@
 }
 
 .bookshelf h1 {
-    scroll-margin-top: 3em;
+    scroll-margin-top: 2.5em;
 }
 
 .bookshelf p.dropCapP:first-letter {
@@ -156,7 +156,6 @@ p.bookAuthor {
 and (min-width: 900px) {
 
     .shelfTabs {
-        top: -4px;
         width: calc(100%+4px);
         margin: 2.5em -2px 3em;
         overflow-x: visible;

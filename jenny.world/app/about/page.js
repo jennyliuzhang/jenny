@@ -17,7 +17,7 @@ export default function Page() {
 
           <p>I’m Jenny Liu Zhang, a designer skilled in creating online products and media. As a strong visual and narrative thinker, I’ve always enjoyed envisioning abstract ideas, dissecting their fundamental relationships and patterns, and conveying them in conscientious, delightful ways.</p>
           
-          <p>Combined with an entrepreneurial mindset and foundations in programming and the visual arts, I thrive at the intersection of design, technology, and product. I’m also passionate about good writing and brand storytelling.</p>
+          <p>Combined with an entrepreneurial mindset and foundations in programming and the visual arts, I thrive at the intersection of design, technology, and product. I’m also passionate about writing and personal storytelling, which I hone in my <Link href="/journal">public journal</Link>.</p>
 
           <div className={aboutStyles.skillsTable}>
             <div className={aboutStyles.creativeStrategy}><span>Product Strategy</span></div>
@@ -82,7 +82,7 @@ export default function Page() {
           <div style={{height: '1em'}}></div>
           
           <h4>Fallible Metadata</h4>
-          <p>Myers–Briggs <a href="https://www.16personalities.com/enfj-personality" target="_blank">ENFJ</a>. Enneagram <a href="https://www.crystalknows.com/enneagram/type-1/wing-2" target="_blank">1w2</a>. Attitudinal Psyche <a href="https://www.attitudinalpsyche.com/personality-profiles/tessera/vfel/" target="_blank">VFEL</a>. Socionics <a href="https://www.sociotype.com/socionics/types/EII-INFJ" target="_blank">EII-INFj</a>. Eristics <a href="https://www.eristicstest.com/#the_architect" target="_blank">Architect</a>. <a href="https://cafeastrology.com/zodiacaquarius.html" target="_blank">Aquarius Sun</a> (and stellium), <a href="https://cafeastrology.com/print/moon_in_taurus.html" target="_blank">Taurus Moon</a>, <a href="https://cafeastrology.com/leo_ascendantrisingsign.html" target="_blank">Leo Rising</a>.</p>
+          <p>Myers–Briggs <a href="https://www.16personalities.com/enfj-personality" target="_blank">ENFJ</a> (though formerly <a href="https://www.16personalities.com/enfp-personality" target="_blank">ENFP</a>). Enneagram <a href="https://www.crystalknows.com/enneagram/type-1/wing-2" target="_blank">1w2</a>. Attitudinal Psyche <a href="https://www.attitudinalpsyche.com/personality-profiles/tessera/vfel/" target="_blank">VFEL</a>. Socionics <a href="https://www.sociotype.com/socionics/types/EII-INFJ" target="_blank">EII-INFj</a>. Eristics <a href="https://www.eristicstest.com/#the_architect" target="_blank">Architect</a>. <a href="https://cafeastrology.com/zodiacaquarius.html" target="_blank">Aquarius Sun</a> (and stellium), <a href="https://cafeastrology.com/print/moon_in_taurus.html" target="_blank">Taurus Moon</a>, <a href="https://cafeastrology.com/leo_ascendantrisingsign.html" target="_blank">Leo Rising</a>.</p>
         </div>
         
       </div>
