@@ -12,7 +12,7 @@ export default function Footer({ children, topBorder }) {
 
             <div className="footerInfo">
                 <span className="copyright">© {currentYear} Jenny Liu Zhang</span>
-                <Link href="/colophon" className="colophon">Colophon</Link>
+                {/* Re-enable later <Link href="/colophon" className="colophon">Colophon</Link> */}
             </div>
             
             <div className="social">

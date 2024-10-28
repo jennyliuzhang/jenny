@@ -41,9 +41,9 @@ export default function Home() {
         <Link className={indexStyles.about} href="/about">About</Link>
         <Link className={indexStyles.projects} href="/projects">Projects</Link>
         <Link className={indexStyles.cv} href="/cv">CV</Link>     
-        <Link className={indexStyles.journal} href="/journal">Bookshelf</Link>
-        <Link className={indexStyles.journal} href="/journal">Journal</Link>
-        <Link className={indexStyles.contact} href="mailto:jenny@jenny.world">Guestbook</Link>   
+        <Link className={indexStyles.bookshelf} href="/bookshelf">Bookshelf</Link>
+        {/* <Link className={indexStyles.journal} href="/journal">Journal</Link>
+        <Link className={indexStyles.contact} href="mailto:jenny@jenny.world">Guestbook</Link>    */}
       </div>
 
       <div className="wrap" style={{paddingTop: '0px'}}>

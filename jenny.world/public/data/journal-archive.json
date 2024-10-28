@@ -1,4 +1,26 @@
 [ {
+    "personalChapter": "cleveland-2",
+    "writingName": "Thesis Season",
+    "writingSlug": "thesis-season",
+    "date": "December 2024",
+    "readTime": "8 min read",
+    "writingDesc": "Entering the last year of my Masters degree and articulating my intellectual passions.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/thesis-season.jpg"
+  },
+  {
+    "personalChapter": "cleveland-2",
+    "writingName": "Put It Out of the Mind",
+    "writingSlug": "put-it-out-of-the-mind",
+    "date": "November 2024",
+    "readTime": "3 min read",
+    "writingDesc": "On being present and intentionally recognizing thoughts and feelings as they come.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/put-it-out-of-the-mind.jpg"
+  },
+  {
   "personalChapter": "cleveland-2",
   "writingName": "Put It Out of the Mind",
   "writingSlug": "put-it-out-of-the-mind",

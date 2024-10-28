@@ -6,7 +6,6 @@
       "projectDesc": "A co-branded mobile payment strategy",
       "projectDeliverables": [
         "Mobile App Design",
-        "Payments",
         "User Education",
         "Co-branding",
         "Pitch deck"
@@ -27,8 +26,7 @@
         "Illustration",
         "React App",
         "Brand Design",
-        "Research Writing",
-        "Tech Studies"
+        "Research Writing"
       ],
       "dateLaunched": "2024-05-15",
       "projectSize": 8,
@@ -42,7 +40,7 @@
       "projectDesc": "A deep-dive into the visual identity and voice of a culture tech company",
       "projectDeliverables": [
         "Brand Design",
-        "Storytelling",
+        "Illustration",
         "Design System"
       ],
       "dateLaunched": "2024-08-30",
@@ -57,7 +55,6 @@
       "projectDesc": "Discover Dorsia restaurants and their scenes, awards, and menus",
       "projectDeliverables": [
         "Mobile App Design",
-        "Modular Design",
         "User Education"
       ],
       "dateLaunched": "2023-07-30",
@@ -69,11 +66,9 @@
       "parentProject": "dorsia",
       "projectName": "Restaurant Shift Editor",
       "projectSlug": "shift-editor",
-      "projectDesc": "Plan and view booking availability on Dorsia",
+      "projectDesc": "Manage and view booking availability on Dorsia",
       "projectDeliverables": [
-        "Web App Design",
-        "Internal Tool",
-        "Scheduling"
+        "Web App Design"
       ],
       "dateLaunched": "2023-06-30",
       "projectSize": 7,
@@ -88,8 +83,6 @@
       "projectDeliverables": [
         "Research Writing",
         "Published Article",
-        "Digital Social Science",
-        "Futures Studies",
         "Illustration"
       ],
       "dateLaunched": "2024-05-30",
@@ -103,10 +96,7 @@
       "projectSlug": "book-on-behalf",
       "projectDesc": "A concierge platform for booking minimum spend reservations",
       "projectDeliverables": [
-        "Web App Design",
-        "Responsive Design",
-        "Modular Design",
-        "Payments"
+        "Web App Design"
       ],
       "dateLaunched": "2023-10-30",
       "projectSize": 8,

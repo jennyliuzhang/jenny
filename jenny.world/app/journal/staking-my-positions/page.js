@@ -1,36 +1,10 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import EntryLayout from '../entry-layout';
 import Image from 'next/image';
-import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
-export default function Page() {
-  const [entry, setEntry] = useState(null);
-
-  useEffect(() => {
-    fetch('/data/journal.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const foundEntry = data.find(item => item.writingSlug === "staking-my-positions");
-        setEntry(foundEntry);
-      })
-      .catch((error) => console.error('Error fetching journal entry:', error));
-  }, []);
-
-  // If entry is not found or still loading
-  if (!entry) return <div>Loading...</div>;
-
-  return (
-    <main className={entryStyles.entryStyles}>
+export default function JournalEntryPage() {
       
-      <Breadcrumbs>
-        <Link href="/journal">Jenny’s Journal</Link>
-        <span>{entry.writingName}</span>
-      </Breadcrumbs>
-      
+  const heroImage = (
       <Image
         className={entryStyles.writingHero}
         src="/journal-graphics/staking-my-positions.jpg"
@@ -41,16 +15,12 @@ export default function Page() {
         quality={100} 
         priority
       />
+  )
 
-      <div className={entryStyles.heroCaption}>
-        Taken on an early morning in a Cleveland coffee shop. I love skull art.
-      </div>
+  const heroCaption = "Taken on an early morning in a Cleveland coffee shop. I love skull art :)"
 
-      <div className={entryStyles.body}>
-        <h1>{entry.writingName}</h1>
-        <p className={entryStyles.descText}>{entry.writingDesc}</p>
-        <h6>{entry.date}</h6>
-        <h6>{entry.readTime}</h6>
+  return (
+    <EntryLayout slug="staking-my-positions" heroImage={heroImage} heroCaption={heroCaption}>
 
         <p>I’m back in Cleveland after being in the UK for the last two months. Updates since returning to my life here: last week I walked to the men's barbershop down the street and impulsively asked for a bob. My car and a neighbor’s car got broken into on Wednesday night. Nothing taken, but I’m paying $200 to get my rear passenger window fixed. My new teammates at Dorsia have been nice to work alongside. I got a 2-year membership to the Cleveland Art Museum. Celebrated Sarah’s birthday party which was themed for Sofia Coppola’s <em>Marie Antoinette</em>. I started taking Ashwaganda, N-Acetyl-L-Cysteine, and B complex. Last night, it rained so hard that my ceiling started leaking, so I had to set up a bowl to catch the droplets. Our building is getting our roof fixed though, so it shouldn’t happen again. I noticed my eyesight getting worse from screen fatigue, so I’ve made it a point to spend time outside sitting in the park or going on a walk and looking into the distance. I have been spending free time window shopping for sofas online, but struck with indecision. I started using ChatGPT to help me code jenny.world. On Sunday I got two pothos plants. I’m sleeping okay, not great.</p>
         
@@ -96,8 +66,6 @@ export default function Page() {
 
         <p>Don’t worry so much, and don’t doubt yourself. &nbsp;&#x273d;</p>
 
-      </div>      
-
-    </main>
+        </EntryLayout>
   );
 }

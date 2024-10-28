@@ -134,6 +134,23 @@
       background-position: 60% 0%, 50% 55px;
     }
 
+    .indexNav .bookshelf {
+      display: block;
+      min-width: 100px;
+      padding: 58px 0 0 0;
+      background: url('/nav/bookshelf.png') no-repeat;
+      background-size: auto 44px;
+      background-position: 50% 0px;
+    }
+      
+    .indexNav .bookshelf:hover {
+        padding: 75px 0 0 0;
+        background-image: url('/nav/bookshelf.png'), url('/nav/active-shadow.png');
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto 44px, 30px auto;
+        background-position: 50% 0px, 50% 55px;
+        }
+
   .indexNav .contact {
     display: block;
     padding: 55px 0 0 0;
@@ -439,7 +456,7 @@
       padding: 0;
       height: 100px;
       width: 80%;
-      max-width: 480px;
+      max-width: 420px;
     }
     
       .indexNav a {

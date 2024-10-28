@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import cvStyles from "../styles/cv.module.css";
 import ScrollingTabs from '../components/ScrollingTabs';
+import Tooltip from "../components/Tooltip";
+import Button from "../components/Button";
 
 export default function Page() {
   return (
@@ -48,7 +50,9 @@ export default function Page() {
 
         <div className={cvStyles.cvContent}>
 
-      <h1 id="skills">Skill Areas</h1>
+          {/* <p className={cvStyles.introPara}>Jenny Liu Zhang is a digital design leader and scholar,  passionate about narrative-driven products and nurturing the relationships and creative practices that bring them to life. See the <a href="#" target="_blank">one-page résumé</a> or read <Link href="/testimonials">testimonials</Link>.</p> */}
+
+      <h1 className={cvStyles.headline}>Jenny Liu Zhang, Design Leader</h1>
       <div className={cvStyles.skills}>
         <div className={cvStyles.designWrap}>
           <h3>Design</h3>
@@ -65,9 +69,45 @@ export default function Page() {
           <div className={cvStyles.productGraph}></div>
         </div>
       </div>
+      
+      <p className={cvStyles.introPara}>
+        <span>Strong communicator, especially in writing, visuals, and presentations. </span>
+        <span>Leads by cultivating <Tooltip text="Being in sync, like a choir singing from the same sheet" width="190px" marginleft="-95px">&ldquo;same-pageness&rdquo;</Tooltip> in creative relationships. </span>
+        <span>Most excited about early-to-mid stage project challenges.</span>
+      </p>
+
+      <div className={cvStyles.resumeTestimonials}>
+        <Link className={cvStyles.resumeButton} href="/resume.pdf" target="_blank">
+          One-Page Résumé
+          <span className={cvStyles.externalIcon}>↗</span>
+        </Link>
+
+        <Link className={cvStyles.testimonialsButton} href="/cv/testimonials">
+          Testimonials
+          <i className={cvStyles.arrowRight}></i>
+        </Link>
+      </div>
+
+      <hr></hr>
+
+      <ScrollingTabs>
+        <Link href="#skills">Skills</Link>
+        <Link href="#education">Education</Link>
+        <Link href="#professional">Professional Experience</Link>
+        <Link href="#grants">Awarded Grants</Link>
+        <Link href="#residencies">Awarded Residencies &amp; Fellowships</Link>
+        <Link href="#honors">Awarded Honors</Link>
+        <Link href="#writing">Published Writing</Link>
+        <Link href="#presentations">Presentations &amp; Exhibitions</Link>
+        <Link href="#teaching">Teaching Experience</Link>
+        <Link href="#other">Other Projects &amp; Volunteer Service</Link>
+      </ScrollingTabs>
+
+      <h1 id="skills">Skills</h1>
+      
 
       <div className={cvStyles.tools}>
-        <h4>Specialty Tools &amp; Software</h4>
+        <h5 style={{margin: '1.25em 0 0.25em', fontSize: '1em'}}>Specialty Tools &amp; Software</h5>
         <p><span className={cvStyles.level}>Expert:</span> Photoshop, Figma, HTML, CSS, Illustrator, InDesign, Notion</p>
         <p><span className={cvStyles.level}>Advanced:</span> JavaScript (jQuery, React, Next.js), Framer, After Effects, Webflow, WordPress, Shopify, MailChimp, Braze</p>
         <p><span className={cvStyles.level}>Proficient:</span> Python, MySQL, command line, Linear, Google Analytics, ProtoPie, Audacity, Logic</p>
@@ -75,7 +115,7 @@ export default function Page() {
       </div>
 
       <div className={cvStyles.tools}>
-        <h4>Metholodogies &amp; Frameworks</h4>
+        <h5 style={{margin: '1.5em 0 0.25em', fontSize: '1em'}}>Metholodogies &amp; Frameworks</h5>
         <p><span className={cvStyles.level}>Expert:</span> Design thinking (d.school, IDEO, Double Diamond), mind mapping, affinity diagramming, moodboarding, storyboarding, rapid ethnography, interview design, survey design, user journey mapping, empathy mapping, wireframing, responsive design</p>
         <p><span className={cvStyles.level}>Advanced:</span> Participatory design, strategic foresight (scenario planning, signals and trends mapping, backcasting, Three Horizons), causal layered analysis (CLA), competitive analysis, SWOT Analysis, Business Model Canvas, Lean Canvas, RACI matrix, agile development, kanban, Gantt charts, heuristic evaluation</p>
         <p><span className={cvStyles.level}>Proficient:</span> Usability testing, functional programming, Root Cause Analysis (RCA), Eisenhower Matrix, Internal Press Release</p>

@@ -96,6 +96,21 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
         /* height: 100%; */
         /* border: 1px solid blue; */
     }
+
+.filters h4 {
+    margin: 0.25em 0 1.1em;
+}
+
+
+.filterLabel {
+    display: block;
+    font: 400 normal 1em/1.6em 'Ivar Text', serif;
+    margin: 0.25em 0;
+}
+
+    .filterLabel input {
+        margin: 0 8px 0 0;
+    }
     
 .subprojectPreviews {
     display: flex;

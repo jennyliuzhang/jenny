@@ -1,6 +1,7 @@
 .bookshelfActive {
     display: block;
-    min-width: 110px !important;
+    /* min-width: 110px !important; Re-enable with 6-button */
+    min-width: 100px !important;
     padding: 75px 0 0 0;
     background-image: url('/nav/bookshelf.png'), url('/nav/active-shadow.png');
     background-repeat: no-repeat, no-repeat;

@@ -98,7 +98,7 @@ export default function Page() {
           <li>Gunning 90 mph in my Honda Fit along the lake on the way to soccer at 10pm</li>
           <li>Moving heavy wood furniture up my oblong stairs by myself</li>
           <li>Texting my boyfriend regular updates about my stomach cramps</li>
-          <li>Resisting buying a $452 glass sculpture</li>
+          {/* <li>Resisting buying a $452 glass sculpture</li> */}
           <li>Laughing at my own jokes in my own house alone</li>
         </ul>
 
@@ -108,7 +108,7 @@ export default function Page() {
 
         <p>Something tough about never doing quick and strategic first drafts is that when I go too far down a certain creative direction, like defending a certain argument in a paper or committing to a specific vision for a design project, I tend to fall into the sunk-cost fallacy if I discover it’s not working. That, or I get so close to running out of time entirely so I need to make the best of the work I’ve already produced, even if I know it’s not great. When I have boundless time to work on something, like my personal website, I find myself creating with seemingly no end: minorly adjusting paragraphs and webpages along what feels like an infinite recursion, in final-polish, high-fidelity iterations.</p>
         
-        <p>What I am hoping for, though, is that the recursion is not infinite and I do arrive at the base case: a perfect end product that wows my soul and makes me feel ecstatic levels of revelation, the thing that proves that every nudge, edit, and transformation was the right decision. As far as treating my life as a creative project goes, I think I’m living it like a final draft too, making moment-to-moment choices and fully committing to paths without much premeditation. I write a paper, I stress, I play soccer, I burn out, I sleep, I turn inward, I seek kinship, I get a dog. I commit to my decisions, even when they’re potentially bad, sunk costs, and I make the next one based on where I’m at. No grand plans, just trusting my small intuitive refinements to figure out how all the themes fit into a positive, consistent, and cohesive body of work. &nbsp;&#x273d;</p>
+        <p>What I am hoping for, though, is that the recursion is not infinite and I do arrive at the base case: a perfect end product that wows my soul and makes me feel ecstatic levels of revelation, the thing that proves that every nudge, edit, and transformation was the right decision. As far as treating my life as a creative project goes, I think I’m living it like a final draft too, making moment-to-moment choices and fully committing to paths without much premeditation. I write a paper, I stress, I play soccer, I burn out, I sleep, I turn inward, I seek kinship, I get a dog. I commit to my decisions, even when they’re potentially bad, sunk costs, and I make the next one based on where I’m at. No grand plans, just trusting my small intuitive refinements to figure out how all the themes fit into a positive, consistent, and confident body of work. &nbsp;&#x273d;</p>
 
       </div>      
 
@@ -116,19 +116,47 @@ export default function Page() {
         {prevEntry && (
           <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
             <span className={entryStyles.direction}>← Previous Entry</span>
-            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
-            <span className={entryStyles.date}>{prevEntry.date}</span>
+            <div className={entryStyles.entryInfo}>
+              <Image
+                className={entryStyles.entryThumb}
+                src={prevEntry.writingThumbnailImageURL}
+                alt="Project"
+                width={400}
+                height={300}
+                style={{ width: '100%', maxWidth: '100px', height: 'auto', maxHeight: '75px' }}
+                quality={100} 
+                priority
+              />
+              <div className={entryStyles.entryText}>
+                <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
+                <span className={entryStyles.date}>{prevEntry.date}</span>
+              </div>
+            </div>
           </Link>
         )}
 
         {nextEntry && (
           <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
             <span className={entryStyles.direction}>Next Entry →</span>
-            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
-            <span className={entryStyles.date}>{nextEntry.date}</span>
+            <div className={entryStyles.entryInfo}>
+              <div className={entryStyles.entryText}>
+                <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
+                <span className={entryStyles.date}>{nextEntry.date}</span>
+              </div>
+              <Image
+                className={entryStyles.entryThumb}
+                src={nextEntry.writingThumbnailImageURL}
+                alt="Project"
+                width={400}
+                height={300}
+                style={{ width: '100%', maxWidth: '100px', height: 'auto', maxHeight: '75px' }}
+                quality={100} 
+                priority
+              />
+            </div>
           </Link>
         )}
-      </div> 
+      </div>  
 
     </main>
   );

@@ -1,52 +1,10 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import EntryLayout from '../entry-layout';
 import Image from 'next/image';
-import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
-export default function Page() {
-  const [entry, setEntry] = useState(null);
-  const [nextEntry, setnextEntry] = useState(null);
-  const [prevEntry, setprevEntry] = useState(null);
+export default function JournalEntryPage() {
 
-  useEffect(() => {
-    fetch('/data/journal.json')
-      .then((response) => response.json())
-      .then((data) => {
-        // Find the index of the current entry
-        const currentIndex = data.findIndex(item => item.writingSlug === "the-comedy");
-        
-        // Get the current entry
-        const foundEntry = data[currentIndex];
-        setEntry(foundEntry);
-
-        // Get the previous entry, if it exists
-        if (currentIndex > 0) {
-          setnextEntry(data[currentIndex - 1]);
-        }
-
-        // Get the next entry, if it exists
-        if (currentIndex < data.length - 1) {
-          setprevEntry(data[currentIndex + 1]);
-        }
-      })
-      .catch((error) => console.error('Error fetching journal entry:', error));
-  }, []);
-
-  // If entry is not found or still loading
-  if (!entry) return <div>Loading...</div>;
-
-  return (
-    <main className={entryStyles.entryStyles}>
-      
-      <Breadcrumbs>
-        <Link href="/journal">Jenny’s Journal</Link>
-        <span>{entry.writingName}</span>
-      </Breadcrumbs>
-      
+  const heroImage = (
       <Image
         className={entryStyles.writingHero}
         src="/journal-graphics/the-comedy.jpg"
@@ -57,16 +15,12 @@ export default function Page() {
         quality={100} 
         priority
       />
+  )
 
-      <div className={entryStyles.heroCaption}>
-        My dog Lila wearing a plastic bag on her head at 7am because she gets chronic ear infections when it rains and the raincoat I bought her was a size too small.
-      </div>
+  const heroCaption = "My dog Lila wearing a plastic bag on her head at 7am because she gets chronic ear infections when it rains and the raincoat I bought her was a size too small.";
 
-      <div className={entryStyles.body}>
-      <h1>{entry.writingName}</h1>
-        <p className={entryStyles.descText}>{entry.writingDesc}</p>
-        <h6>{entry.date}</h6>
-        <h6>{entry.readTime}</h6>
+  return (
+    <EntryLayout slug="the-comedy" heroImage={heroImage} heroCaption={heroCaption}>
 
         <blockquote>
           Just when I thought it wouldn't get no sicker
@@ -75,11 +29,10 @@ export default function Page() {
           <br></br>
           — YG on "FDT"
         </blockquote>
-        <p>this era of my 20s has been a riot. i can't go into detail right now because honestly it was a bit traumatizing, so i resist reliving it. but i will recount the basics
 
-          number of emails i've had to send being like hey so sorry. catastrophe!
+        <p>The last few weeks of my life have been a riot. It's frankly hilarious how many Slack messages and emails I've had to send being like, "Hey, so sorry. Catastrophe!" I can't even go into detail right now because honestly it has been a bit traumatizing, so I resist reliving it. But I will recount the basics.</p>
 
-mice. eating lila's dog food. i spotted them middle of the night downstairs. 
+        <p>mice. eating lila's dog food. i spotted them middle of the night downstairs. 
 my blinds stopped working. they are a perpetual diagonal, a violent angle in my massive window
 in the middle of my burnout recovery and new mice panic, i discover a dripping that flowed from my attic to my first floor, causing two floors to be filled by water. hvac at fault, ultimately due to mishap by the roofers. within 24 hours, had to emergency relocate lila and me for 2 weeks, drop and demolition two floors partially, and wrestle with legal and financial and contractor bullshit. felt so little trust in the processes as a non-specialist. shuttling back and forth between the airbnb and home while still working.
 lila was found to have stage 2 cancer. got tumor surgery. expensive. poor girl.
@@ -91,26 +44,6 @@ i've tried everything. poison bait. no-kill traps. snap traps. 24 snap traps at 
 my nighttime routine is to prepare for the mice. gloves on. shoes on. set and check the traps. big flashlight to scan. UV light on. vacuum every corner possible. put away all food. dishes.
 mousetrapping is my hobby. lila has a new lump. i'm so tired you guys &nbsp;&#x273d;</p>
 
-      </div>      
-
-      <div className={entryStyles.otherEntries}>        
-        {prevEntry && (
-          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
-            <span className={entryStyles.direction}>← Previous Entry</span>
-            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
-            <span className={entryStyles.date}>{prevEntry.date}</span>
-          </Link>
-        )}
-
-        {nextEntry && (
-          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
-            <span className={entryStyles.direction}>Next Entry →</span>
-            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
-            <span className={entryStyles.date}>{nextEntry.date}</span>
-          </Link>
-        )}
-      </div> 
-
-    </main>
+</EntryLayout>
   );
 }

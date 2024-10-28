@@ -15,9 +15,18 @@ export default function Page() {
 
           <div className={`${aboutStyles.portrait} ${aboutStyles.hideOnDesktop}`}></div>
 
-          <p>I’m Jenny Liu Zhang, a designer skilled in creating online products and media. As a strong visual and narrative thinker, I’ve always enjoyed envisioning abstract ideas, dissecting their fundamental relationships and patterns, and conveying them in conscientious, delightful ways.</p>
+          {/* <p>I’m Jenny Liu Zhang, a designer skilled in creating software products and media. As a strong visual and narrative thinker, I’ve always enjoyed envisioning abstract ideas, dissecting their fundamental relationships and patterns, and conveying them in conscientious, delightful ways.</p> */}
+
+          <p>I’m Jenny Liu Zhang, a designer specializing in digital products. I’m a visual and narrative thinker, and my working style is energetic, meticulous, and positive. I grew up within multiple cultures and have lived in the USA, Europe, and Asia.</p>
           
-          <p>Combined with an entrepreneurial mindset and foundations in programming and the visual arts, I thrive at the intersection of design, technology, and product. I’m also passionate about writing and personal storytelling, which I hone in my <Link href="/journal">public journal</Link>.</p>
+          <p>I value co-creative collaboration, well-rounded research, and effective communication. With an entrepreneurial mindset and backgrounds in programming and the visual arts, I thrive at the intersection of design, technology, and product. I’m also passionate about good writing and brand storytelling.
+
+
+            {/* I’m also passionate about writing and personal storytelling, which I hone in my <Link href="/journal">journal</Link>. */}
+            
+            </p>
+
+          {/* <p>I'm Jenny Liu Zhang, a digital designer with wide hobbies and a passion for writing. My attitude is energetic, meticulous, and positive. I’ve always enjoyed envisioning new concepts or different worlds and dissecting their fundamental relationships, processes, and patterns. I'm practicing the art of bringing these abstract ideas to life in conscientious, delightful ways.</p> */}
 
           <div className={aboutStyles.skillsTable}>
             <div className={aboutStyles.creativeStrategy}><span>Product Strategy</span></div>
@@ -46,6 +55,7 @@ export default function Page() {
           I only commit to projects when I'm confident I will add value, and I prioritize the ones that I believe will bring the world delight :)</p> */}
 
           {/* <h1 style={{marginTop: '0.5em'}}>End-to-End Design Experience</h1> */}
+          {/* <h3>Personal Statement</h3> */}
           <h3>End-to-End Design Experience</h3>
           
           <p>I got my start at age 11 following and contributing to graphic design blogs, picking up Adobe software and self-teaching <Tooltip text="Back when &lt;font&gt; and	&lt;center&gt; were still a thing" width="180px" marginleft="-90px"><span>HTML</span></Tooltip>, CSS, and JavaScript to build my own art websites. I still bring this curiosity and personal drive to my craft today. My expertise now ranges from spearheading early UX strategy to designing go-to-market education and promotional campaigns, for both lean and large organizations.</p>
@@ -58,7 +68,7 @@ export default function Page() {
           
           {/* <p>I also have a storied academic background in the digital humanities, with <Link href="/cv#writing">published research</Link> and several <Link href="/cv#presentations">conference presentations</Link>, <Link href="/cv#residencies">residencies</Link>, and <Link href="/cv#residencies">fellowships</Link> under my belt.</p> */}
           
-          <p>I hold an interdisciplinary B.S. in “Arts, Technology and Business of Innovation” from the University of Southern California’s <a href="https://iovine-young.usc.edu/" target="_blank">Iovine and Young Academy</a>. I’m currently writing my thesis for a part-time M.S. in “Narrative Futures,” a degree on the role of storytelling in modern social progress, from the <a href="https://efi.ed.ac.uk/" target="_blank">Edinburgh Futures Institute</a> at the University of Edinburgh.</p>
+          <p>I attended the University of Southern California on a full-ride merit scholarship, graduating with an interdisciplinary B.S. in “Arts, Technology and Business of Innovation” from the <a href="https://iovine-young.usc.edu/" target="_blank">USC Iovine and Young Academy</a>. I’m currently writing my thesis for a part-time M.S. in “Narrative Futures,” a degree on the role of storytelling in modern society, from the <a href="https://efi.ed.ac.uk/" target="_blank">Edinburgh Futures Institute</a> at the University of Edinburgh in Scotland, UK.</p>
           
         </div>
 
@@ -66,23 +76,26 @@ export default function Page() {
         <div className={aboutStyles.highlights}>
           <div className={`${aboutStyles.portrait} ${aboutStyles.hideOnMobile}`}></div>
 
-          <Button title="My Journey &amp; Perspectives" desc="" link="/about/bookshelf" type="line"></Button>
-          <Button title="Testimonials" desc="" link="/about/bookshelf" type="line"></Button>
-          <Button title="Résumé" desc="" link="/about/bookshelf" type="line" isExternal="true"></Button>
+          {/* <Button title="My Journey, Values &amp; Perspectives" desc="" link="/about/journey" type="line"></Button> */}
+
+          <Button title="Testimonials" desc="" link="/testimonials" type="line"></Button>
+          <Button title="Résumé" desc="" link="/resume.pdf" type="line" isExternal="true"></Button>
           
           <div style={{height: '1em'}}></div>
 
           <h4>My Digital Nomad Years</h4>
           <p>I spent 2021-23 as a <Tooltip text="I worked remotely from hostels, Airbnbs, hotel lobbies, trains, and cafes" width="170px" marginleft="-80px"><span>digital nomad</span></Tooltip>, honing my design and project skills while traveling to 10 countries and 27 cities.</p>
-          <Image src="/travel-ig-post/3.png" alt="Digital Nomad collage" width={0} height={0} sizes="50%" style={{ display: 'inline', margin: '0 auto 0', width: '50%', height: 'auto', borderRadius: '10px 0 0 10px'}}></Image>
-          <Image src="/travel-ig-post/4.png" alt="Digital Nomad collage" width={0} height={0} sizes="50%" style={{ display: 'inline', margin: '0 auto 0', width: '50%', height: 'auto', borderRadius: '0 10px 10px 0'}}></Image>
+          <Image src="/journal-graphics/nomad-life-recap/1.png" alt="Digital Nomad collage" width={0} height={0} sizes="50%" style={{ display: 'inline', margin: '0 auto 0', width: '50%', height: 'auto', borderRadius: '10px 0 0 10px'}}></Image>
+          <Image src="/journal-graphics/nomad-life-recap/2.png" alt="Digital Nomad collage" width={0} height={0} sizes="50%" style={{ display: 'inline', margin: '0 auto 0', width: '50%', height: 'auto', borderRadius: '0 10px 10px 0'}}></Image>
 
-          <Button title="More about my travels" desc="" link="/journal/traveling" target="_blank" type="line"></Button>
+          {/* <Button title="More about my travels" desc="" link="/journal/nomad-life-recap" type="line"></Button> */}
+
+          <Button title="More about my travels" desc="" link="https://www.instagram.com/p/C1zqq6MpV8d/?img_index=1" target="_blank" type="line" isExternal></Button>
 
           <div style={{height: '1em'}}></div>
           
           <h4>Fallible Metadata</h4>
-          <p>Myers–Briggs <a href="https://www.16personalities.com/enfj-personality" target="_blank">ENFJ</a> (though formerly <a href="https://www.16personalities.com/enfp-personality" target="_blank">ENFP</a>). Enneagram <a href="https://www.crystalknows.com/enneagram/type-1/wing-2" target="_blank">1w2</a>. Attitudinal Psyche <a href="https://www.attitudinalpsyche.com/personality-profiles/tessera/vfel/" target="_blank">VFEL</a>. Socionics <a href="https://www.sociotype.com/socionics/types/EII-INFJ" target="_blank">EII-INFj</a>. Eristics <a href="https://www.eristicstest.com/#the_architect" target="_blank">Architect</a>. <a href="https://cafeastrology.com/zodiacaquarius.html" target="_blank">Aquarius Sun</a> (and stellium), <a href="https://cafeastrology.com/print/moon_in_taurus.html" target="_blank">Taurus Moon</a>, <a href="https://cafeastrology.com/leo_ascendantrisingsign.html" target="_blank">Leo Rising</a>.</p>
+          <p>Myers–Briggs <a href="https://www.16personalities.com/enfj-personality" target="_blank">ENFJ</a> (sometimes <a href="https://www.16personalities.com/enfp-personality" target="_blank">ENFP</a>). Enneagram <a href="https://www.crystalknows.com/enneagram/type-1/wing-2" target="_blank">1w2</a>. Attitudinal Psyche <a href="https://www.attitudinalpsyche.com/personality-profiles/tessera/vfel/" target="_blank">VFEL</a>. Socionics <a href="https://www.sociotype.com/socionics/types/EII-INFJ" target="_blank">EII-INFj</a>. Eristics <a href="https://www.eristicstest.com/#the_architect" target="_blank">Architect</a>. <a href="https://cafeastrology.com/zodiacaquarius.html" target="_blank">Aquarius Sun</a> (and stellium), <a href="https://cafeastrology.com/print/moon_in_taurus.html" target="_blank">Taurus Moon</a>, <a href="https://cafeastrology.com/leo_ascendantrisingsign.html" target="_blank">Leo Rising</a>.</p>
         </div>
         
       </div>
@@ -170,11 +183,21 @@ export default function Page() {
 
           <div className={aboutStyles.axiomTile}>
             <h4>Trends come and go</h4>
-            <p>Almost everything we make will expire — some tastes just have longer lifecycles. Generally, it's good to err on the side of long-lasting. But it can also be fun, and sometimes the best choice, to make the ephemeral thing.</p>
+            <p>Almost everything we make will expire—some tastes just have longer lifecycles. Generally, it's good to err on the side of long-lasting. But it can also be fun, and sometimes the best choice, to make the ephemeral thing.</p>
           </div>
 
           <div className={aboutStyles.axiomTile}>
-            <h4>Do Your Best</h4>
+            <h4>The devil's in the details</h4>
+            <p>Some times it comes down to the little things, so it&rsquo;s good to be thorough and do your due diligence.</p>
+          </div>
+
+          <div className={aboutStyles.axiomTile}>
+            <h4>Don&rsquo;t sweat the little things</h4>
+            <p>While it&rsquo;s good to mind the details, keep your priorities straight and stress levels low. Over-fixating on small issues can be self-sabotaging.</p>
+          </div>
+
+          <div className={aboutStyles.axiomTile}>
+            <h4>Always Do Your Best</h4>
             <p>Your &ldquo;best&rdquo; will change based on your circumstances at any point in time, but always be positive and work with what you have.</p>
           </div>
 

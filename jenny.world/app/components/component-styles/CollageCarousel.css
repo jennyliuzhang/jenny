@@ -1,0 +1,119 @@
+.collageCarousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 0.5em 0;
+    width: calc(100%+50px);
+    margin: 2em -25px 0.75em;
+    z-index: 1;
+    overflow-x: scroll;
+    /* border: 1px solid red; */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+      .collageCarousel::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+      }
+  
+    .collageCarousel img {
+      margin: 0;
+      display: inline-block;
+      width: auto;
+      white-space: nowrap;
+      padding: 0;
+      max-height: 360px;
+      border-top: 1px solid rgba(255,255,255,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+  
+      .collageCarousel img:first-child {
+        margin-left: 25px;
+        border-radius: 15px 0 0 15px;
+        border-left: 1px solid rgba(255,255,255,0.5);
+      }
+  
+      .collageCarousel img:last-child {
+        margin-right: 25px;
+        border-radius: 0 15px 15px 0;
+        border-right: 1px solid rgba(255,255,255,0.5);
+      }
+
+@media screen
+and (min-width: 540px) {      
+
+      /* .collageCarousel a {
+        font-size: 1em;
+      } */
+
+      .collageCarousel img {
+        max-height: 480px;
+      }
+
+}
+
+@media screen
+and (min-width: 1100px) {
+
+  .collageCarousel {
+    width: 100vw;
+    margin-left: calc((-1*(100vw - 1140px))/2);
+  }
+
+  .collageCarousel img {
+    max-height: 560px;
+  }
+
+  .collageCarousel img:first-child {
+    margin-left: calc((100vw - 1140px)/2);
+    border-radius: 25px 0 0 25px;
+  }
+
+  .collageCarousel img:last-child {
+    margin-right: calc((100vw - 1140px)/2);
+    border-radius: 0 25px 25px 0;
+    
+  }
+
+}
+
+@media screen
+and (min-width: 1400px) {
+
+  .collageCarousel {
+    width: 100vw;
+    margin-left: calc((-1*(100vw - 1280px))/2);
+  }
+
+  .collageCarousel img {
+    max-height: 600px;
+  }
+
+  .collageCarousel img:first-child {
+    margin-left: calc((100vw - 1280px)/2);
+  }
+
+  .collageCarousel img:last-child {
+    margin-right: calc((100vw - 1280px)/2);
+  }
+
+}
+
+@media screen
+and (min-width: 1600px) {
+
+  .collageCarousel {
+    width: 100vw;
+    margin-left: calc((-1*(100vw - 1460px))/2);
+  }
+
+  .collageCarousel img:first-child {
+    margin-left: calc((100vw - 1460px)/2);
+  }
+
+  .collageCarousel img:last-child {
+    margin-right: calc((100vw - 1460px)/2);
+  }
+
+}

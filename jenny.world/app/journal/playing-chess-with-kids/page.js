@@ -1,55 +1,13 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import EntryLayout from '../entry-layout';
 import Image from 'next/image';
-import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
-export default function Page() {
-  const [entry, setEntry] = useState(null);
-  const [nextEntry, setnextEntry] = useState(null);
-  const [prevEntry, setprevEntry] = useState(null);
-
-  useEffect(() => {
-    fetch('/data/journal.json')
-      .then((response) => response.json())
-      .then((data) => {
-        // Find the index of the current entry
-        const currentIndex = data.findIndex(item => item.writingSlug === "playing-chess-with-kids");
-        
-        // Get the current entry
-        const foundEntry = data[currentIndex];
-        setEntry(foundEntry);
-
-        // Get the previous entry, if it exists
-        if (currentIndex > 0) {
-          setnextEntry(data[currentIndex - 1]);
-        }
-
-        // Get the next entry, if it exists
-        if (currentIndex < data.length - 1) {
-          setprevEntry(data[currentIndex + 1]);
-        }
-      })
-      .catch((error) => console.error('Error fetching journal entry:', error));
-  }, []);
-
-  // If entry is not found or still loading
-  if (!entry) return <div>Loading...</div>;
-
-  return (
-    <main className={entryStyles.entryStyles}>
+export default function JournalEntryPage() {
       
-      <Breadcrumbs>
-        <Link href="/journal">Jenny’s Journal</Link>
-        <span>{entry.writingName}</span>
-      </Breadcrumbs>
-      
+  const heroImage = (
       <Image
         className={entryStyles.writingHero}
-        src="/journal-graphics/put-it-out-of-the-mind.jpg"
+        src="/journal-graphics/playing-chess-with-kids.jpg"
         alt="Project"
         width={2880}
         height={2025}
@@ -57,27 +15,25 @@ export default function Page() {
         quality={100} 
         priority
       />
+  )
 
-      <div className={entryStyles.heroCaption}>
-        This photo isn't really related to this post, but its energy is. Imagine that it's us looking down at a chess board. Taken at Majestic Meadows Alpaca Farm in Medina, Ohio.
-      </div>
+  const heroCaption =
+        "This photo isn't really related to this post, but its energy is. Imagine that it's us looking down at a chess board. Taken at Majestic Meadows Alpaca Farm in Medina, Ohio."
 
-      <div className={entryStyles.body}>
-        <h1>{entry.writingName}</h1>
-        <p className={entryStyles.descText}>{entry.writingDesc}</p>
-        <h6>{entry.date}</h6>
-        <h6>{entry.readTime}</h6>
+  return (
+    <EntryLayout slug="playing-chess-with-kids" heroImage={heroImage} heroCaption={heroCaption}>
+
         <p>When I first got my Honda when I was 22, I bought a set of fuzzy dice to hang from the rearview mirror. I drove all around and in between California and Washington with these dice. They made me smile. As I'd drive, the dice would bounce and roll in the air, and whenever I was paused at a traffic light, I would glance and notice that they were snake eyes or two fours (my lucky number) or add up to seven and be so happy. At some point in San Francisco or perhaps Seattle, I took them down and stuffed them away in the glovebox. I was experiencing a bout of excessive self-consciousness or self-doubt or other kind of useless curse. I thought maybe the dice were too cringey and eye-catching and maybe this was embarrassing and not virtuous.</p>
 
         <p>I'm in Cleveland now and I found the fuzzy dice in my glovebox the other day while I was stuck at a red light. I decided it was time to hang them back up.</p>
 
-        <p>The other night at the weekly CODA open mic, I met Parker who owns Viva, a ballroom and Latin dance studio in Asiatown. I got drunk that night with Jake and Bert, and when I get drunk, I want to dance. It's not something I can help, it simply takes over. Anyway, I am dancing viciously through Bert's set and Parker who owns Viva comes up to me after and asks me if I am a dancer. I said I did ballet, tap dance, and jazz for 10 formative years of my life, so I must be a dancer in my bones and at my core. He invited me to a salsa party at Viva the next night. I added my contact to his phone—with a selfie as my contact photo no less—and pinky-promised I would be at the salsa party. Anyway, it's been a few weeks since then and I have gone to Viva three times now to dance. They have Thursday salsa parties and lessons throughout the week. I'm practicing bachata and preparing to learn zouk, a Brazilian dance style similar to but more fluid and graceful than salsa. I'm also taking ballet lessons again at the studio of the Ohio Contemporary Ballet to refine my foundations.</p>
+        <p>The other night at the weekly CODA open mic, I met Parker who founded Viva, a ballroom and Latin dance studio in Asiatown. I got drunk that night with Jake and Berdt, and when I get drunk, I want to dance. It's not something I can help, it simply takes over. Anyway, I am dancing viciously through Berdt's set and Parker who owns Viva comes up to me after and asks me if I am a dancer. I said I did ballet, tap dance, and jazz for 10 formative years of my life, so I must be a dancer in my bones and at my core. He invited me to a salsa party at Viva the next night. I added my contact to his phone—with a selfie as my contact photo no less—and pinky-promised I would be at the salsa party. Anyway, I went the next night and it was a lot of fun; people were very patient with me despite being markedly bad at salsa and bachata. Viva has a variety of dance lessons and parties throughout the week. I intend on signing up for a progressive bachata class soon and perhaps one day also learn zouk, a Brazilian dance style similar to but more fluid and graceful than salsa. However, I've decided to start by simply refining my dance foundations through ballet lessons first, which I'm taking weekly at the studio of the Ohio Contemporary Ballet.</p>
 
-        <p>I've been going to the public library branch in my neighborhood. It's very small. I go to print things I want to read on paper—PDFs, articles, my friends' Masters theses. I sit and read them. A few weeks ago, I noticed they had a sign by the printer advertising the library chess club. I asked one of the librarians, Nick, if this was still happening. He said yes, but that it was for kids to attend after school. I asked if it would be weird for me to attend. He said no, he didn't think so. So now I'm a regular at the after school library chess club. I play the kids, who are usually 14 or 15, or I play Nick. I always ask for white. Sometimes the kids help me plan my moves. During my first week, Samir, age 14, helped me get to an end game with Nick. I was doing pretty badly, forfeiting pieces on accident and wedged up against the sides of the board, but with Samir's help, we came to a draw and Nick was only up a rook in the end.</p>
+        <p>I've been going to the public library branch in my neighborhood. It's very small. I go to print things I want to read on paper—PDFs, articles, my friends' Masters theses. I sit and read them. A few weeks ago, I noticed they had a sign by the printer advertising the library chess club. I asked one of the librarians, Nick, if this was still happening. He said yes, but that it was for kids to attend after school. I asked if it would be weird for me to attend (my privileges as a young and innocuous woman really kicked in here). He said no, he didn't think so. So now I'm a regular at the after school library chess club. I play the kids, who are usually 14 or 15, or I play Nick. I always ask for white. Sometimes the kids help me plan my moves. During my first week, Samir, age 14, helped me get to an end game with Nick. I was doing pretty badly, forfeiting pieces on accident and wedged up against the sides of the board, but with Samir's help, we came to a draw and Nick was only up a rook in the end.</p>
 
         <p>I had a mild anxiety attack before I went to CODA that other night. I am unemployed and living in a city where I don't have many close friends. Existential dread, fear of vulnerability, recognizing a deep-seated knowing that my career path will be unconventional, lack of role models, and lamenting that only a few relationships in my physical life have been spiritually nurturing. It'd been several months since I had an emotional wave like that. I brought a book and a sparkling water to the park that evening and I ignored both in favor of laying supine in the grass next to Lila while I stared at the sky and questioned my entire life.</p>
         
-        <p>I was lucky, then, when Jake reminded me that CODA's open mic was that night and texted me to join him, because I probably would have spiraled until morning. At CODA an hour later, I basically entered with some classic frazzled Jenny statement like, "Jake, I'm going through it." Jake and I met through a mutual friend from USC, so I felt more safe than usual to speak vulnerably. To describe why I felt safe, it's like the shared reality of a different relationship outside of little Cleveland was a safety net. I could trust that I did indeed belong to multiple contexts, like I am not a solipsistic meat vehicle melting in Ohio but I am also a nice woman and friend to someone else in another universe that we both know dearly and my problems here would still be logical and valid there and therefore I am allowed to have them. Anyway, he listened to and reassured me, which was kind because we haven't been friends long; I even teared up a little at the bar and he took it like a champ.</p>
+        <p>I was lucky, then, when Jake reminded me that CODA's open mic was that night and texted me to join him, because I probably would have spiraled until morning. At CODA an hour later, I basically entered with some classically frazzled statement like, "Jake, I'm going through it." Jake and I met through a mutual friend from USC, so I felt more safe than usual to speak vulnerably. To describe why I felt safe, it's like the shared reality of a different relationship outside of little Cleveland was a safety net. I could trust that I did indeed belong to multiple contexts, like I am not a solipsistic meat vehicle melting in Ohio but I am also a nice woman and friend to someone else in another universe that we both know dearly and my problems here would still be logical and valid there and therefore I am allowed to have them. Anyway, he listened to and reassured me, which was kind because we haven't been friends long; I even teared up a little at the bar and he took it like a champ.</p>
         
         <p>After I became the lady who cried at the bar, I felt a good release and then became the lady that was ready to drink and enjoy her night. Over my whiskey ginger and his peach cocktail, we talked about more positive things. We had a great conversation about the process of learning new things. I mentioned my guitar collecting dust in my living room. Jake's an extremely talented musician. He explained that you basically have to sit with the guitar and break the song down into small pieces. You examine every piece and learn how they work individually, in your mind, with your hands. Then you look at the bigger project, how it all comes together, and learn that. And it takes fucking time. And you just sit and do it. And I told him about coding a component for my website that morning. How dreadful I felt before I sat down to code it. But then I went to Rising Star and pumped a coffee. And just like he said, I broke it down, laid it out, and ended up coding the thing in 35 minutes.</p>
         
@@ -92,26 +48,7 @@ export default function Page() {
         <p>When I took the selfie for my contact profile in Parker's phone, I laughed about how silly and embarrassing it was. He told me I could retake it if I wanted. I said something like, "No, I think part of dancing is that you can't be afraid of being embarrassed." And I think some wise spirit must've possessed my body at that moment to say that, because it's true, and not just about dance. And for how much I can get in my head and fear vulnerability and feel like I am too cringey or off-putting or not making enough sense to deserve acceptance and attention, I strongly believe with my whole heart that it's true: part of dancing is that you can't be afraid of being embarrassed.</p>
         
         <p>What I love about learning chess from kids is that I get to borrow their mindset again for a moment. At age 14, the world is quite a bit smaller and things like chess probably seem a lot easier. There are fewer compounded years of learned second guessing, being scratched up by self-doubt. The fuzzy dice still hang from the rearview mirror and have never come down, you know? Once they know the rules, the game is simple. The rest is just about the pieces in front of them. &nbsp;&#x273d;</p>
-      </div>      
 
-      <div className={entryStyles.otherEntries}>        
-        {prevEntry && (
-          <Link href={`/journal/${prevEntry.writingSlug}`} className={entryStyles.prevEntry}>
-            <span className={entryStyles.direction}>← Previous Entry</span>
-            <span className={entryStyles.writingName}>{prevEntry.writingName}</span>
-            <span className={entryStyles.date}>{prevEntry.date}</span>
-          </Link>
-        )}
-
-        {nextEntry && (
-          <Link href={`/journal/${nextEntry.writingSlug}`} className={entryStyles.nextEntry}>
-            <span className={entryStyles.direction}>Next Entry →</span>
-            <span className={entryStyles.writingName}>{nextEntry.writingName}</span>
-            <span className={entryStyles.date}>{nextEntry.date}</span>
-          </Link>
-        )}
-      </div> 
-
-    </main>
+        </EntryLayout>
   );
 }

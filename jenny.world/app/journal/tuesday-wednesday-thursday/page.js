@@ -1,35 +1,10 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import EntryLayout from '../entry-layout';
 import Image from 'next/image';
-import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
-export default function Page() {
-  const [entry, setEntry] = useState(null);
+export default function JournalEntryPage() {
 
-  useEffect(() => {
-    fetch('/data/journal.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const foundEntry = data.find(item => item.writingSlug === "tuesday-wednesday-thursday");
-        setEntry(foundEntry);
-      })
-      .catch((error) => console.error('Error fetching journal entry:', error));
-  }, []);
-
-  // If entry is not found or still loading
-  if (!entry) return <div>Loading...</div>;
-
-  return (
-    <main className={entryStyles.entryStyles}>
-
-      <Breadcrumbs>
-        <Link href="/journal">Jenny’s Journal</Link>
-        <span>{entry.writingName}</span>
-      </Breadcrumbs>
+  const heroImage = (
       
       <Image
         className={entryStyles.writingHero}
@@ -41,17 +16,13 @@ export default function Page() {
         quality={100} 
         priority
       />
-
-      <div className={entryStyles.heroCaption}>
-        Estero Bluffs State Park on the California Coast.
-      </div>
+  );
 
 
-      <div className={entryStyles.body}>
-        <h1>{entry.writingName}</h1>
-        <p className={entryStyles.descText}>{entry.writingDesc}</p>
-        <h6>{entry.date}</h6>
-        <h6>{entry.readTime}</h6>
+  const heroCaption = "Estero Bluffs State Park on the California Coast.";
+
+  return (
+    <EntryLayout slug="tuesday-wednesday-thursday" heroImage={heroImage} heroCaption={heroCaption}>
 
         <p>Today is Thursday. I woke up irritated. I’ve been thinking many rude things to myself because of indecision related to food. When I am overwhelmed or lacking sleep, I step back into strange thought processes related to what I eat. Calculating calories and macronutrients and timing the distribution of my consumption throughout the day. It’s the type of obsessive mental behavior that could be better used to tag Plot Twisters research readings or organize my clothes. I’m still learning to divert the energy.</p>
 
@@ -83,8 +54,6 @@ export default function Page() {
 
         <p>Today is Thursday night. We potted some plants this evening and I got to water some of the bigger bamboo. Sam read her book while I practiced skateboarding. Then we ate a cauliflower pizza for dinner. I’m in bed writing this and she’s reading. It’s been foggy and colder than usual. I like it. I still feel anxiety in my stomach, but writing is helping. &nbsp;&#x273d;</p>
 
-      </div>      
-
-    </main>
+        </EntryLayout>
   );
 }

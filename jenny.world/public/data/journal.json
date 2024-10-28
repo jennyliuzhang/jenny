@@ -1,14 +1,47 @@
 [
   {
     "personalChapter": "cleveland-2",
+    "writingName": "Takes a Village",
+    "writingSlug": "takes-a-village",
+    "date": "October 2024",
+    "readTime": "3 min read",
+    "writingDesc": "A celebrity astrologer read my birth chart. Notes summarized by ChatGPT.",
+    "favorite": false,
+    "isPasswordProtected": false,
+    "writingThumbnailImageURL": "/journal-graphics/astrology.gif"
+  },
+  {
+    "personalChapter": "cleveland-2",
+    "writingName": "Astrology Consultation",
+    "writingSlug": "astrology-consultation",
+    "date": "October 2024",
+    "readTime": "3 min read",
+    "writingDesc": "A celebrity astrologer read my birth chart. Notes summarized by ChatGPT.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/astrology.gif"
+  },
+  {
+    "personalChapter": "cleveland-2",
     "writingName": "Cardamom Lattes",
     "writingSlug": "cardamom-lattes",
     "date": "October 2024",
     "readTime": "3 min read",
-    "writingDesc": "Stream-of-conscious prose poem. Rhythmic little vignettes about taking an intentional break between jobs in the fall.",
+    "writingDesc": "Stream-of-conscious prose poem. Rhythmic little vignettes about an intentional break between jobs in the fall.",
+    "favorite": false,
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/cardamom-lattes.jpg"
+  },
+  {
+    "personalChapter": "cleveland-2",
+    "writingName": "Three Wise Men",
+    "writingSlug": "three-wise-men",
+    "date": "September 2024",
+    "readTime": "6 min read",
+    "writingDesc": "Interactions during an adventurous weekend in Cleveland. On Ben’s and my friendship.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/cardamom-lattes.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/three-wise-men-thumb.jpg"
   },
   {
     "personalChapter": "cleveland-2",
@@ -16,10 +49,10 @@
     "writingSlug": "muse-within-myself",
     "date": "September 2024",
     "readTime": "4 min read",
-    "writingDesc": "A fast tribute to part of myself I'm sometimes annoyed by and sometimes in love with.",
+    "writingDesc": "A fast tribute to part of myself I’m sometimes annoyed by and sometimes in love with.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/cardamom-lattes.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/muse-within-myself.jpg"
   },
   {
     "personalChapter": "cleveland-2",
@@ -29,8 +62,8 @@
     "readTime": "9 min read",
     "writingDesc": "On getting better at things, from hobbies to patience with myself. On self-acceptance and the nonlinearity of growth.",
     "favorite": true,
-    "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/put-it-out-of-the-mind.jpg"
+    "isPasswordProtected": true,
+    "writingThumbnailImageURL": "/journal-graphics/playing-chess-with-kids.jpg"
   },
   {
     "personalChapter": "cleveland-2",
@@ -38,9 +71,9 @@
     "writingSlug": "the-great-weird",
     "date": "September 2024",
     "readTime": "9 min read",
-    "writingDesc": "An “I’m between jobs” reflection. On self-alignment and the nature of committing to paths.",
+    "writingDesc": "An “I’m between jobs” reflection. On self-alignment and the nature of committing to things.",
     "favorite": false,
-    "isPasswordProtected": false,
+    "isPasswordProtected": true,
     "writingThumbnailImageURL": "/journal-graphics/the-great-weird.jpg"
   },
   {
@@ -126,10 +159,10 @@
     "writingSlug": "nomad-life-recap",
     "date": "January 2024",
     "readTime": "2 min read",
-    "writingDesc": "A collage of vignettes from my time wandering around Europe, Asia, and the USA. Belated bookend to my nomad era.",
+    "writingDesc": "A collage of vignettes about wandering around Europe, Asia, and the USA. The belated bookend to my nomad era.",
     "favorite": false,
     "isPasswordProtected": false,
-    "writingThumbnailImageURL": "/journal-graphics/vaccuuming.jpg"
+    "writingThumbnailImageURL": "/journal-graphics/nomad-life-recap.jpg"
   },
   {
     "personalChapter": "traveling",
@@ -147,10 +180,10 @@
     "writingName": "Every Love Is Different",
     "writingSlug": "every-love-is-different",
     "date": "October 2022",
-    "readTime": "9 min read",
-    "writingDesc": "Comparing the experience of loving new cities to loving new people. On Doha, Amsterdam, Edinburgh, ",
+    "readTime": "12 min read",
+    "writingDesc": "A long reflection on new cities, love and gratitude, and the interior worlds of people. Edinburgh as metaphor.",
     "favorite": true,
-    "isPasswordProtected": false,
+    "isPasswordProtected": true,
     "writingThumbnailImageURL": "/journal-graphics/every-love-is-different.jpg"
   },
   {
@@ -159,7 +192,7 @@
     "writingSlug": "amsterdam-jotting",
     "date": "September 2022",
     "readTime": "3 min read",
-    "writingDesc": "On Amsterdam.",
+    "writingDesc": "On quirky moments in the Netherlands, making an offer on a home in Cleveland, being positive, traveling, and hostels.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/amsterdam-jotting.jpg"
@@ -170,7 +203,7 @@
     "writingSlug": "brief-scotland-update",
     "date": "August 2022",
     "readTime": "1 min read",
-    "writingDesc": "Checking in between St Andrews and Edinburgh.",
+    "writingDesc": "Checking in between St Andrews and Edinburgh. On DISI, starting the MSc, and meeting Sarah Sherman.",
     "favorite": false,
     "isPasswordProtected": false,
     "writingThumbnailImageURL": "/journal-graphics/brief-scotland-update.jpg"

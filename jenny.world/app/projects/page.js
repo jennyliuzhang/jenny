@@ -15,15 +15,56 @@ const breakpointColumnsObj = {
 };
 
 export default function Page() {
-
   const [projects, setProjects] = useState([]);
+  const [filteredProjects, setFilteredProjects] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState([]); // Track selected deliverables
 
-  useEffect(() => {
-    fetch('/data/projects.json')
-      .then((response) => response.json())
-      .then((data) => setProjects(data))
-      .catch((error) => console.error('Error fetching projects:', error));
-  }, []);
+// Fetch projects on component mount
+useEffect(() => {
+  fetch('/data/projects.json')
+    .then((response) => response.json())
+    .then((data) => {
+      setProjects(data);
+      setFilteredProjects(data); // Initialize with all projects
+    })
+    .catch((error) => console.error('Error fetching projects:', error));
+}, []);
+
+// Handle filter changes (checkbox toggle)
+const handleFilterChange = (deliverable) => {
+  setSelectedFilters((prevFilters) =>
+    prevFilters.includes(deliverable)
+      ? prevFilters.filter((f) => f !== deliverable) // Remove if already selected
+      : [...prevFilters, deliverable] // Add if not selected
+  );
+};
+
+// Filter projects whenever selected filters change
+useEffect(() => {
+  if (selectedFilters.length === 0) {
+    setFilteredProjects(projects); // Show all projects if no filters are selected
+  } else {
+    const filtered = projects.filter((project) =>
+      selectedFilters.every((filter) =>
+        project.projectDeliverables.includes(filter)
+      )
+    );
+    setFilteredProjects(filtered);
+  }
+}, [selectedFilters, projects]);
+
+// Count occurrences of each deliverable across all projects
+const deliverableCounts = projects.reduce((acc, project) => {
+  project.projectDeliverables.forEach((deliverable) => {
+    acc[deliverable] = (acc[deliverable] || 0) + 1;
+  });
+  return acc;
+}, {});
+
+// Create a sorted list of deliverables by count (descending)
+const sortedDeliverables = Object.entries(deliverableCounts)
+  .sort((a, b) => b[1] - a[1]) // Sort by count descending
+  .map(([deliverable, count]) => ({ deliverable, count }));
 
   return (
     <main>
@@ -184,86 +225,62 @@ export default function Page() {
       <div className={projectStyles.moreProjects}>
 
         <div className={projectStyles.filters}>
-            <h4>Filter</h4>
+            <h4>Filter by Deliverable</h4>
+            <div>
+            {sortedDeliverables.map(({ deliverable, count }) => (
+              <label key={deliverable} className={projectStyles.filterLabel}>
+                <input
+                  type="checkbox"
+                  checked={selectedFilters.includes(deliverable)}
+                  onChange={() => handleFilterChange(deliverable)}
+                />
+                {deliverable} ({count})
+              </label>
+            ))}
+          </div>
         </div>
       
         <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className={`my-masonry-grid ${projectStyles.allProjects}`}
-                columnClassName={`my-masonry-grid_column ${projectStyles.allProjectsColumn}`}>
-
-        {projects.map((project, index) => (
-          
-          <Link
-          href={`/projects/${project.parentProject ? project.parentProject + '/' : ''}${project.projectSlug}`}
-          key={index}
-          className={projectStyles.project}
+          breakpointCols={breakpointColumnsObj}
+          className={`my-masonry-grid ${projectStyles.allProjects}`}
+          columnClassName={`my-masonry-grid_column ${projectStyles.allProjectsColumn}`}
         >
-          <Image
-            className={projectStyles.projectThumbnail}
-            src={project.projectCoverURL}
-            alt={project.projectName}
-            width={960}
-            height={675}
-            style={{ width: '100%', height: 'auto' }}
-            quality={100}
-            priority
-          />
-          <div className={projectStyles.projectDesc}>
-            <h3>{project.projectName}</h3>
-            <p>{project.projectDesc}</p>
-
-            <div className={`tags ${projectStyles.tags}`}>
-              {project.projectDeliverables.map((deliverable, index) => (
-                <span className={`tag ${projectStyles.tag}`} key={index}>
-                  {deliverable}
-                </span>
-              ))}
-            </div>
-          </div>
-        </Link>
-        ))}
-
+          {filteredProjects.map((project, index) => (
+            <Link
+              href={`/projects/${project.parentProject ? project.parentProject + '/' : ''}${project.projectSlug}`}
+              key={index}
+              className={projectStyles.project}
+            >
+              <Image
+                className={projectStyles.projectThumbnail}
+                src={project.projectCoverURL}
+                alt={project.projectName}
+                width={960}
+                height={675}
+                style={{ width: '100%', height: 'auto' }}
+                quality={100}
+                priority
+              />
+              <div className={projectStyles.projectDesc}>
+                <h3>{project.projectName}</h3>
+                <p>{project.projectDesc}</p>
+                <div className={`tags ${projectStyles.tags}`}>
+                  {project.projectDeliverables.map((deliverable, idx) => (
+                    <span className={`tag ${projectStyles.tag}`} key={idx}>
+                      {deliverable}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
         </Masonry>
 
       </div>
 
-      <h2 className="centeredh2">The Archive</h2>
+      {/* <h2 className="centeredh2">The Archive</h2>
 
-      <h1>Older projects, unfinished projects, and just-for-fun projects.</h1>
-
-
-      {/* <h1 style={{marginTop: "40px"}}>Testimonials</h1>
-
-      <div className={projectStyles.testimonials}>
-        <div className={projectStyles.testimonial}>
-          <blockquote className={projectStyles.testimonialContent}>Jenny possesses the very rare combination of having an incredibly strong aesthetic, a deep understanding of how product design influences business strategy, and a way of intuiting how the design of a product can change the behavior of those who interact with it. You want her on your founding team!”</blockquote>
-          <div className={projectStyles.testimonialAuthor}>
-            Jared Morgenstern, former COO of Raya and 3rd Designer at Facebook
-          </div>
-        </div>
-
-        <div className={projectStyles.testimonial}>
-          <blockquote className={projectStyles.testimonialContent}>It was important for us to work with someone that was flexible, agile and diligent. Jenny blew us away with her ability to create curated, clear webflows — her talents go beyond that of web development. She has a knack for conveying language in an extremely effective and engaging way. Jenny was brilliant to work alongside.”</blockquote>
-          <div className={projectStyles.testimonialAuthor}>
-            Sahar Rohani, Co-Founder of SOSHE Beauty
-          </div>
-        </div>
-
-        <div className={projectStyles.testimonial}>
-          <blockquote className={projectStyles.testimonialContent}>Jenny is my go-to person for creative and consumer. She has the unique ability to bring her own direction to the table while iterating on feedback with intention and speed.”</blockquote>
-          <div className={projectStyles.testimonialAuthor}>
-            Suraya Shivji, Designer at Snap and former Founder of HAGS
-          </div>
-        </div>
-
-        <div className={projectStyles.testimonial}>
-          <blockquote className={projectStyles.testimonialContent}>I can't think of anyone else that embodies the word 'curiosity' more than Jenny. She has a natural ability to ask the right questions at the right time, and brings a perfect balance of research and intuition to every project she is involved in.”</blockquote>
-          <div className={projectStyles.testimonialAuthor}>
-            Matthew Manos, Founder of verynice
-          </div>
-        </div>
-      </div> */}
+      <h1>Older projects, unfinished projects, and just-for-fun projects.</h1> */}
 
     </main>
   );

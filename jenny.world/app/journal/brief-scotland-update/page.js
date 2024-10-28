@@ -1,35 +1,10 @@
-"use client";
-
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import EntryLayout from '../entry-layout';
 import Image from 'next/image';
-import Link from 'next/link';
 import entryStyles from "../../styles/entry.module.css";
-import Breadcrumbs from '../../components/Breadcrumbs';
 
-export default function Page() {
-  const [entry, setEntry] = useState(null);
+export default function JournalEntryPage() {
 
-  useEffect(() => {
-    fetch('/data/journal.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const foundEntry = data.find(item => item.writingSlug === "brief-scotland-update");
-        setEntry(foundEntry);
-      })
-      .catch((error) => console.error('Error fetching journal entry:', error));
-  }, []);
-
-  // If entry is not found or still loading
-  if (!entry) return <div>Loading...</div>;
-
-  return (
-    <main className={entryStyles.entryStyles}>
-      
-      <Breadcrumbs>
-        <Link href="/journal">Jenny’s Journal</Link>
-        <span>{entry.writingName}</span>
-      </Breadcrumbs>
+  const heroImage = (
       
       <Image
         className={entryStyles.writingHero}
@@ -41,16 +16,12 @@ export default function Page() {
         quality={100} 
         priority
       />
+  );
 
-      <div className={entryStyles.heroCaption}>
-        A rainy shot of the Gilded Balloon during Edinburgh Fringe Festival 2022, taken right before Sarah Sherman’s show.
-      </div>
+  const heroCaption = "A rainy shot of the Gilded Balloon during Edinburgh Fringe Festival 2022, taken right before Sarah Sherman’s show."
 
-      <div className={entryStyles.body}>
-        <h1>{entry.writingName}</h1>
-        <p className={entryStyles.descText}>{entry.writingDesc}</p>
-        <h6>{entry.date}</h6>
-        <h6>{entry.readTime}</h6>
+  return (
+    <EntryLayout slug="brief-scotland-update" heroImage={heroImage} heroCaption={heroCaption}>
 
         <p>Hi! Been a while since I shared a personal update. I just came back from a beer tasting so this writing is entirely stream of consciousness and a bit infused with drink made from “murdered barley babies” as our tasting guide called it. I’m in Edinburgh now after a long 3 weeks at St Andrews for the Diverse Intelligences Summer Institute (DISI). Back to full-time work and balancing Plot Twisters and other projects. The city is wondrous: it’s layered in this weird way, with a volcano sitting in the middle of it and streets that go up and up and around and around. If you’re walking down the street and turn around to look back, the odds of seeing a massive landform are high. It’s beautiful and awe-inspiring and wild to behold how civilization has made itself work around these natural shapes.</p>
 
@@ -62,8 +33,6 @@ export default function Page() {
 
         <p>TTYL! &nbsp;&#x273d;</p>
 
-      </div>      
-
-    </main>
+        </EntryLayout>
   );
 }

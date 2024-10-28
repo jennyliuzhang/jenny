@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import "../styles/globals.css";
+import "../styles/global-nav.css";
 import "../styles/fonts.css";
 import cvStyles from "../styles/cv.module.css";
 import Footer from "../components/Footer"
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
               <div className="logo"></div>
           </Link>
 
-          <div className="pageNav">
+          {/* <div className="pageNav">
               <div className="leftNav">
                 <Link className="about" href="/about">About</Link>
                 <Link className="projects" href="/projects">Projects</Link>
@@ -41,6 +42,18 @@ export default function RootLayout({ children }) {
                 <Link className="bookshelf" href="/bookshelf">Bookshelf</Link>   
                 <Link className="journal" href="/journal">Journal</Link>
                 <Link className="guestbook" href="/guestbook">Guestbook</Link>
+              </div>
+          </div> */}
+
+          <div className="pageNav">
+              <div className="leftNav">
+                <Link className="about" href="/about">About</Link>
+                <Link className="projects" href="/projects">Projects</Link>
+                 
+              </div>
+              <div className="rightNav">
+                <Link className={cvStyles.cvActive} href="/cv">CV</Link>  
+                <Link className="bookshelf" href="/bookshelf">Bookshelf</Link>
               </div>
           </div>
       </header>

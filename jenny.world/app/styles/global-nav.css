@@ -1,0 +1,252 @@
+.pageNav {
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; Re-enable 6-button */
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2em 0.75em 1em;
+  height: 100px;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+      .pageNav::-webkit-scrollbar { 
+        display: none;
+      }
+
+.leftNav, .rightNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: auto;
+  height: 90px;
+}
+
+  .pageNav a {
+    align-self: flex-end;
+    font: 700 normal 14px/1.1em 'Capitaine', serif;
+    text-transform: uppercase;
+    color: #2c2c2c;
+    text-decoration: none;
+    min-width: 80px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    transition: all 0.3s;
+  }
+  
+  .pageNav a:hover {
+      margin-top: -20px;
+      color: #962006;
+  }
+  
+  .pageNav .about {
+      display: block;
+      padding: 55px 0 0 0;
+      background: url('/nav/about.png') no-repeat;
+      background-size: auto 42px;
+      background-position: center top;
+  }
+  
+      .pageNav .about:hover {
+      padding: 75px 0 0 0;
+      background-image: url('/nav/about.png'), url('/nav/active-shadow.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 42px, 30px auto;
+      background-position: center top, 50% 55px;
+      }
+  
+  .pageNav .projects {
+      display: block;
+      min-width: 95px;
+      padding: 55px 0 0 0;
+      background: url('/nav/projects.png') no-repeat;
+      background-size: auto 42px;
+      background-position: 55% 0%;
+  }
+  
+      .pageNav .projects:hover {
+      padding: 75px 0 0 0;
+      background-image: url('/nav/projects.png'), url('/nav/active-shadow.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 42px, 30px auto;
+      background-position: 60% 0%, 50% 55px;
+      }
+  
+  .pageNav .cv {
+    display: block;
+    padding: 55px 0 0 0;
+    background: url('/nav/cv.png') no-repeat;
+    background-size: auto 42px;
+    background-position: 60% 0%;
+  }
+  
+      .pageNav .cv:hover {
+      padding: 75px 0 0 0;
+      background-image: url('/nav/cv.png'), url('/nav/active-shadow.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 42px, 30px auto;
+      background-position: 60% 0%, 50% 55px;
+      }
+
+  .pageNav .bookshelf {
+    display: block;
+    /* min-width: 110px; Re-enable with 6-button */
+    min-width: 100px;
+    padding: 58px 0 0 0;
+    background: url('/nav/bookshelf.png') no-repeat;
+    background-size: auto 44px;
+    background-position: 50% 0px;
+  }
+    
+  .pageNav .bookshelf:hover {
+      padding: 75px 0 0 0;
+      background-image: url('/nav/bookshelf.png'), url('/nav/active-shadow.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 44px, 30px auto;
+      background-position: 50% 0px, 50% 55px;
+      }
+
+    .pageNav .journal {
+      display: block;
+      padding: 55px 0 0 0;
+      background: url('/nav/journal.png') no-repeat;
+      background-size: auto 42px;
+      background-position: 45% 0px;
+  }
+      
+    .pageNav .journal:hover {
+        padding: 75px 0 0 0;
+        background-image: url('/nav/journal.png'), url('/nav/active-shadow.png');
+        background-repeat: no-repeat, no-repeat;
+        background-size: auto 42px, 30px auto;
+        background-position: 45% 0px, 50% 55px;
+        }
+  
+  .pageNav .guestbook {
+      display: block;
+      margin: 0 0.75em 0;
+      padding: 55px 0 0 0;
+      background: url('/nav/guestbook.png') no-repeat;
+      background-size: auto 32px;
+      background-position: 40% 4px;
+      /* border: 1px solid blue; */
+  }
+  
+  .pageNav .guestbook:hover {
+      padding: 75px 0 0 0;
+      background-image: url('/nav/guestbook.png'), url('/nav/active-shadow.png');
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 32px, 30px auto;
+      background-position: 40% 6px, 40% 55px;
+      }
+
+  @media screen
+  and (min-width: 400px) {
+
+    .pageNav {
+      justify-content: center;
+    }
+
+  }
+
+/* Delete above and re-enable for 6-button
+  @media screen
+  and (min-width: 580px) {
+
+    .pageNav {
+      justify-content: center;
+    }
+
+  } */
+
+@media screen
+and (min-width: 640px) {
+  .pageNav a {
+    margin: 0 0.5em;
+  }
+}
+
+
+  @media screen
+  and (min-width: 860px) {
+
+      .pageNav {
+          margin: -105px 0 0 0;
+          /* min-width: 860px; Re-enable for 6 */
+          /* max-width: 900px; Re-enable for 6 */
+          min-width: 580px;
+          max-width: 640px;
+          overflow: visible;
+          justify-content: space-around;
+          /* border: 1px solid red; */
+      }
+
+      .leftNav, .rightNav {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          transition: all 0.3s;
+      }
+
+      /* 
+      Re-enable for 6-button
+
+      .leftNav {
+        padding: 0 0 0 30px;
+        min-width: 300px;
+        max-width: 400px;
+      }
+
+      .rightNav {
+        padding: 0 0 0 130px;
+        min-width: 340px;
+        max-width: 440px;
+      } */
+
+      .leftNav {
+        padding: 0 0 0 0px;
+        min-width: 150px;
+        max-width: 250px;
+      }
+
+      .rightNav {
+        padding: 0 0 0 100px;
+        min-width: 100px;
+        max-width: 200px;
+      }
+
+  }
+
+  @media screen
+  and (min-width: 1180px) {
+
+    /* Re-enable with 6-button
+    
+    .leftNav {
+      padding: 0 0 0 30px;
+      min-width: 320px;
+      max-width: 420px;
+    }
+
+    .rightNav {
+      padding: 0 0 0 160px;
+      min-width: 360px;
+      max-width: 460px;
+    } */
+
+    .leftNav {
+      padding: 0 0 0 10px;
+      min-width: 110px;
+      max-width: 210px;
+    }
+
+    .rightNav {
+      padding: 0 0 0 110px;
+      min-width: 180px;
+      max-width: 280px;
+    }
+
+  }
