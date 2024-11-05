@@ -21,7 +21,7 @@
     }
 
 .skillsTable {
-    margin: 10px 0;
+    margin: 10px 0 1em;
     width: 100%;
     display: inline-grid;
     grid-gap: 1px;

@@ -21,14 +21,15 @@ export default function Page() {
 
         <div className={bookshelfStyles.introduction}>
         <div className={bookshelfStyles.introPara}>
-          <h1 className={bookshelfStyles.bookshelfHeadline}>My favorite books, essays, stories, and tidbits.</h1>
-          <p>These are my most impactful reads, organized into <Link href="#shelves">six &ldquo;bookshelves&rdquo;</Link> of themes I enjoy meditating on. I think about these texts often for inspiration, knowledge, or their ability to articulate something in my inner world.</p>
-          <p style={{marginBottom: '0'}}>Some works could easily sit on multiple shelves, but I’ve sorted them based on my overall judgement and takeaway, which is fun for me to think about.</p>
+          <h1 className={bookshelfStyles.bookshelfHeadline}>My favorite books, essays, stories, and written wisdoms.</h1>
+          <p>These are my most impactful reads, organized into <Link href="#shelves">six &ldquo;bookshelves&rdquo;</Link> of themes I enjoy meditating on and shape my core values. I think about these texts often for inspiration, knowledge, or their ability to articulate something in my inner world. To make this list, I must have re-read or returned to it a handful of times.</p>
+          <p style={{marginBottom: '0'}}>Some works could easily sit on multiple shelves, but I’ve sorted them based on my overall judgement and takeaway, which is a fun little thought exercise for me.</p>
         </div>
 
 
         <div className={bookshelfStyles.highlights}>
 
+            <div className={bookshelfStyles.portrait}></div>
 
         </div>
         

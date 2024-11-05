@@ -18,6 +18,8 @@ export default function Page() {
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState([]); // Track selected deliverables
+  const [selectedOwnershipFilters, setSelectedOwnershipFilters] = useState([]);
+  const [selectedProjectSizeFilters, setSelectedProjectSizeFilters] = useState([]);
 
 // Fetch projects on component mount
 useEffect(() => {
@@ -61,10 +63,95 @@ const deliverableCounts = projects.reduce((acc, project) => {
   return acc;
 }, {});
 
+// Count occurrences of each ownership type across all projects
+const ownershipCounts = projects.reduce((acc, project) => {
+  acc[project.projectOwnership] = (acc[project.projectOwnership] || 0) + 1;
+  return acc;
+}, {});
+
+// Count occurrences of each projectSize type across all projects
+const projectSizeCounts = projects.reduce((acc, project) => {
+  acc[project.projectSize] = (acc[project.projectSize] || 0) + 1;
+  return acc;
+}, {});
+
 // Create a sorted list of deliverables by count (descending)
 const sortedDeliverables = Object.entries(deliverableCounts)
   .sort((a, b) => b[1] - a[1]) // Sort by count descending
   .map(([deliverable, count]) => ({ deliverable, count }));
+
+
+const handleOwnershipFilterChange = (ownership) => {
+    if (selectedOwnershipFilters.includes(ownership)) {
+      setSelectedOwnershipFilters(
+        selectedOwnershipFilters.filter((item) => item !== ownership)
+      );
+    } else {
+      setSelectedOwnershipFilters([...selectedOwnershipFilters, ownership]);
+    }
+  };
+
+const handleProjectSizeFilterChange = (projectSize) => {
+  if (selectedProjectSizeFilters.includes(projectSize)) {
+    setSelectedProjectSizeFilters(
+      selectedProjectSizeFilters.filter((item) => item !== projectSize)
+    );
+  } else {
+    setSelectedProjectSizeFilters([...selectedProjectSizeFilters, projectSize]);
+  }
+};
+
+useEffect(() => {
+  let filtered = projects;
+
+  // Apply deliverable filters
+  if (selectedFilters.length > 0) {
+    filtered = filtered.filter((project) =>
+      selectedFilters.every((filter) =>
+        project.projectDeliverables.includes(filter)
+      )
+    );
+  }
+
+  // Apply ownership filters
+  if (selectedOwnershipFilters.length > 0) {
+    filtered = filtered.filter((project) =>
+      selectedOwnershipFilters.includes(project.projectOwnership)
+    );
+  }
+
+  // Apply projectSize filters
+  if (selectedProjectSizeFilters.length > 0) {
+    filtered = filtered.filter((project) =>
+      selectedProjectSizeFilters.includes(project.projectSize)
+    );
+  }
+
+  setFilteredProjects(filtered);
+}, [selectedFilters, selectedOwnershipFilters, selectedProjectSizeFilters, projects]);
+
+// For filter toggling, keeping details open on desktop
+const [isDesktop, setIsDesktop] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsDesktop(window.innerWidth > 960);
+  };
+
+  // Check the initial window size
+  handleResize();
+
+  // Add event listener for window resize
+  window.addEventListener('resize', handleResize);
+
+  // Clean up the event listener on component unmount
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+// Count by parent project
+const countProjectsByParentProject = (parentProjectId) => {
+  return projects.filter(project => project.parentProject === parentProjectId).length;
+};
 
   return (
     <main>
@@ -87,7 +174,7 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                 <p>I led early product and marketing design as the first design hire of this $35M-backed hospitality startup.</p>
               </Link>
 
-              <h5>12 subprojects</h5>
+              <h5>{countProjectsByParentProject("dorsia")} subprojects</h5>
               <div className={projectStyles.subprojectPreviews}>
                 <Link href="/projects/dorsia/restaurant-profiles" className={projectStyles.subprojectPreview}>
                   <Image
@@ -147,7 +234,7 @@ const sortedDeliverables = Object.entries(deliverableCounts)
         <div className={projectStyles.featuredTile}>
           <div className={projectStyles.featuredTileDesc}>
 
-            <Link className={projectStyles.linkedTile} href="/projects/plottwisters">
+            <Link className={projectStyles.linkedTile} href="/projects/plot-twisters">
               <Image
                   src="/projects/logos/pt.png"
                   alt="Dorsia"
@@ -160,9 +247,9 @@ const sortedDeliverables = Object.entries(deliverableCounts)
               <p>I founded this award-winning EdTech design collective, focused on making playful self-reflection products.</p>
             </Link>
 
-            <h5>6 subprojects</h5>
+            <h5>{countProjectsByParentProject("plot-twisters")} subprojects</h5>
             <div className={projectStyles.subprojectPreviews}>
-              <div className={projectStyles.subprojectPreview}>
+              <Link href="/projects/plot-twisters/brand-strategy" className={projectStyles.subprojectPreview}>
                 <Image
                   src="/projects/thumbnails/brand-strategy.png"
                   alt="Project"
@@ -171,8 +258,8 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                   style={{ width: '100%', height: 'auto' }}
                   priority
                 />
-              </div>
-              <div className={projectStyles.subprojectPreview}>
+              </Link>
+              <Link href="/projects/plot-twisters/org-design" className={projectStyles.subprojectPreview}>
                 <Image
                   src="/projects/thumbnails/org-design.png"
                   alt="Project"
@@ -181,8 +268,8 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                   style={{ width: '100%', height: 'auto' }}
                   priority
                 />
-              </div>
-              <div className={projectStyles.subprojectPreview}>
+              </Link>
+              <Link href="/projects/plot-twisters/openideo" className={projectStyles.subprojectPreview}>
                 <Image
                   src="/projects/thumbnails/openideo.png"
                   alt="Project"
@@ -191,8 +278,8 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                   style={{ width: '100%', height: 'auto' }}
                   priority
                 />
-              </div>
-              <div className={projectStyles.moreSubprojects}>+ 3 more</div>
+              </Link>
+              <div className={projectStyles.moreSubprojects}>+ 9 more</div>
             </div>
           </div>
 
@@ -210,7 +297,7 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                 transform: 'translate(-50%,-50%)'
               }}
             >
-              <source src="/projects/dorsia-featured.mp4" type="video/mp4" />
+              <source src="/projects/plot-twisters/final.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </Link>
@@ -225,8 +312,49 @@ const sortedDeliverables = Object.entries(deliverableCounts)
       <div className={projectStyles.moreProjects}>
 
         <div className={projectStyles.filters}>
-            <h4>Filter by Deliverable</h4>
-            <div>
+          <h6 style={{fontSize: '1em'}}>{projects.length} projects total</h6>
+
+          <details className={projectStyles.detailsTag} open={isDesktop}>
+            <summary><h4>Ownership</h4></summary>
+            <div className={projectStyles.checkboxes}>
+              {[100, 90, 80, 70].map((ownership) => (
+                <label key={ownership} className={projectStyles.filterLabel}>
+                  <input
+                    type="checkbox"
+                    checked={selectedOwnershipFilters.includes(ownership)}
+                    onChange={() => handleOwnershipFilterChange(ownership)}
+                  />
+                  {ownership === 100 && `100% created by me (${ownershipCounts[100] || 0})`}
+                  {ownership === 90 && `90% created by me (${ownershipCounts[90] || 0})`}
+                  {ownership === 80 && `Owned but collaborative (${ownershipCounts[80] || 0})`}
+                  {ownership === 70 && `Equal teamwork (${ownershipCounts[70] || 0})`}
+                </label>
+              ))}
+            </div>
+          </details>
+
+          <details className={projectStyles.detailsTag} open={isDesktop}>
+            <summary><h4>Complexity</h4></summary>
+            <div className={projectStyles.checkboxes}>
+              {["XL", "L", "M", "S"].map((projectSize) => (
+                <label key={projectSize} className={projectStyles.filterLabel}>
+                  <input
+                    type="checkbox"
+                    checked={selectedProjectSizeFilters.includes(projectSize)}
+                    onChange={() => handleProjectSizeFilterChange(projectSize)}
+                  />
+                  {projectSize === "XL" && `Rigorous (${projectSizeCounts["XL"] || 0})`}
+                  {projectSize === "L" && `Challenging (${projectSizeCounts["L"] || 0})`}
+                  {projectSize === "M" && `Moderately Complex (${projectSizeCounts["M"] || 0})`}
+                  {projectSize === "S" && `Some Complexity (${projectSizeCounts["S"] || 0})`}
+                </label>
+              ))}
+            </div>
+          </details>
+
+          <details className={projectStyles.detailsTag} open={isDesktop}>
+            <summary><h4>Deliverable</h4></summary>
+            <div className={projectStyles.checkboxes}>
             {sortedDeliverables.map(({ deliverable, count }) => (
               <label key={deliverable} className={projectStyles.filterLabel}>
                 <input
@@ -238,6 +366,9 @@ const sortedDeliverables = Object.entries(deliverableCounts)
               </label>
             ))}
           </div>
+          </details>
+
+
         </div>
       
         <Masonry
@@ -270,6 +401,13 @@ const sortedDeliverables = Object.entries(deliverableCounts)
                       {deliverable}
                     </span>
                   ))}
+                  {project.projectOwnership >= 90 && (
+                    <span className={`tag ${projectStyles.tag} ${projectStyles.ownershipLabel}`}>
+                      {project.projectOwnership === 100
+                        ? "💡 100% created by me"
+                        : "💡 90% created by me"}
+                    </span>
+                  )}
                 </div>
               </div>
             </Link>
@@ -277,6 +415,7 @@ const sortedDeliverables = Object.entries(deliverableCounts)
         </Masonry>
 
       </div>
+
 
       {/* <h2 className="centeredh2">The Archive</h2>
 

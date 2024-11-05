@@ -1,96 +1,66 @@
+
 import Image from "next/image";
 import Link from "next/link";
+import ProjectLayout from '../../project-layout';
 import projectPage from "../../../styles/projectPage.module.css";
+import projectStyles from "../../../styles/projects.module.css";
 import Breadcrumbs from '../../../components/Breadcrumbs';
 
-export default function Page() {
-  return (
-    <main className={projectPage.projectPage}>
 
-      <Breadcrumbs>
-        <Link href="/projects">Projects</Link>
-        <Link href="/projects/dorsia">Dorsia</Link>
-        <span>Research with Dom Perignon</span>
-      </Breadcrumbs>
+export default function ProjectPage() {
+  const heroImage = "/projects/dorsia/dom-perignon/cover.jpg";
 
-      {/* <h2 className="breadcrumbh2"><span className="subnav"><Link href="/projects" className="breadcrumb">Projects</Link><Link href="/projects/dorsia" className="breadcrumb">Dorsia</Link>Reserve with Dom Perignon</span></h2> */}
-      
-      <Image
-        className={projectPage.projectHero}
-        src="/projects/dorsia/dom-perignon/cover.jpg"
-        alt="Project"
-        width={2880}
-        height={2025}
-        style={{ width: '100%', height: 'auto' }}
-        quality={100} 
-        priority
-      />
+  const projectExplain = "Innovating on minimum spend payments through a co-branded alternative";
 
-      <div className={projectPage.projectIntro}>
-        <div className={projectPage.introContent}>
-        <h1>Reserve with Dom Perignon</h1>
-          <h2>Innovating on minimum spend payments through a co-branded alternative</h2>
-          {/* <h2>Secure a hard-to-get reservation by buying a bottle of Dom Perignon for the table beforehand</h2> */}
+  const introPara = "Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.";
 
-          <div className="tags">
-            <span className="tag">Mobile App Design</span>
-            <span className="tag">Payments</span>
-            <span className="tag">User Education</span>
-            <span className="tag">Co-branding</span>
-            <span className="tag">Pitch Deck</span>
-          </div>
-
-          <div className={projectPage.introPara}>
-            <p>Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.</p>
-          </div>
-
-          <div className={projectPage.details}>
-            
-            <div className={projectPage.team}>
-              <h5>Team</h5>
-              <ul>
-                <li><span className={projectPage.role}>Jenny Liu Zhang</span> (design lead)</li>
-                <li>Catie Case (BD lead)</li>
-                <li>Ophra Werde (product lead)</li>
-              </ul>
-            </div>
-
-            <div className={projectPage.services}>
-              <h5>Activities</h5>
-              <ul>
-                <li>Product strategy</li>
-                <li>Presentation design</li>
-                <li>Journey mapping</li>
-                <li>User flows</li>
-                <li>Prototyping</li>
-                <li>Interface design</li>
-                <li>Graphic &amp; motion design</li>
-              </ul>
-            </div>
-
-            <div className={projectPage.team}>
-              <h5>Stakeholders</h5>
-              <ul>
-                <li>Dorsia Leadership</li>
-                <li>Dorsia Marketing Team</li>
-                <li>Dom Perignon</li>
-              </ul>
-            </div>
-
-            <div className={projectPage.team}>
-              <h5>Timeline</h5>
-              <ul>
-                <li>3 weeks</li>
-              </ul>
-            </div>
-            
-          </div>
-
-          
-        </div>
+  const projectDetails = (
+    <div className={projectPage.details}>
+      <div className={projectPage.team}>
+        <h5>Team</h5>
+        <ul>
+          <li><span className={projectPage.role}>Jenny Liu Zhang</span> (design lead)</li>
+          <li>Catie Case (BD lead)</li>
+          <li>Ophra Werde (product lead)</li>
+        </ul>
       </div>
 
-      <h2 className={`centeredh2 ${projectPage.projectPageh2}`}>Creative Process</h2>
+      <div className={projectPage.services}>
+        <h5>Activities</h5>
+        <ul>
+          <li>Product strategy</li>
+          <li>Presentation design</li>
+          <li>Journey mapping</li>
+          <li>User flows</li>
+          <li>Prototyping</li>
+          <li>Interface design</li>
+          <li>Graphic &amp; motion design</li>
+        </ul>
+      </div>
+
+      <div className={projectPage.team}>
+        <h5>Stakeholders</h5>
+        <ul>
+          <li>Dorsia Leadership</li>
+          <li>Dorsia Marketing Team</li>
+          <li>Dom Perignon</li>
+        </ul>
+      </div>
+
+      <div className={projectPage.team}>
+        <h5>Timeline</h5>
+        <ul>
+          <li>3 weeks</li>
+        </ul>
+      </div>
+      
+    </div>
+  );
+
+  return (
+    <ProjectLayout slug="dom-perignon" heroImage={heroImage} projectExplain={projectExplain} introPara={introPara} projectDetails={projectDetails}>
+
+      <h2 className="centeredh2">Creative Process</h2>
 
       <div className={projectPage.creativeProcess}>
 
@@ -152,7 +122,7 @@ export default function Page() {
         </div>
       </div>
 
-      <h2 className={`centeredh2 ${projectPage.projectPageh2}`}>Project Takeaways</h2>
+      <h2 className="centeredh2">Project Takeaways</h2>
 
       <div className={projectPage.takeaways}>
         <div className={projectPage.takeaway}>
@@ -170,7 +140,6 @@ export default function Page() {
             <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
         </div>
       </div>
-
-    </main>
+    </ProjectLayout>
   );
 }

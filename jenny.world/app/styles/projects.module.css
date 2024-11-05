@@ -81,6 +81,7 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
         margin: 0.75em 0;
     }
 
+    
 .featuredTileDesc h5 {
     color: #4c4c4c;
 }
@@ -98,7 +99,12 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
     }
 
 .filters h4 {
-    margin: 0.25em 0 1.1em;
+    margin: 0.75em 0 0.75em 7px;
+    display: inline-block;
+}
+
+.filters .checkboxes {
+    margin: 0 0 1.5em;
 }
 
 
@@ -150,7 +156,7 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
 }
 
 .allProjects {
-    margin: -30px 0px 3.5em -20px;
+    margin: -20px 0px 1em -20px;
     }
     
 .tags {
@@ -160,6 +166,13 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
 .tags .tag {
     font-size: 0.8em;
     margin: 0 0.6em 0.4em 0;
+}
+
+.ownershipLabel {
+    display: inline-block;
+    margin: 0.4em 0 0;
+    background: none !important;
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
 
@@ -206,10 +219,10 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
             max-width: none;
         }
 
+    .filterLabel {
+        font-size: 0.95em;
+    }
 
-    .allProjects {
-        margin: -25px 0px 4em -20px;
-      }
       
       .allProjectsColumn {
         padding-left: 20px;
@@ -226,7 +239,7 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
 
         .moreProjects {
             display: grid;
-            grid-template-columns: 0.3fr 1fr;
+            grid-template-columns: 0.4fr 1fr;
         }
 
         .project {
@@ -257,6 +270,10 @@ a.linkedTile *, a.linkedTile *:visited, a.project *, a.project *:visited {
 
 @media screen
 and (min-width: 1100px) {
+
+    .moreProjects {
+        grid-template-columns: 0.3fr 1fr;
+    }
 
     .featuredTileDesc {
         padding: 4em 2% 4em 20%;

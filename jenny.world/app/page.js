@@ -76,7 +76,8 @@ export default function Home() {
             <div className={indexStyles.position2wrap}>
               {/* <p>I craft both the <em style={{fontWeight: '600'}}>function</em> and <em style={{fontWeight: '600'}}>form</em> of digital projects.</p> */}
               {/* <p>My creative practice <em style={{fontWeight: '600'}}>integrates</em> design, technology, and product.</p> */}
-              <p>I thrive at the <em style={{fontWeight: '600'}}>intersection</em> of design, technology, and product.</p>
+              {/* <p>I thrive at the <em style={{fontWeight: '600'}}>intersection</em> of design, technology, and product.</p> */}
+              <p>My skills integrate design, technology, and product.</p>
               <span className={`${indexStyles.tileCTA}`}>My Skills &amp; CV</span>
             </div>
           </div>
@@ -136,7 +137,7 @@ export default function Home() {
 
         <div className={`${indexStyles.tile} ${indexStyles.gapPosition}`}></div>
 
-        <Link href="/about/bookshelf">
+        <Link href="/bookshelf">
           <div className={`${indexStyles.tile} ${indexStyles.position7}`}>
             <div className={indexStyles.position7wrap}>
               <Image className={indexStyles.position7book} src="/home-graphics/patternlanguage.png" alt="A Pattern Language by Christopher Alexander" width='100' height='150'></Image>

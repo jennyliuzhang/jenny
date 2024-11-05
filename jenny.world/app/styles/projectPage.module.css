@@ -2,6 +2,7 @@
     
 }
 
+
 h2.backh2{
     color: #8c8c8c;
 }
@@ -24,7 +25,7 @@ h2.backh2{
 }
 
 .projectIntro {
-    margin: 0 0 40px;
+    margin: 0 0 1em;
 }
 
     .projectIntro h1 {
@@ -40,6 +41,10 @@ h2.backh2{
         .projectIntro h2:after {
             display: none;
         }
+
+    .projectIntro p {
+        font-size: 1.12em;
+    }
 
     .details {
 
@@ -80,22 +85,21 @@ h2.backh2{
         margin: 1em 0 1em;
     }
 
-        .introPara p {
-            font-size: 1.2em;
-        }
-
 .projectPage h2.projectPageh2 {
     margin: 1em 0 0.25em;
+}
+
+.highlights p {
+    color: #5c5c5c;
 }
 
 .creativeProcess {
     margin: 0 0 3em;
 }
 
-
     .step .number {
         display: inline-block;
-        margin: 1.5em 0 0.5em;
+        margin: 1em 0 0.5em;
         font: 600 normal 1.1em/1.2em 'Capitaine', serif; /* */
         padding: 8px 12px;
         background: rgba(0,0,0,0.03);
@@ -110,16 +114,16 @@ h2.backh2{
 
     .step p {
         font-size: 1em;
-        margin: 0;
+        margin: 0 0 1em;
     }
 
 .keyFeatures {
     border-top: 1px solid rgba(0,0,0,0.15);
-    margin: 1em 0 3.5em;
+    margin: 2em 0 3.5em;
 }
 
     .keyFeature h4 {
-        margin: 2em 0 0;
+        margin: 2.5em 0 0;
     }
     
     .keyFeature h1 {
@@ -181,7 +185,7 @@ and (min-width: 540px) {
 
         .projectIntro {
             display: grid;
-            grid-template-columns: 3fr 0.2fr;
+            grid-template-columns: 3fr 1.8fr;
             grid-auto-rows: 1fr;
             grid-column-gap: 60px;
         }
@@ -201,11 +205,15 @@ and (min-width: 540px) {
             max-width: 90%;
         }
 
+        .highlights p {
+            font-size: 0.9em;
+        }        
+
         .creativeProcess {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 0 0 1em;
+            margin: 0 0 2em;
         }
 
             .creativeProcess .step {
@@ -215,6 +223,15 @@ and (min-width: 540px) {
                 text-align: center;
                 /* border: 1px solid red; */
             }
+
+                .step .number {
+                    margin: 0.5em 0 0.5em;
+                }
+
+                .step p {
+                    font-size: 1em;
+                    margin: 0 0 0.5em;
+                }
 
             .creativeProcess .step:nth-child(2n) {
                 padding: 0 0 20px 2%;
@@ -234,10 +251,11 @@ and (min-width: 540px) {
 and (min-width: 960px) {
 
     .projectIntro {
-        grid-template-columns: 3fr 0.8fr;
+        grid-template-columns: 3fr 1.3fr;
     }
 
     .details {
+        margin: 0 0 1em;
         display: grid;
         grid-template-columns: 1.2fr 1fr 1.1fr 0.2fr;
         grid-auto-rows: 1fr;

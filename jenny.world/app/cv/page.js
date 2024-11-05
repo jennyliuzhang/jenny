@@ -3,7 +3,6 @@ import Link from "next/link";
 import cvStyles from "../styles/cv.module.css";
 import ScrollingTabs from '../components/ScrollingTabs';
 import Tooltip from "../components/Tooltip";
-import Button from "../components/Button";
 
 export default function Page() {
   return (
@@ -52,7 +51,7 @@ export default function Page() {
 
           {/* <p className={cvStyles.introPara}>Jenny Liu Zhang is a digital design leader and scholar,  passionate about narrative-driven products and nurturing the relationships and creative practices that bring them to life. See the <a href="#" target="_blank">one-page résumé</a> or read <Link href="/testimonials">testimonials</Link>.</p> */}
 
-      <h1 className={cvStyles.headline}>Jenny Liu Zhang, Design Leader</h1>
+      {/* <h1 className={cvStyles.headline}>Jenny Liu Zhang, Design Leader</h1> */}
       <div className={cvStyles.skills}>
         <div className={cvStyles.designWrap}>
           <h3>Design</h3>

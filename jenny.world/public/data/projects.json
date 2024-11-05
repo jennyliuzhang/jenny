@@ -1,19 +1,431 @@
 [
     {
       "parentProject": "dorsia",
-      "projectName": "Reserve with Dom Perignon",
-      "projectSlug": "dom-perignon",
-      "projectDesc": "A co-branded mobile payment strategy",
+      "parentProjectName": "Dorsia",
+      "projectName": "Restaurant Profiles",
+      "projectSlug": "restaurant-profiles",
+      "projectDesc": "Discover Dorsia restaurants and their scenes, awards, and menus",
       "projectDeliverables": [
-        "Mobile App Design",
-        "User Education",
-        "Co-branding",
-        "Pitch deck"
+        "Product Design",
+        "Email Design"
+      ],
+      "dateLaunched": "2023-07-30",
+      "projectSize": "L",
+      "projectOwnership": 80,
+      "projectCoverURL": "/projects/dorsia/restaurant-profiles/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-profiles.png"
+    },  
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Plot Twisters Brand Strategy",
+      "projectSlug": "brand-strategy",
+      "projectDesc": "Identity and positioning for youth-facing self-reflection products",
+      "projectDeliverables": [
+        "Strategic Vision",
+        "Market Research",
+        "Brand Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "L",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/plot-twisters/brand-strategy/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/brand-strategy.jpg"
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Restaurant Shift Editor",
+      "projectSlug": "shift-editor",
+      "projectDesc": "Empowering operators to manage and view booking availability on Dorsia",
+      "projectDeliverables": [
+        "Product Design",
+        "User Research"
+      ],
+      "dateLaunched": "2023-06-30",
+      "projectSize": "XL",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/dorsia/shift-editor/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-scheduler.png"
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Reserve with Dom Pérignon",
+      "projectSlug": "dom-perignon",
+      "projectDesc": "Dorsia’s co-branded payment strategy for securing reservations",
+      "projectDeliverables": [
+        "Product Design",
+        "Email Design",
+        "Pitch Deck"
       ],
       "dateLaunched": "2023-09-30",
-      "projectSize": 6,
+      "projectSize": "M",
+      "projectOwnership": 90,
       "projectCoverURL": "/projects/dorsia/dom-perignon/cover.jpg",
       "projectThumbnailImageURL": "/projects/thumbnails/dom-perignon.jpg"
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Design for Digital Thriving Proposal",
+      "projectSlug": "openideo",
+      "projectDesc": "The winning application for IDEO x Riot Games’ grant challenge",
+      "projectDeliverables": [
+        "Grant Writing",
+        "Pitch Deck",
+        "Content Design"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "L",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/plot-twisters/openideo/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/openideo.png"
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Dorsia Style Guide",
+      "projectSlug": "style-guide",
+      "projectDesc": "A deep-dive into the visual identity and voice of a culture tech company",
+      "projectDeliverables": [
+        "Brand Design",
+        "Illustration",
+        "Design System"
+      ],
+      "dateLaunched": "2024-08-30",
+      "projectSize": "L",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/dorsia/style-guide/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Plot Twisters Organizational Design",
+      "projectSlug": "org-design",
+      "projectDesc": "Governance design and charter for a part-time team of volunteers",
+      "projectDeliverables": [
+        "Strategic Vision",
+        "Brand Design"
+      ],
+      "dateLaunched": "2020-10-01",
+      "projectSize": "XL",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/plot-twisters/org-design/cover.jpg",
+      "projectThumbnailImageURL": "/projects/thumbnails/org-design.jpg"
+    },
+    {
+      "parentProject": null,
+      "parentProjectName": null,
+      "projectName": "Al Jazeera Contrast",
+      "projectSlug": "aj-contrast",
+      "projectDesc": "Minimalist media portfolio for Al Jazeera's immersive storytelling studio",
+      "projectDeliverables": [
+        "Website Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "S",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/aj-contrast/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Twisterland Game Design",
+      "projectSlug": "game-design",
+      "projectDesc": "Inventing the gameplay, algorithm, and art for a browser-based journaling game",
+      "projectDeliverables": [
+        "Game Design",
+        "Illustration",
+        "Graphic Design"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "XL",
+      "projectOwnership": 80,
+      "projectCoverURL": "/projects/plot-twisters/game-design/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": null,
+      "parentProjectName": null,
+      "projectName": "Wright Electric",
+      "projectSlug": "wright",
+      "projectDesc": "Sharp informational website for a zero-emissions aviation company",
+      "projectDeliverables": [
+        "Website Design",
+        "Graphic Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "M",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/wright/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Dorsia Email Campaigns",
+      "projectSlug": "dorsia-emails",
+      "projectDesc": "Newsletters, launches, and promotional campaigns",
+      "projectDeliverables": [
+        "Email Design",
+        "Braze"
+      ],
+      "dateLaunched": "2023-06-30",
+      "projectSize": "L",
+      "projectOwnership": 70,
+      "projectCoverURL": "/projects/dorsia/dorsia-emails/static.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Book as a Guest",
+      "projectSlug": "book-as-a-guest",
+      "projectDesc": "A web tool for non-members to book minimum spend reservations on Dorsia",
+      "projectDeliverables": [
+        "Product Design",
+        "Website Design"
+      ],
+      "dateLaunched": "2023-10-30",
+      "projectSize": "L",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/dorsia/book-as-a-guest/cover.jpg",
+      "projectThumbnailImageURL": ""
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Storytelling Cards",
+      "projectSlug": "storytelling-cards",
+      "projectDesc": "A deck of cards for expressing feelings, needs, and values",
+      "projectDeliverables": [
+        "Product Design",
+        "Literary Research",
+        "User Research"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "L",
+      "projectOwnership": 70,
+      "projectCoverURL": "/projects/plot-twisters/storytelling-cards/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": null,
+      "parentProjectName": null,
+      "projectName": "verynice",
+      "projectSlug": "verynice",
+      "projectDesc": "Playful online face for an award-winning design strategy practice",
+      "projectDeliverables": [
+        "Website Design",
+        "Graphic Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "M",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/verynice/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "PlotTwisters.org",
+      "projectSlug": "plottwisters-org",
+      "projectDesc": "Colorful informational website for the EdTech design collective",
+      "projectDeliverables": [
+        "Website Design",
+        "Content Design",
+        "Graphic Design",
+        "React App"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "L",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/plot-twisters/plottwisters-org/static.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Dorsia.com",
+      "projectSlug": "dorsia-com",
+      "projectDesc": "The online face for the members-only booking platform",
+      "projectDeliverables": [
+        "Website Design",
+        "Webflow",
+        "Framer"
+      ],
+      "dateLaunched": "2022-07-30",
+      "projectSize": "S",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/dorsia/dorsia-com/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": null,
+      "parentProjectName": null,
+      "projectName": "Celebration Theatre",
+      "projectSlug": "celebration-theatre",
+      "projectDesc": "Upbeat rebrand for the oldest LGBTQ+ theatre in Los Angeles, CA",
+      "projectDeliverables": [
+        "Brand Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "M",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/celebration-theatre/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Reservation Command Center",
+      "projectSlug": "command-center",
+      "projectDesc": "Helping hosts and maître d's check in Dorsia guests while on the floor",
+      "projectDeliverables": [
+        "Product Design"
+      ],
+      "dateLaunched": "2023-09-30",
+      "projectSize": "L",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/dorsia/command-center/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Plot Twisters Think Tank",
+      "projectSlug": "think-tank",
+      "projectDesc": "A research database that serves as a live annotated bibliography",
+      "projectDeliverables": [
+        "Strategic Vision",
+        "Literary Research",
+        "Notion"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "L",
+      "projectOwnership": 80,
+      "projectCoverURL": "/projects/plot-twisters/think-tank/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "Plot Twisters Early Research & Worksheets",
+      "projectSlug": "early-research",
+      "projectDesc": "Discovering self-reflection habits of grade school and college students",
+      "projectDeliverables": [
+        "Strategic Vision",
+        "Market Research",
+        "User Research",
+        "Graphic Design",
+        "Content Design"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "L",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/plot-twisters/early-research/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Dorsia Illustration Identity",
+      "projectSlug": "dorsia-illustrations",
+      "projectDesc": "Defining the in-house art style of Dorsia",
+      "projectDeliverables": [
+        "Illustration",
+        "Art Direction"
+      ],
+      "dateLaunched": "2023-06-30",
+      "projectSize": "M",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/dorsia/dorsia-illustrations/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Frictionless Checks",
+      "projectSlug": "frictionless-checks",
+      "projectDesc": "Checking in and accessing the check for your meal on the Dorsia app",
+      "projectDeliverables": [
+        "Product Design"
+      ],
+      "dateLaunched": "2022-07-30",
+      "projectSize": "M",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/dorsia/frictionless-checks/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Split Pay",
+      "projectSlug": "split-pay",
+      "projectDesc": "Split the Dorsia check with others at your table",
+      "projectDeliverables": [
+        "Product Design"
+      ],
+      "dateLaunched": "2023-09-30",
+      "projectSize": "XL",
+      "projectOwnership": 90,
+      "projectCoverURL": "/projects/dorsia/split-pay/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": null,
+      "parentProjectName": null,
+      "projectName": "SOSHE Beauty",
+      "projectSlug": "soshe",
+      "projectDesc": "Elegant eCommerce storefront for a refillable makeup brand",
+      "projectDeliverables": [
+        "Website Design",
+        "Graphic Design",
+        "Shopify"
+      ],
+      "dateLaunched": "2019-05-01",
+      "projectSize": "M",
+      "projectOwnership": 100,
+      "projectCoverURL": "/projects/soshe/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "dorsia",
+      "parentProjectName": "Dorsia",
+      "projectName": "Dorsia Instagram",
+      "projectSlug": "dorsia-instagram",
+      "projectDesc": "Visual strategy for the social media face of Dorsia",
+      "projectDeliverables": [
+        "Graphic Design",
+        "Art Direction",
+        "Design System"
+      ],
+      "dateLaunched": "2023-06-30",
+      "projectSize": "M",
+      "projectOwnership": 80,
+      "projectCoverURL": "/projects/dorsia/dorsia-instagram/cover.jpg",
+      "projectThumbnailImageURL": null
+    },
+    {
+      "parentProject": "plot-twisters",
+      "parentProjectName": "Plot Twisters",
+      "projectName": "EMPOWERhood",
+      "projectSlug": "empowerhood",
+      "projectDesc": "Virtual therapy playground for Black youth to heal from racial trauma",
+      "projectDeliverables": [
+        "Product Design",
+        "Webflow",
+        "Illustration",
+        "Art Direction"
+      ],
+      "dateLaunched": "2022-10-30",
+      "projectSize": "M",
+      "projectOwnership": 80,
+      "projectCoverURL": "/projects/plot-twisters/empowerhood/cover.jpg",
+      "projectThumbnailImageURL": null
     },
     {
       "parentProject": null,
@@ -29,51 +441,10 @@
         "Research Writing"
       ],
       "dateLaunched": "2024-05-15",
-      "projectSize": 8,
+      "projectSize": "M",
+      "projectOwnership": 90,
       "projectCoverURL": "/projects/how-to-play-with-fire/cover.jpg",
       "projectThumbnailImageURL": null
-    },
-    {
-      "parentProject": "dorsia",
-      "projectName": "Dorsia Style Guide",
-      "projectSlug": "style-guide",
-      "projectDesc": "A deep-dive into the visual identity and voice of a culture tech company",
-      "projectDeliverables": [
-        "Brand Design",
-        "Illustration",
-        "Design System"
-      ],
-      "dateLaunched": "2024-08-30",
-      "projectSize": 8,
-      "projectCoverURL": "/projects/dorsia/style-guide/cover.jpg",
-      "projectThumbnailImageURL": null
-    },
-    {
-      "parentProject": "dorsia",
-      "projectName": "Restaurant Profiles",
-      "projectSlug": "restaurant-profiles",
-      "projectDesc": "Discover Dorsia restaurants and their scenes, awards, and menus",
-      "projectDeliverables": [
-        "Mobile App Design",
-        "User Education"
-      ],
-      "dateLaunched": "2023-07-30",
-      "projectSize": 7,
-      "projectCoverURL": "/projects/dorsia/restaurant-profiles/cover.jpg",
-      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-profiles.png"
-    },
-    {
-      "parentProject": "dorsia",
-      "projectName": "Restaurant Shift Editor",
-      "projectSlug": "shift-editor",
-      "projectDesc": "Manage and view booking availability on Dorsia",
-      "projectDeliverables": [
-        "Web App Design"
-      ],
-      "dateLaunched": "2023-06-30",
-      "projectSize": 7,
-      "projectCoverURL": "/projects/dorsia/shift-editor/cover.jpg",
-      "projectThumbnailImageURL": "/projects/thumbnails/restaurant-scheduler.png"
     },
     {
       "parentProject": null,
@@ -81,26 +452,16 @@
       "projectSlug": "mortality-tiktok",
       "projectDesc": "Published writing on how Oslo's Future Library inspires existential thinking online",
       "projectDeliverables": [
+        "User Research",
+        "Literary Research",
         "Research Writing",
         "Published Article",
         "Illustration"
       ],
       "dateLaunched": "2024-05-30",
-      "projectSize": 8,
+      "projectSize": "L",
+      "projectOwnership": 70,
       "projectCoverURL": "/projects/mortality-tiktok/cover.jpg",
-      "projectThumbnailImageURL": ""
-    },
-    {
-      "parentProject": "dorsia",
-      "projectName": "Book on Behalf",
-      "projectSlug": "book-on-behalf",
-      "projectDesc": "A concierge platform for booking minimum spend reservations",
-      "projectDeliverables": [
-        "Web App Design"
-      ],
-      "dateLaunched": "2023-10-30",
-      "projectSize": 8,
-      "projectCoverURL": "/projects/dorsia/book-on-behalf/cover.jpg",
       "projectThumbnailImageURL": ""
     }
   ]

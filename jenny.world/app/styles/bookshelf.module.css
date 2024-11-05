@@ -22,6 +22,19 @@
         font-size: 1em;
     }
 
+.portrait {
+    margin: 2em 0 0.5em 0;
+    display: block;
+    width: 100%;
+    height: 120vw;
+    background: url('/jennybook.jpg') no-repeat;
+    /* background: url('/jenny-working.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,1);
+}
+
 .shelfTabs {
     width: calc(100%+50px);
     margin: 0.5em -25px 0;
@@ -133,7 +146,7 @@ p.bookAuthor {
 
         .introduction {
             display: grid;
-            grid-template-columns: 3fr 2.1fr;
+            grid-template-columns: 3fr 1.5fr;
             grid-auto-rows: 1fr;
             grid-column-gap: 60px;
             margin: 0 0 30px;
@@ -151,10 +164,22 @@ p.bookAuthor {
                     font-size: 1.1em;
                 }
 
+        .portrait {
+            float: right;
+            margin: 0 0 0.5em;
+            width: 100%;
+            height: 44vw;
+            background-position: bottom -4vw center;
+        }
+
 }
 
 @media screen
 and (min-width: 900px) {
+
+    .portrait {
+        height: 40vw;
+    }
 
     .shelfTabs {
         width: calc(100%+4px);
@@ -175,7 +200,7 @@ and (min-width: 900px) {
     .shelfTabs a:last-child {
         border-right: 1px solid #dcdcdc;
     }
-
+    
 }
 
 @media screen
@@ -183,6 +208,19 @@ and (min-width: 960px) {
 
     .bookshelfHeadline {
         font-size: 3em;
+    }
+
+    .portrait {
+        height: 44vw;
+    }
+
+}
+
+@media screen
+and (min-width: 1040px) {
+
+    .portrait {
+        height: 36vw;
     }
 
 }
@@ -194,17 +232,28 @@ and (min-width: 1140px) {
         grid-column-gap: 80px;
     }
 
+    .portrait {
+        height: 380px;
+        background-position: bottom -70px center;
+    }
+
 }
 
 @media screen
 and (min-width: 1600px) {
 
     .introduction {
-        grid-template-columns: 3fr 2.6fr;
+        grid-template-columns: 3fr 1.75fr;
+        grid-column-gap: 120px;
     }
 
     .bookshelfHeadline {
         font-size: 3.5em;
+    }
+
+    .portrait {
+        height: 470px;
+        background-position: bottom -120px center;
     }
 
 }

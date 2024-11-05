@@ -17,9 +17,9 @@ export default function Page() {
 
           {/* <p>I’m Jenny Liu Zhang, a designer skilled in creating software products and media. As a strong visual and narrative thinker, I’ve always enjoyed envisioning abstract ideas, dissecting their fundamental relationships and patterns, and conveying them in conscientious, delightful ways.</p> */}
 
-          <p>I’m Jenny Liu Zhang, a designer specializing in digital products. I’m a visual and narrative thinker, and my working style is energetic, meticulous, and positive. I grew up within multiple cultures and have lived in the USA, Europe, and Asia.</p>
+          <p>I’m Jenny Liu Zhang, a digital designer with backgrounds in programming and the arts. I’m a visual and narrative thinker and my work style is energetic, meticulous, and positive. I grew up exposed to multiple cultures and have lived in the USA, Europe, and Asia.</p>
           
-          <p>I value co-creative collaboration, well-rounded research, and effective communication. With an entrepreneurial mindset and backgrounds in programming and the visual arts, I thrive at the intersection of design, technology, and product. I’m also passionate about good writing and brand storytelling.
+          <p>I value co-creative collaboration, well-rounded research, and effective communication. Combined with an entrepreneurial mindset, I thrive at the intersection of design, technology, and product. I’m also passionate about good writing and brand storytelling.
 
 
             {/* I’m also passionate about writing and personal storytelling, which I hone in my <Link href="/journal">journal</Link>. */}
@@ -170,15 +170,20 @@ export default function Page() {
             <p>&ldquo;Whatever the tasks, do them slowly and with ease, in mindfulness. Don’t do any task in order to get it over with. Resolve to do each job in a relaxed way, with all your attention.&rdquo; — Thich Nhat Hanh</p>
           </div>
 
-
           <div className={aboutStyles.axiomTile}>
-            <h4>Luck Is Opportunity Meets Preparation</h4>
-            <p>Good things take both hard work and opening doors. Outcomes are in our control.</p>
+            <h4>Education is expensive, but so is ignorance</h4>
+            <p>Growth never comes cheap. I’ve spent a lot of time, energy, and money on mistakes that taught me important life lessons. I consider this &ldquo;life tax,&ldquo; but I’ve learned that I can’t evolve if I don’t pay it.</p>
           </div>
 
           <div className={aboutStyles.axiomTile}>
             <h4>Every problem has a solution</h4>
             <p>My mom raised me with this one.</p>
+          </div>
+
+
+          <div className={aboutStyles.axiomTile}>
+            <h4>Luck Is Opportunity Meets Preparation</h4>
+            <p>Good things take both hard work and opening doors. Outcomes are in our control.</p>
           </div>
 
           <div className={aboutStyles.axiomTile}>
@@ -187,13 +192,8 @@ export default function Page() {
           </div>
 
           <div className={aboutStyles.axiomTile}>
-            <h4>The devil's in the details</h4>
+            <h4>The devil&rsquo;s in the details</h4>
             <p>Some times it comes down to the little things, so it&rsquo;s good to be thorough and do your due diligence.</p>
-          </div>
-
-          <div className={aboutStyles.axiomTile}>
-            <h4>Don&rsquo;t sweat the little things</h4>
-            <p>While it&rsquo;s good to mind the details, keep your priorities straight and stress levels low. Over-fixating on small issues can be self-sabotaging.</p>
           </div>
 
           <div className={aboutStyles.axiomTile}>
