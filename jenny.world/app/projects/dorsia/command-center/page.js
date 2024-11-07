@@ -9,9 +9,9 @@ export default function ProjectPage() {
 
   const heroImage = "/projects/dorsia/command-center/cover.jpg";
 
-  const projectExplain = "Defining the narrative, identity, and aesthetic of a global brand in the hospitality tech space";
+  const projectExplain = "Equipping hosts, servers, and maitre d's to manage Dorsia reservations quickly on the floor";
 
-  const introPara = "Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.";
+  const introPara = "The Reservation Command Center is a B2B tool created for restaurant hosts, maitre ds, and servers to manage Dorsia reservations seamlessly. This tool consolidates complex reservation details—including minimum spend requirements, party sizes, and point-of-sale (POS) connections—into a direct interface designed for use in fast-paced restaurant environments.";
 
   const projectDetails = (
     <div className={projectPage.details}>
@@ -19,33 +19,35 @@ export default function ProjectPage() {
         <h5>Team</h5>
         <ul>
           <li><span className={projectPage.role}>Jenny Liu Zhang</span>, design lead</li>
-          <li>Nate Storey, editorial lead</li>
-          <li>Abby Saldana, editor</li>
+          <li>Joshua Stern, product lead</li>
+          <li>Jessica Demakos, hospitality partner</li>
+          <li>J.B. Krishner, hospitality partner</li>
         </ul>
       </div>
 
       <div className={projectPage.services}>
         <h5>Activities</h5>
         <ul>
-          <li>Narrative design</li>
-          <li>Content design</li>
-          <li>Visual identity</li>
-          <li>Illustration</li>
+          <li>User research</li>
+          <li>Product strategy</li>
+          <li>User flows</li>
+          <li>Prototyping</li>
+          <li>Visual design</li>
         </ul>
       </div>
 
       <div className={projectPage.team}>
         <h5>Stakeholders</h5>
         <ul>
-          <li>Dorsia Leadership</li>
-          <li>Dorsia Marketing Team</li>
+          <li>Dorsia Hospitality Team</li>
+          <li>Restaurant Partners of Dorsia</li>
         </ul>
       </div>
 
       <div className={projectPage.team}>
         <h5>Timeline</h5>
         <ul>
-          <li>5 weeks</li>
+          <li>3 weeks</li>
         </ul>
       </div>
       
@@ -60,26 +62,26 @@ export default function ProjectPage() {
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>1</div>
-          <h5>Identify Business Opportunity</h5>
-          <p>Dorsia and Dom Perignon share a luxury-valuing audience, revealing a mutually beneficial co-brand opportunity. Dorsia also had an existing UX issue: the challenge of meeting the minimum spend. </p>
+          <h5>Unpack System Limitations for POS Integration</h5>
+          <p>Close collaboration with the hospitality, product, and engineering teams allowed me to understand the POS connection process for in-app check management. It was crucial that I mastered the functional requirements of an operator dashboard.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>2</div>
-          <h5>UX Design with Stakeholder</h5>
-          <p>Through 2 rounds of iterations, we integrated the Dom Perignon product via in-app marketing and conversion, creating reusable product infrastructure for future collaborations.</p>
+          <h5>On-Site Observation</h5>
+          <p>I visited One White Street in NYC to shadow the floor staff and gain a firsthand understanding of the complexities they face in managing reservations. Speed and transactional accuracy are imperative in restaurant environments. This insight helped to inform an intuitive interface.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>3</div>
-          <h5>Product Design &amp; QA</h5>
-          <p>Created user education, visual assets, and interface components. Worked with engineers to accommodate edge cases and conditionals, including smaller tables and custom reservations.</p>
+          <h5>Design a Responsive, Real-Time Dashboard</h5>
+          <p>I structured the Command Center as a color-coded iPad interface with auto-refresh and manual refresh options, ensuring that incoming reservations and their status updates are immediately visible to the user.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>4</div>
-          <h5>Marketing Campaign</h5>
-          <p>Collaborated with Dom Perignon marketing team on product artwork to co-promote the feature across in-app channels, email, and social media. Helped create the go-to-market launch strategy.</p>
+          <h5>Develop Clear Visual Cues for Urgent Actions</h5>
+          <p>Color coding, with blinking tiles for urgent cases, were also implemented to simplify the tracking of unconnected or modified checks, making it easy for staff to spot and prioritize reservations needing attention.</p>
         </div>
 
       </div>
@@ -88,30 +90,32 @@ export default function ProjectPage() {
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Champagne as Payment</h1>
+            <h1>Color-Coding for Urgency</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>Replacing the Dorsia minimum spend with a bottle of Dom Perignon offers users a unique and luxurious payment alternative. This solution introduces a new paradigm for paying to secure a reservation, transforming a transactional requirement into an invitation for a celebration.</p>
+            <p>The Command Center’s interface uses color and blinking animations to highlight reservations requiring action. For example, unconnected checks are displayed in red and blink if urgent, allowing staff to quickly identify and resolve issues with minimal screen interaction. This visual hierarchy ensures that essential information stands out, supporting efficient floor management.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Ethos of Elevation</h1>
+            <h1>Scannable Groupings for Complex Check Details</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>A prime example of strategic co-branding, the alignment of the prestige of Dom Perignon with Dorsia's high-end hospitality experience reinforces the image of both brands in user minds. Every piece of marketing and user interaction showcased the luxury lifestyle valued by both audiences.</p>
+            <p>Each check in the Command Center displays a range of essential information—party size, guest name, connection status, reservation time, minimum spend per person, total minimum, and POS tab name—in clearly defined visual groupings. While simplifying all these details was challenging, strategic grouping made each reservation scannable, helping staff absorb and act on critical information efficiently.</p>
+
+            <p>This design pattern remained consistent through the check editing journey if the server needed to update table's party size, for example, and also led to how check details were grouped in future iterations of member-facing check designs.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Operational Ease</h1>
+            <h1>Real-Time Tracking</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>The product was seamlessly integrated into Dorsia's existing booking flow and infrastructure. Close collaboration with engineers ensured all components could be reused for similar payment alternatives down the line, easing internal adoption of the feature and making it a new selling point for future brand partners.</p>
+            <p>The dashboard offers both auto-refresh and manual refresh options, keeping incoming and updated reservations immediately visible. This real-time functionality is crucial in a fast-paced setting, allowing hosts and servers to maintain an accurate view of reservation statuses, even during peak times. The real-time nature also enabled live editing of reservation details to maintain accuracy both on the floor and in the Dorsia system.</p>
           </div>
         </div>
       </div>
@@ -120,18 +124,18 @@ export default function ProjectPage() {
 
       <div className={projectPage.takeaways}>
         <div className={projectPage.takeaway}>
-            <h3>Behavior Shifts Require User Education</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Empathy Can Drive Usability Design</h3>
+            <p>Visiting a live restaurant environment provided valuable insights into the challenges faced by floor staff, enabling me to create a tool that addresses their specific pain points. This experience reinforced the value of on-site observation in designing effective, user-centered solutions.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Consider Operational Constraints Early</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Fast-Paced Usage Requires Strict Visual Hierarchy</h3>
+            <p>Using color and motion as visual cues proved instrumental in managing urgent and complex reservation requirements. This approach underscored the importance of a clear visual hierarchy to support quick and accurate actions, especially in high-stakes B2B products.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Future-Proofing Product Upgrades</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Working with Practitioners Ensures Practical Solutions</h3>
+            <p>Working closely with the product, hospitality, and engineering enabled the Command Center’s interface to directly translate needs and functions of the POS systems. By considering technical constraints early, the design process eliminated any misunderstandings.</p>
         </div>
       </div>
     </ProjectLayout>

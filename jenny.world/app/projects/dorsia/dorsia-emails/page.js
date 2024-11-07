@@ -4,14 +4,15 @@ import ProjectLayout from '../../project-layout';
 import projectPage from "../../../styles/projectPage.module.css";
 import projectStyles from "../../../styles/projects.module.css";
 import Breadcrumbs from '../../../components/Breadcrumbs';
+import Button from '../../../components/Button';
 
 export default function ProjectPage() {
 
   const heroImage = "/projects/dorsia/dorsia-emails/cover.gif";
 
-  const projectExplain = "Defining the narrative, identity, and aesthetic of a global brand in the hospitality tech space";
+  const projectExplain = "Polished yet playful email designs for members-only communications";
 
-  const introPara = "Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.";
+  const introPara = "I worked with the Dorsia content team to upgrade our email communications' design and content standards. I developed the visuals, templates, and HTML builds for email campaigns in Braze, establishing a flexible illustration and design system across six primary email types. My work ensured each campaign aligns with Dorsia’s minimalist yet cheeky identity while staying organized and engaging for readers.";
 
   const projectDetails = (
     <div className={projectPage.details}>
@@ -19,6 +20,8 @@ export default function ProjectPage() {
         <h5>Team</h5>
         <ul>
           <li><span className={projectPage.role}>Jenny Liu Zhang</span>, design lead</li>
+          <li>Husein Esufally, designer</li>
+          <li>Isabella Koopman, designer</li>
           <li>Nate Storey, editorial lead</li>
           <li>Abby Saldana, editor</li>
         </ul>
@@ -27,59 +30,64 @@ export default function ProjectPage() {
       <div className={projectPage.services}>
         <h5>Activities</h5>
         <ul>
-          <li>Narrative design</li>
+          <li>Graphic design</li>
           <li>Content design</li>
-          <li>Visual identity</li>
           <li>Illustration</li>
+          <li>Workspace organization</li>
+          <li>Workflow setup</li>
         </ul>
       </div>
 
       <div className={projectPage.team}>
         <h5>Stakeholders</h5>
         <ul>
-          <li>Dorsia Leadership</li>
           <li>Dorsia Marketing Team</li>
+          <li>Dorsia Content Team</li>
         </ul>
       </div>
 
       <div className={projectPage.team}>
         <h5>Timeline</h5>
         <ul>
-          <li>5 weeks</li>
+          <li>4 weeks</li>
         </ul>
       </div>
       
     </div>
   );
+
+  const projectHighlights = (
+    <Button title="See my Dorsia Style Guide" desc="" target="_blank" link="/projects/dorsia/style-guide" isExternal="false"></Button>
+  );
   
   return (
-    <ProjectLayout slug="dorsia-emails" heroImage={heroImage} projectExplain={projectExplain} introPara={introPara} projectDetails={projectDetails}>
+    <ProjectLayout slug="dorsia-emails" heroImage={heroImage} projectExplain={projectExplain} introPara={introPara} projectDetails={projectDetails} projectHighlights={projectHighlights}>
       <h2 className="centeredh2">Creative Process</h2>
 
       <div className={projectPage.creativeProcess}>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>1</div>
-          <h5>Identify Business Opportunity</h5>
-          <p>Dorsia and Dom Perignon share a luxury-valuing audience, revealing a mutually beneficial co-brand opportunity. Dorsia also had an existing UX issue: the challenge of meeting the minimum spend. </p>
+          <h5>Implementing Bento Philosophy</h5>
+          <p>Using the Dorsia <Link href="/projects/dorsia/style-guide/">Bento</Link> design philosophy, I designed email headers, body sections, and footers, establishing a clean and organized visual hierarchy with playful illustration touches.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>2</div>
-          <h5>UX Design with Stakeholder</h5>
-          <p>Through 2 rounds of iterations, we integrated the Dom Perignon product via in-app marketing and conversion, creating reusable product infrastructure for future collaborations.</p>
+          <h5>Mocking Up Templates</h5>
+          <p>I created customized structures for six email types, including Venue Launches and The Weekend Edit, to give each campaign a clear, distinctive feel while staying true to Dorsia’s brand.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>3</div>
-          <h5>Product Design &amp; QA</h5>
-          <p>Created user education, visual assets, and interface components. Worked with engineers to accommodate edge cases and conditionals, including smaller tables and custom reservations.</p>
+          <h5>HTML Development in Braze</h5>
+          <p>By coding templates in Braze from scratch, I ensured that all emails rendered beautifully across platforms, enhancing both the brand’s accessibility and aesthetic appeal.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>4</div>
-          <h5>Marketing Campaign</h5>
-          <p>Collaborated with Dom Perignon marketing team on product artwork to co-promote the feature across in-app channels, email, and social media. Helped create the go-to-market launch strategy.</p>
+          <h5>Optimizing Workspace &amp; Workflow</h5>
+          <p>I implemented a structured Figma workspace and streamlined workflows, making the process of creating and updating emails efficient for the team.</p>
         </div>
 
       </div>
@@ -88,51 +96,53 @@ export default function ProjectPage() {
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Champagne as Payment</h1>
+            <h1>Organized and Scannable</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>Replacing the Dorsia minimum spend with a bottle of Dom Perignon offers users a unique and luxurious payment alternative. This solution introduces a new paradigm for paying to secure a reservation, transforming a transactional requirement into an invitation for a celebration.</p>
+            <p>Email communications need to be "snackable," even if they are dense with information. To achieve this, I crafted visually organized emails using clean lines, ample spacing, and bold typography and imagery, enabling readers to navigate chunks of content easily and nonlinearly when necessary. Playful illustrations add a touch of Dorsia’s personalit and provide anchors for information.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Ethos of Elevation</h1>
+            <h1>Cheeky and Engaging</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>A prime example of strategic co-branding, the alignment of the prestige of Dom Perignon with Dorsia's high-end hospitality experience reinforces the image of both brands in user minds. Every piece of marketing and user interaction showcased the luxury lifestyle valued by both audiences.</p>
+            <p>Dorsia’s editorial content—a major value proposition of the brand—is dialed-in, smart, and witty, proven by our emails' ~65% open rate. These campaign designs amplify this quality visually by supporting the tone of the writing through insider-savvy illustrations and graphics. The light customizations, from unique weekly color treatments to my niche art direction instructions for venue launch hero imagery, help make each email feel like an exclusive update, reinforcing the brand’s in-the-know appeal.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Operational Ease</h1>
+            <h1>Customizable and Scalable Templates</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>The product was seamlessly integrated into Dorsia's existing booking flow and infrastructure. Close collaboration with engineers ensured all components could be reused for similar payment alternatives down the line, easing internal adoption of the feature and making it a new selling point for future brand partners.</p>
+            <p>I created unique email templates in Braze for all six email types. Each design had subtle differences in their hero image setup and content sections, but remained visually consistent. To accommodate quick adaptations—or cases when a limited-edition email needed to be published—my template system was scalable so the marketing team could easily repurpose templates. This system also set the pattern for other transactional emails like welcome messages and birthday notifications, emppowering cohesion across all member touchpoints.</p>
           </div>
         </div>
+
       </div>
 
       <h2 className="centeredh2">Project Takeaways</h2>
 
       <div className={projectPage.takeaways}>
         <div className={projectPage.takeaway}>
-            <h3>Behavior Shifts Require User Education</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>The Art of Aligning Visuals to Editorial Voice</h3>
+            <p>Crafting emails that reflect the wit and sharpness of Dorsia’s editorial voice reminded me of the power of visual design to strengthen written content, making every touchpoint feel intentional and aligned.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Consider Operational Constraints Early</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Commit to Aesthetic Excellence</h3>
+            <p>We decided to focus on high-quality aesthetics in our email templates, even if it meant more development work and team training. This commitment ensured each email matched Dorsia’s visual standards, reinforcing brand integrity.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Future-Proofing Product Upgrades</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Organized Systems Foster Brand Consistency</h3>
+            <p>To maintain brand integrity in practice, I had to help upskill the marketing team and set up systems in Figma and Braze to streamline the process for future email creation, ensuring that email designs are maintained consistently as Dorsia scales.</p>
         </div>
+
       </div>
     </ProjectLayout>
   );

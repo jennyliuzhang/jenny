@@ -11,7 +11,7 @@ export default function ProjectPage() {
 
   const projectExplain = "A web app and widget for booking reservations without a standard Dorsia membership";
 
-  const introPara = "Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.";
+  const introPara = "I designed a restaurant availability shift editor for Dorsia, enabling our hospitality team to manage and update booking availability seamlessly. This tool streamlines shift creation, duplication, and edits, providing a top-level view of seatings across restaurant shifts and simplifying a previously complex and manual process.";
 
   const projectDetails = (
     <div className={projectPage.details}>
@@ -61,26 +61,26 @@ export default function ProjectPage() {
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>1</div>
-          <h5>Identify Business Opportunity</h5>
-          <p>Dorsia and Dom Perignon share a luxury-valuing audience, revealing a mutually beneficial co-brand opportunity. Dorsia also had an existing UX issue: the challenge of meeting the minimum spend. </p>
+          <h5>Competitive Research</h5>
+          <p>I analyzed similar interfaces from industry leaders like SevenRooms and Resy OS, identifying best practices, removing complexity, and pinpointing areas unique to Dorsia, such as its minimum spend feature.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>2</div>
-          <h5>UX Design with Stakeholder</h5>
-          <p>Through 2 rounds of iterations, we integrated the Dom Perignon product via in-app marketing and conversion, creating reusable product infrastructure for future collaborations.</p>
+          <h5>User Context Gathering</h5>
+          <p>I collaborated closely with the hospitality team to understand their primary pain points, learning about the specific inventory management challenges they faced daily.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>3</div>
-          <h5>Product Design &amp; QA</h5>
-          <p>Created user education, visual assets, and interface components. Worked with engineers to accommodate edge cases and conditionals, including smaller tables and custom reservations.</p>
+          <h5>First Principles UX Design</h5>
+          <p>By iterating on a calendar layout, I adapted the interface to work within the day-of-week template structure that restaurants commonly use, creating a system that felt intuitive and easy to navigate.</p>
         </div>
 
         <div className={projectPage.step}>
-          <div className={projectPage.number}>4</div>
-          <h5>Marketing Campaign</h5>
-          <p>Collaborated with Dom Perignon marketing team on product artwork to co-promote the feature across in-app channels, email, and social media. Helped create the go-to-market launch strategy.</p>
+          <div className={projectPage.number}>2</div>
+          <h5>User Walkthroughs</h5>
+          <p>I conducted detailed walkthroughs to address edge cases like holiday shifts and small yet critical edits, ensuring the tool could handle complex, real-world scenarios effectively.</p>
         </div>
 
       </div>
@@ -89,30 +89,30 @@ export default function ProjectPage() {
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Champagne as Payment</h1>
+            <h1>Visual and Quick-to-Use Calendar Layout</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>Replacing the Dorsia minimum spend with a bottle of Dom Perignon offers users a unique and luxurious payment alternative. This solution introduces a new paradigm for paying to secure a reservation, transforming a transactional requirement into an invitation for a celebration.</p>
+            <p>The shift editor interface is a calendar-based layout, allowing users to see availability across shifts and make edits on individual or bulk days with ease. Shifts are visually segmented, enabling the Hospitality team to track availability, including critical details like seating times and minimum spends, at a glance. This view gives the team a real-time understanding of availability status, simplifying efforts to market or promote open time slots.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Ethos of Elevation</h1>
+            <h1>Shift-Based Editing to Reflect Existing Heuristics</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>A prime example of strategic co-branding, the alignment of the prestige of Dom Perignon with Dorsia's high-end hospitality experience reinforces the image of both brands in user minds. Every piece of marketing and user interaction showcased the luxury lifestyle valued by both audiences.</p>
+            <p>By grouping seatings under top-level shifts (e.g., “Lunch” and “Dinner”), the tool aligns with the restaurant’s natural scheduling rhythm, making it straightforward to edit, duplicate, or override shifts in bulk. This approach not only eases updates but also enhances consistency across repeated seatings, allowing the team to handle recurring availabilities without duplicating manual work each time they need to make a minor update.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Operational Ease</h1>
+            <h1>Attention to Edge Cases</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>The product was seamlessly integrated into Dorsia's existing booking flow and infrastructure. Close collaboration with engineers ensured all components could be reused for similar payment alternatives down the line, easing internal adoption of the feature and making it a new selling point for future brand partners.</p>
+            <p>Edge cases like holiday scheduling and other unique variations are often the most challenging aspects of availability management. My design addresses this by offering flexible, granular controls, allowing the team to adjust for non-standard days effortlessly. The editor also supports nuanced updates to minimize the need for complete re-entry, enhancing both the team’s speed and confidence in handling special requests.</p>
           </div>
         </div>
       </div>
@@ -121,18 +121,18 @@ export default function ProjectPage() {
 
       <div className={projectPage.takeaways}>
         <div className={projectPage.takeaway}>
-            <h3>Behavior Shifts Require User Education</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Lockstep Cross-Functional Collaboration is Possible</h3>
+            <p>Working directly with the hospitality team was key to understanding the full scope of their needs. Having structured conversations early on helped avoid assumptions, allowing me to design a tool truly adapted to their workflow.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Consider Operational Constraints Early</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Design for the Novice User</h3>
+            <p>By anticipating the potential for a restaurant-facing interface, I ensured that every design choice remained adaptable for future audiences. This forward-thinking approach helps the product remain valuable as Dorsia grows its partnerships and product capabilities.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Future-Proofing Product Upgrades</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Follow Your Intuition</h3>
+            <p>Creating a shift-based organization allowed for a clearer, more intuitive interface, empowering users to manage availability quickly. This project reinforced the importance of designing around natural workflows to improve both user experience and operational efficiency.</p>
         </div>
       </div>
     </ProjectLayout>

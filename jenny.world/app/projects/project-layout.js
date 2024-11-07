@@ -6,7 +6,7 @@ import Link from "next/link";
 import Breadcrumbs from "../components/Breadcrumbs";
 import projectPage from "../styles/projectPage.module.css";
 
-export default function ProjectLayout({ slug, heroImage, projectExplain, introPara, projectDetails, children }) {
+export default function ProjectLayout({ slug, heroImage, projectExplain, introPara, projectDetails, projectHighlights, children }) {
   const [project, setProject] = useState(null);
 
   useEffect(() => {
@@ -66,10 +66,25 @@ export default function ProjectLayout({ slug, heroImage, projectExplain, introPa
                 {deliverable}
               </span>
             ))}
+            {project.projectOwnership >= 70 && (
+              <span className={`tag ${projectPage.ownershipLabel}`}>
+                {project.projectOwnership === 100
+                  ? "💡 100% created by me"
+                  : project.projectOwnership === 90
+                  ? "💡 90% created by me"
+                  : project.projectOwnership === 80
+                  ? "⚽️ Owned but collaborative"
+                  : "⚽️ Equal teamwork"}
+              </span>
+            )}
           </div>
 
           {projectDetails}
 
+        </div>
+
+        <div className={projectPage.projectHighlights}>
+          {projectHighlights}
         </div>
       </div>
 

@@ -159,6 +159,13 @@ export default function Page() {
                     {deliverable}
                   </span>
                 ))}
+                {project.projectOwnership >= 90 && (
+                    <span className={`tag ${projectStyles.tag} ${projectStyles.ownershipLabel}`}>
+                      {project.projectOwnership === 100
+                        ? "💡 100% created by me"
+                        : "💡 90% created by me"}
+                    </span>
+                  )}
               </div>
             </div>
           </Link>

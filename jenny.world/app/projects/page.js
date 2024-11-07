@@ -283,7 +283,7 @@ const countProjectsByParentProject = (parentProjectId) => {
             </div>
           </div>
 
-          <Link href="/projects/plottwisters" className={projectStyles.featuredTileImage}>
+          <Link href="/projects/plot-twisters" className={projectStyles.featuredTileImage}>
             <video
               autoPlay
               loop

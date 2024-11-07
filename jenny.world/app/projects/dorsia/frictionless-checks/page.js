@@ -9,9 +9,9 @@ export default function ProjectPage() {
 
   const heroImage = "/projects/dorsia/frictionless-checks/cover.jpg";
 
-  const projectExplain = "A web app and widget for booking reservations without a standard Dorsia membership";
+  const projectExplain = "View, track, and manage the check for your meal in real time in your Dorsia app";
 
-  const introPara = "Most Dorsia restaurant bookings require a member to prepay a minimum spend in the app to secure the reservation. Through this exclusive partnership, Dorsia members can now opt into purchasing a bottle of Dom Perignon as their form of prepayment, replacing the minimum spend requirement and promoting cross-brand awareness.";
+  const introPara = "Frictionless Checks is an innovative Dorsia product that allows members to manage their check in real time during their dining experience. It automatically tracks minimum spend requirements, applies available credits, and facilitates an automatic end-of-meal charge, freeing users from the typical check-waiting process. This proto-version of Dorsia Pay introduced a novel, streamlined dining experience for Dorsia members.";
 
   const projectDetails = (
     <div className={projectPage.details}>
@@ -61,26 +61,26 @@ export default function ProjectPage() {
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>1</div>
-          <h5>Identify Business Opportunity</h5>
-          <p>Dorsia and Dom Perignon share a luxury-valuing audience, revealing a mutually beneficial co-brand opportunity. Dorsia also had an existing UX issue: the challenge of meeting the minimum spend. </p>
+          <h5>Build Off Familiar Check Heuristics</h5>
+          <p>I developed initial wireframes that mimicked a traditional check structure, introducing the minimum spend in a way that would feel familiar and logical to users. These mockups helped set the foundation for a simple, linear check design that still conveyed essential information about spend requirements and real-time updates.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>2</div>
-          <h5>UX Design with Stakeholder</h5>
-          <p>Through 2 rounds of iterations, we integrated the Dom Perignon product via in-app marketing and conversion, creating reusable product infrastructure for future collaborations.</p>
+          <h5>Iterative Prototyping &amp; Design Reviews</h5>
+          <p>I built interactive prototypes and conducted iterative design reviews to assess usability, refining elements like spend tracking, tip options, and automatic charges. These reviews ensured the design remained user-friendly and visually aligned with Dorsia’s brand.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>3</div>
-          <h5>Product Design &amp; QA</h5>
-          <p>Created user education, visual assets, and interface components. Worked with engineers to accommodate edge cases and conditionals, including smaller tables and custom reservations.</p>
+          <h5>Accommodate Edge Cases &amp; QA</h5>
+          <p>Working closely with engineering, I addressed technical edge cases, such as failed connections, missed minimum spend targets, and manual charge scenarios (not all restaurants had check integration capability). This ensured that every possible scenario was considered.</p>
         </div>
 
         <div className={projectPage.step}>
           <div className={projectPage.number}>4</div>
-          <h5>Marketing Campaign</h5>
-          <p>Collaborated with Dom Perignon marketing team on product artwork to co-promote the feature across in-app channels, email, and social media. Helped create the go-to-market launch strategy.</p>
+          <h5>Polish for Business Feedback</h5>
+          <p>Business stakeholders provided input on features like the default 20% tip to promote positive dining experiences and not overselling the idea of "hitting the minimum" to maintain luxury branding. This feedback guided design decisions that reflected Dorsia’s elevated brand positioning.</p>
         </div>
 
       </div>
@@ -89,30 +89,30 @@ export default function ProjectPage() {
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Champagne as Payment</h1>
+            <h1>Automatic Card Charge</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>Replacing the Dorsia minimum spend with a bottle of Dom Perignon offers users a unique and luxurious payment alternative. This solution introduces a new paradigm for paying to secure a reservation, transforming a transactional requirement into an invitation for a celebration.</p>
+            <p>The automatic charge feature represents a significant shift in user behavior, allowing members to leave the restaurant without waiting for the final bill. To support this, clear messaging—“We’ll automatically charge your card”—was prominently placed at the bottom of the check, reassuring users that everything was handled seamlessly, creating a unique Dorsia benefit that reinforces white-glove hospitality and convenience.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Ethos of Elevation</h1>
+            <h1>Familiar Check Anatomy</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>A prime example of strategic co-branding, the alignment of the prestige of Dom Perignon with Dorsia's high-end hospitality experience reinforces the image of both brands in user minds. Every piece of marketing and user interaction showcased the luxury lifestyle valued by both audiences.</p>
+            <p>Frictionless Checks adopts the familiar structure of a traditional dining check, with a linear layout that places the total amount at the bottom. This design helps members intuitively understand the interface, while discreetly introducing features like minimum spend tracking. By balancing familiarity with new elements, the design provides clarity without overwhelming the user with additional math or details.</p>
           </div>
         </div>
 
         <div className={projectPage.keyFeature}>
           <div className={projectPage.featureTitle}>
             <h4>Key Quality</h4>
-            <h1>Operational Ease</h1>
+            <h1>Real-Time Updates</h1>
           </div>
           <div className={projectPage.featureDesc}>
-            <p>The product was seamlessly integrated into Dorsia's existing booking flow and infrastructure. Close collaboration with engineers ensured all components could be reused for similar payment alternatives down the line, easing internal adoption of the feature and making it a new selling point for future brand partners.</p>
+            <p>The check dynamically updates in real time as orders are added in the POS, displaying the latest spend total, remaining minimum balance, and itemizations throughout the dining experience. This live transparency instills user confidence by providing up-to-the-moment accuracy, making it easy for members to monitor their dining status without having to request updates from staff.</p>
           </div>
         </div>
       </div>
@@ -121,18 +121,18 @@ export default function ProjectPage() {
 
       <div className={projectPage.takeaways}>
         <div className={projectPage.takeaway}>
-            <h3>Behavior Shifts Require User Education</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Real-Time Updates Are Luxurious</h3>
+            <p>A live-updating check in the member’s app was crucial in cultivating a sense of transparency and trust, which in turn feels like a privilege, especially in complicated restaurant environments where transactions and communications can easily be subject to error. Immediate feedback can deepen engagement and elevate the dining experience.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Consider Operational Constraints Early</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Build On Familiar Heuristics</h3>
+            <p>Designing Frictionless Checks required blending familiar UX elements with Dorsia’s unique features like minimum spend tracking and automatic end-of-meal payments. This experience underscored the value of grounding innovative products in familiar frameworks, making it easier for users to embrace new behaviors.</p>
         </div>
 
         <div className={projectPage.takeaway}>
-            <h3>Future-Proofing Product Upgrades</h3>
-            <p>A good experience is made of little memories that bring happiness. I strive to design the way I give gifts to friends: with attention to the details. Whether through a clever interaction or beautiful visual detail, I like to invite wonder and joy into my work.</p>
+            <h3>Being Direct Supports Behavior Change</h3>
+            <p>The design literally says, "We'll automatically charge your card. You can just leave when you’re done." By giving direct instruction that members could simply leave without asking for a check, we effectively facilitated behavior shift, underscoring how straightforward messaging may be the best route for novel product features.</p>
         </div>
       </div>
     </ProjectLayout>

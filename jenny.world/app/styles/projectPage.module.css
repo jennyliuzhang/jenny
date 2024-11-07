@@ -46,6 +46,10 @@ h2.backh2{
         font-size: 1.12em;
     }
 
+    .ownershipLabel {
+        background: #fff !important;
+    }
+
     .details {
 
     }
@@ -66,10 +70,11 @@ h2.backh2{
 
         .services ul li, .team ul li {
             display: inline;
+            margin: 0;
         }
 
         .services ul li:after, .team ul li:after {
-            content: ', ';
+            content: '; ';
         }
 
         .services ul li:last-child::after, .team ul li:last-child::after {

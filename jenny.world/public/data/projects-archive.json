@@ -1,4 +1,172 @@
 [
-    
+  {
+    "parentProject": null,
+    "projectName": "Mortality Awareness on TikTok",
+    "projectSlug": "mortality-tiktok",
+    "projectDesc": "Published writing on how Oslo's Future Library inspires existential thinking online",
+    "projectDeliverables": [
+      "User Research",
+      "Literary Research",
+      "Research Writing",
+      "Published Article",
+      "Illustration"
+    ],
+    "dateLaunched": "2024-05-30",
+    "projectSize": "L",
+    "projectOwnership": 70,
+    "projectCoverURL": "/projects/mortality-tiktok/cover.jpg",
+    "projectThumbnailImageURL": ""
+  },
+  {
+    "parentProject": "dorsia",
+    "parentProjectName": "Dorsia",
+    "projectName": "Dorsia Instagram",
+    "projectSlug": "dorsia-instagram",
+    "projectDesc": "Visual strategy for the social media face of Dorsia",
+    "projectDeliverables": [
+      "Graphic Design",
+      "Art Direction",
+      "Design System"
+    ],
+    "dateLaunched": "2023-06-30",
+    "projectSize": "M",
+    "projectOwnership": 80,
+    "projectCoverURL": "/projects/dorsia/dorsia-instagram/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "dorsia",
+    "parentProjectName": "Dorsia",
+    "projectName": "Dorsia Illustration Identity",
+    "projectSlug": "dorsia-illustrations",
+    "projectDesc": "Defining the in-house art style of Dorsia",
+    "projectDeliverables": [
+      "Illustration",
+      "Art Direction"
+    ],
+    "dateLaunched": "2023-06-30",
+    "projectSize": "M",
+    "projectOwnership": 90,
+    "projectCoverURL": "/projects/dorsia/dorsia-illustrations/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "plot-twisters",
+    "parentProjectName": "Plot Twisters",
+    "projectName": "Plot Twisters Think Tank",
+    "projectSlug": "think-tank",
+    "projectDesc": "A research database that serves as a live annotated bibliography",
+    "projectDeliverables": [
+      "Strategic Vision",
+      "Literary Research",
+      "Notion"
+    ],
+    "dateLaunched": "2022-10-30",
+    "projectSize": "L",
+    "projectOwnership": 80,
+    "projectCoverURL": "/projects/plot-twisters/think-tank/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "dorsia",
+    "parentProjectName": "Dorsia",
+    "projectName": "Split Pay",
+    "projectSlug": "split-pay",
+    "projectDesc": "Split the Dorsia check with others at your table",
+    "projectDeliverables": [
+      "Product Design"
+    ],
+    "dateLaunched": "2023-09-30",
+    "projectSize": "XL",
+    "projectOwnership": 90,
+    "projectCoverURL": "/projects/dorsia/split-pay/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": null,
+    "parentProjectName": null,
+    "projectName": "Al Jazeera Contrast",
+    "projectSlug": "aj-contrast",
+    "projectDesc": "Minimalist media portfolio for Al Jazeera's immersive storytelling studio",
+    "projectDeliverables": [
+      "Website Design"
+    ],
+    "dateLaunched": "2019-05-01",
+    "projectSize": "S",
+    "projectOwnership": 100,
+    "projectCoverURL": "/projects/aj-contrast/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "plot-twisters",
+    "parentProjectName": "Plot Twisters",
+    "projectName": "Plot Twisters Organizational Design",
+    "projectSlug": "org-design",
+    "projectDesc": "Governance design and charter for a part-time team of volunteers",
+    "projectDeliverables": [
+      "Strategic Vision",
+      "Brand Design"
+    ],
+    "dateLaunched": "2020-10-01",
+    "projectSize": "XL",
+    "projectOwnership": 90,
+    "projectCoverURL": "/projects/plot-twisters/org-design/cover.jpg",
+    "projectThumbnailImageURL": "/projects/thumbnails/org-design.jpg"
+  },
+  {
+    "parentProject": "plot-twisters",
+    "parentProjectName": "Plot Twisters",
+    "projectName": "PlotTwisters.org",
+    "projectSlug": "plottwisters-org",
+    "projectDesc": "Colorful informational website for the EdTech design collective",
+    "projectDeliverables": [
+      "Website Design",
+      "Content Design",
+      "Graphic Design",
+      "React App"
+    ],
+    "dateLaunched": "2022-10-30",
+    "projectSize": "L",
+    "projectOwnership": 100,
+    "projectCoverURL": "/projects/plot-twisters/plottwisters-org/static.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "plot-twisters",
+    "parentProjectName": "Plot Twisters",
+    "projectName": "Plot Twisters Early Research & Worksheets",
+    "projectSlug": "early-research",
+    "projectDesc": "Discovering self-reflection habits of grade school and college students",
+    "projectDeliverables": [
+      "Strategic Vision",
+      "Market Research",
+      "User Research",
+      "Graphic Design",
+      "Content Design"
+    ],
+    "dateLaunched": "2019-05-01",
+    "projectSize": "L",
+    "projectOwnership": 100,
+    "projectCoverURL": "/projects/plot-twisters/early-research/cover.jpg",
+    "projectThumbnailImageURL": null
+  },
+  {
+    "parentProject": "plot-twisters",
+    "parentProjectName": "Plot Twisters",
+    "projectName": "EMPOWERhood",
+    "projectSlug": "empowerhood",
+    "projectDesc": "Virtual therapy playground for Black youth to heal from racial trauma",
+    "projectDeliverables": [
+      "Product Design",
+      "Webflow",
+      "Illustration",
+      "Art Direction"
+    ],
+    "dateLaunched": "2022-10-30",
+    "projectSize": "M",
+    "projectOwnership": 80,
+    "projectCoverURL": "/projects/plot-twisters/empowerhood/cover.jpg",
+    "projectThumbnailImageURL": null
+  }
 ]
   
